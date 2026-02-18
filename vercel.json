@@ -46,13 +46,11 @@
       "destination": "https://www.performancefondamentale.com/sitemap.xml",
       "permanent": true
     }
-  ]
-  {
+  ],
   "rewrites": [
     {
       "source": "/breathwork",
       "destination": "/breathwork.html"
     }
   ]
-}
 }
