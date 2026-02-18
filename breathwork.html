@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathwork à la demande - Performance Fondamentale</title>
+    <meta name="description" content="Exercices de respiration à la demande. Sommeil, réduction du stress, méditation. Pratique autonome adaptée à vos besoins.">
+    <meta name="keywords" content="breathwork, respiration, sommeil, stress, méditation, exercices">
+    <meta name="author" content="Etienne Yong">
+    <meta name="theme-color" content="#faf9f5">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Breathwork à la demande - Performance Fondamentale">
+    <meta property="og:description" content="Exercices de respiration pour chaque moment de votre journée.">
+    <meta property="og:url" content="https://www.performancefondamentale.com/breathwork">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%231f1e1d'>P</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #faf9f5;
+            color: #1f1e1d;
+            line-height: 1.6;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: #faf9f5;
+            border-bottom: 1px solid #e8e7e3;
+            padding: 20px 40px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-color: rgba(250, 249, 245, 0.8);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1f1e1d;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .logo div {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #999;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* Navigation Dots */
+        .nav-dots {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #1f1e1d;
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Sections */
+        section {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        section:nth-child(odd) {
+            background: #faf9f5;
+        }
+
+        section:nth-child(even) {
+            background: #f5f4f1;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            max-width: 900px;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        #hero h1 {
+            max-width: 100%;
+        }
+
+        #hero p {
+            font-size: 18px;
+            color: #666;
+            margin: 20px auto 0;
+            max-width: 600px;
+        }
+
+        /* Breathwork Grid */
+        .breathwork-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin: 50px 0;
+        }
+
+        .exercise-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .exercise-card:hover .exercise-image {
+            opacity: 0.85;
+            transform: scale(1.02);
+        }
+
+        .exercise-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #e8e7e3 0%, #d4d3ce 100%);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .exercise-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exercise-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1f1e1d;
+            margin-bottom: 8px;
+        }
+
+        .exercise-meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .exercise-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #1f1e1d;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .exercise-button:hover {
+            background: #333;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            margin: 80px 0 40px;
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(31, 30, 29, 0.04);
+            border-radius: 4px;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #1f1e1d;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(200, 199, 195, 0.3);
+            border-left: 2px solid #1f1e1d;
+            border-radius: 2px;
+        }
+
+        .contact-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            color: #1f1e1d;
+            text-decoration: none;
+            border-bottom: 1px solid #1f1e1d;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .contact-link:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f4f1;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #e8e7e3;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .breathwork-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .breathwork-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            #hero {
+                padding: 40px 0;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="https://www.performancefondamentale.com" class="logo">
+                <div>PERFORMANCE FONDAMENTALE</div>
+                <div style="font-size: 11px; letter-spacing: 1px; color: #999; text-transform: uppercase; margin-top: 4px;">par Etienne Yong</div>
+            </a>
+            <div class="nav-dots">
+                <div class="dot active" data-section="0"></div>
+                <div class="dot" data-section="1"></div>
+                <div class="dot" data-section="2"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <h1>Breathwork à la demande</h1>
+                <p>Exercices de respiration pour chaque moment de votre journée</p>
+            </div>
+        </section>
+
+        <!-- Exercises Grid Section -->
+        <section id="exercises">
+            <div class="container">
+                <div class="breathwork-grid">
+                    <!-- Exercise 1 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_1" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="box-breathing.jpg" alt="Box Breathing">
+                        </div>
+                        <div class="exercise-title">Box Breathing</div>
+                        <div class="exercise-meta">5 min • Focus</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 2 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_2" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="4-7-8-breathing.jpg" alt="4-7-8 Breathing">
+                        </div>
+                        <div class="exercise-title">4-7-8 Breathing</div>
+                        <div class="exercise-meta">8 min • Sleep</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 3 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_3" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="coherence-breathing.jpg" alt="Coherence Breathing">
+                        </div>
+                        <div class="exercise-title">Coherence Breathing</div>
+                        <div class="exercise-meta">10 min • Calm</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 4 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_4" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="wim-hof.jpg" alt="Wim Hof Method">
+                        </div>
+                        <div class="exercise-title">Wim Hof Method</div>
+                        <div class="exercise-meta">12 min • Energy</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 5 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_5" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="nadi-shodhana.jpg" alt="Alternate Nostril">
+                        </div>
+                        <div class="exercise-title">Alternate Nostril</div>
+                        <div class="exercise-meta">8 min • Balance</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 6 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_6" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="extended-exhale.jpg" alt="Extended Exhale">
+                        </div>
+                        <div class="exercise-title">Extended Exhale</div>
+                        <div class="exercise-meta">6 min • Sleep</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 7 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_7" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="bellows-breath.jpg" alt="Bellows Breath">
+                        </div>
+                        <div class="exercise-title">Bellows Breath</div>
+                        <div class="exercise-meta">5 min • Energy</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+
+                    <!-- Exercise 8 -->
+                    <a href="https://www.youtube.com/watch?v=REPLACE_WITH_ID_8" target="_blank" rel="noopener noreferrer" class="exercise-card">
+                        <div class="exercise-image">
+                            <img src="connected-breathing.jpg" alt="Circular Connected Breathing">
+                        </div>
+                        <div class="exercise-title">Circular Connected</div>
+                        <div class="exercise-meta">10 min • Deep Calm</div>
+                        <button class="exercise-button">Regarder</button>
+                    </a>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2>Besoin d'une accompagnement personnalisé ?</h2>
+                    <p style="font-size: 16px; margin-bottom: 30px; color: #666;">Réservez une session 1:1 pour un plan d'action breathwork adapté à vos objectifs.</p>
+                    <a href="https://www.performancefondamentale.com#exploration" class="cta-button">Réserver une session</a>
+
+                    <!-- Contact Box -->
+                    <div class="contact-box">
+                        <div class="contact-label">Prenez contact</div>
+                        <a href="mailto:etienne.ywm@gmail.com" class="contact-link">etienne.ywm@gmail.com</a>
+                        <a href="tel:+625227554" class="contact-link">+625227554</a>
+                        <a href="https://www.instagram.com/et_ywm/" target="_blank" rel="noopener noreferrer" class="contact-link">instagram.com/et_ywm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Performance Fondamentale par Etienne Yong</p>
+            <p style="margin-top: 10px; font-size: 12px;">Régulation du système nerveux • Performance durable • Santé véritable</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation dots
+        const dots = document.querySelectorAll('.nav-dots .dot');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = 0;
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = index;
+                }
+            });
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[current]) dots[current].classList.add('active');
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const sectionIndex = this.getAttribute('data-section');
+                sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll to top on logo click
+        document.querySelector('.logo').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
