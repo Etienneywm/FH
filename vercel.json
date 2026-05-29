@@ -60,5 +60,9 @@
       "source": "/tarifs",
       "destination": "/tarifs.html"
     }
+    {
+  "source": "/a-propos",
+  "destination": "/a-propos.html"
+}
   ]
 }
