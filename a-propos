@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etienne Yong — Kinésithérapeute & Praticien en Breathwork</title>
+    <meta name="description" content="Etienne Yong, kinésithérapeute oro-maxillo-faciale et praticien en breathwork. 10 ans d'expérience clinique, formé par Dan Brulé et School of Breath Science.">
+    <meta name="author" content="Etienne Yong">
+    <meta name="theme-color" content="#faf9f5">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Etienne Yong — Kinésithérapeute & Praticien en Breathwork">
+    <meta property="og:description" content="10 ans de kinésithérapie, une expérience personnelle du burnout, et une formation rigoureuse au breathwork.">
+    <meta property="og:url" content="https://www.performancefondamentale.com/a-propos">
+    <meta property="og:image" content="https://www.performancefondamentale.com/etienne.profile.jpg">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CCTKJCL');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%231f1e1d'>P</text></svg>">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Etienne Yong",
+      "jobTitle": "Kinésithérapeute & Praticien en Breathwork",
+      "description": "Kinésithérapeute oro-maxillo-faciale avec 10 ans d'expérience, praticien en breathwork formé par Dan Brulé et School of Breath Science.",
+      "url": "https://www.performancefondamentale.com/a-propos",
+      "image": "https://www.performancefondamentale.com/etienne.profile.jpg",
+      "sameAs": ["https://www.instagram.com/et_ywm/"],
+      "knowsAbout": ["Breathwork", "Système nerveux", "Kinésithérapie", "Performance", "Régulation du stress"],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "DU Maxillo Faciale" },
+        { "@type": "EducationalOccupationalCredential", "name": "Breathwork Fondamental & Advanced — Dan Brulé" },
+        { "@type": "EducationalOccupationalCredential", "name": "Hypnotic Breathwork — Coâmes, Siam Lee" },
+        { "@type": "EducationalOccupationalCredential", "name": "Breath Science Certification — School of Breath Science" }
+      ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #faf9f5;
+            color: #1f1e1d;
+            line-height: 1.6;
+        }
+
+        html, body { scroll-behavior: smooth; overflow-x: hidden; }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 249, 245, 0.9);
+            border-bottom: 1px solid #e8e7e3;
+            padding: 20px 40px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1f1e1d;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .logo:hover { opacity: 0.7; }
+        .logo-sub {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #999;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        nav a {
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #1f1e1d; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(15%);
+        }
+
+        .hero-text .label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 300;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            color: #1f1e1d;
+            margin-bottom: 28px;
+        }
+
+        .hero-text .intro {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .hero-stat {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: #1f1e1d;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Histoire */
+        .histoire {
+            padding: 80px 0;
+            background: #f5f4f1;
+        }
+
+        .histoire-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #bbb;
+            margin-bottom: 48px;
+        }
+
+        .story-text p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.95;
+            margin-bottom: 28px;
+        }
+
+        .story-text p:last-child { margin-bottom: 0; }
+
+        .story-text .em {
+            font-size: 18px;
+            color: #1f1e1d;
+            font-style: italic;
+            line-height: 1.85;
+        }
+
+        /* Formations */
+        .formations {
+            padding: 80px 0;
+            background: #faf9f5;
+        }
+
+        .formations-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .formation-group {
+            margin-bottom: 48px;
+        }
+
+        .formation-group-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #bbb;
+            margin-bottom: 24px;
+        }
+
+        .formation-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e7e3;
+        }
+
+        .formation-item:last-child { border-bottom: none; }
+
+        .formation-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #1f1e1d;
+            margin-bottom: 3px;
+        }
+
+        .formation-org {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 100px 0;
+            background: #1f1e1d;
+            text-align: center;
+        }
+
+        .cta-section .label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 24px;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: white;
+            margin-bottom: 16px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: white;
+            color: #1f1e1d;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+        .cta-button:hover { opacity: 0.85; }
+
+        footer {
+            background: #f5f4f1;
+            border-top: 1px solid #e8e7e3;
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .container { padding: 0 20px; }
+            .hero { padding: 60px 0 40px; }
+            .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+            .hero-text h1 { font-size: 36px; }
+            .hero-stat { gap: 24px; }
+            .histoire-inner,
+            .formations-inner { padding: 0 20px; }
+            .cta-section h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CCTKJCL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+    <div class="header-content">
+        <a href="https://www.performancefondamentale.com" class="logo">
+            PERFORMANCE FONDAMENTALE
+            <div class="logo-sub">par Etienne Yong</div>
+        </a>
+        <nav>
+            <a href="https://www.performancefondamentale.com">← Retour</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- Hero -->
+    <section style="background: #faf9f5;">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-inner">
+
+                    <div class="hero-photo">
+                        <img src="/etienne.profile.jpg" alt="Etienne Yong, praticien en breathwork">
+                    </div>
+
+                    <div class="hero-text">
+                        <p class="label">À propos</p>
+                        <h1>Etienne<br>Yong</h1>
+                        <p class="intro">Kinésithérapeute et praticien en breathwork. J'ai vécu l'épuisement de l'intérieur. C'est ce qui m'a conduit à comprendre le système nerveux autrement.</p>
+                        <div class="hero-stat">
+                            <div>
+                                <div class="stat-number">10</div>
+                                <div class="stat-label">ans de clinique</div>
+                            </div>
+                            <div>
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">certifications</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Histoire -->
+    <section class="histoire">
+        <div class="container">
+            <div class="histoire-inner">
+                <p class="section-label">Mon parcours</p>
+
+                <div class="story-text">
+                    <p>Dix ans de kinésithérapie oro-maxillo-faciale. Dix ans à étudier la littérature scientifique, à affiner mon approche technique, à apprendre à voir le corps d'un point de vue systémique plutôt que spécifique.</p>
+
+                    <p>Dans cette quête d'excellence, je me suis retrouvé plusieurs fois en état d'épuisement professionnel. Sans le savoir, en phase pré-burnout. Le praticien qui soignait les autres ne voyait pas les signaux que son propre corps lui envoyait.</p>
+
+                    <p class="em">C'est mon apprentissage lui-même qui m'a guidé vers la respiration et son implication dans le système nerveux.</p>
+
+                    <p>Je me suis formé au breathwork pour devenir d'abord facilitateur, puis praticien. La différence est fondamentale : le praticien s'appuie sur des bases scientifiques rigoureuses pour proposer des exercices respiratoires spécifiques au contexte de chaque individu.</p>
+
+                    <p>C'est dans ce chemin que ma vision du soin a émergé : rétablir les fondamentaux d'une bonne santé. La maladie ne naît pas de nulle part. Elle apparaît quand toutes les conditions sont réunies. Et c'est bien souvent le déséquilibre intérieur qui en est responsable.</p>
+
+                    <p class="em">Bien respirer, avoir un système nerveux résilient au stress externe et interne — ce n'est plus une option. C'est une nécessité. C'est alors que la performance arrive, et qu'on l'accueille.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations -->
+    <section class="formations">
+        <div class="container">
+            <div class="formations-inner">
+
+                <div class="formation-group">
+                    <p class="formation-group-label">Formations dans le champ de la kinésithérapie</p>
+                    <div class="formation-item">
+                        <p class="formation-name">Diplôme d'État de Kinésithérapeute</p>
+                        <p class="formation-org">Spécialisation oro-maxillo-faciale</p>
+                    </div>
+                    <div class="formation-item">
+                        <p class="formation-name">DU Maxillo Faciale</p>
+                        <p class="formation-org">Diplôme Universitaire</p>
+                    </div>
+                </div>
+
+                <div class="formation-group">
+                    <p class="formation-group-label">Certifications en breathwork</p>
+                    <div class="formation-item">
+                        <p class="formation-name">Breathwork Fondamental & Advanced</p>
+                        <p class="formation-org">Dan Brulé</p>
+                    </div>
+                    <div class="formation-item">
+                        <p class="formation-name">Hypnotic Breathwork</p>
+                        <p class="formation-org">Coâmes, Siam Lee</p>
+                    </div>
+                    <div class="formation-item">
+                        <p class="formation-name">Breath Science Certification</p>
+                        <p class="formation-org">School of Breath Science</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <p class="label">Travailler ensemble</p>
+            <h2>Prêt à réguler votre système nerveux ?</h2>
+            <p>Une session découverte pour faire le point sur votre situation.</p>
+            <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=a-propos&utm_campaign=reservation"
+               target="_blank" rel="noopener noreferrer"
+               class="cta-button">Réserver une session</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Performance Fondamentale par Etienne Yong</p>
+    <p style="margin-top: 8px; font-size: 12px;">Régulation du système nerveux • Performance durable • Santé véritable</p>
+    <p style="margin-top: 16px;">
+        <a href="/mentions-legales" style="color: #999; text-decoration: none; border-bottom: 1px solid #ddd; font-size: 12px;">Mentions légales & Politique de confidentialité</a>
+    </p>
+</footer>
+
+</body>
+</html>
