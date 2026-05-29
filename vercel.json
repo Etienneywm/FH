@@ -58,3 +58,8 @@
     }
   ]
 }
+
+{
+  "source": "/tarifs",
+  "destination": "/tarifs.html"
+}
