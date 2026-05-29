@@ -57,9 +57,8 @@
       "destination": "/mentions-legales.html"
     },
     {
-  "source": "/tarifs",
-  "destination": "/tarifs.html"
+      "source": "/tarifs",
+      "destination": "/tarifs.html"
     }
   ]
 }
-
