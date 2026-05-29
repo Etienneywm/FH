@@ -50,19 +50,4 @@
   "rewrites": [
     {
       "source": "/breathwork",
-      "destination": "/breathwork.html"
-    },
-    {
-      "source": "/mentions-legales",
-      "destination": "/mentions-legales.html"
-    },
-    {
-      "source": "/tarifs",
-      "destination": "/tarifs.html"
-    }
-    {
-  "source": "/a-propos",
-  "destination": "/a-propos.html"
-}
-  ]
-}
+      "destination": "/breathwork.html
