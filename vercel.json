@@ -55,12 +55,11 @@
     {
       "source": "/mentions-legales",
       "destination": "/mentions-legales.html"
-    }
+    },
     {
   "source": "/tarifs",
   "destination": "/tarifs.html"
-}
-
+    }
   ]
 }
 
