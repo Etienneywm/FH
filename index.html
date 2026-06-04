@@ -931,6 +931,171 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     ></iframe>
                 </div>
             </div>
+           <section id="temoignages-ecrits" style="background: #faf9f5;">
+    <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+ 
+        <div style="text-align: center; margin-bottom: 50px;">
+            <p style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 12px;">Ils témoignent</p>
+            <h2 style="font-size: 36px; font-weight: 300; letter-spacing: -0.5px; color: #1f1e1d; margin: 0;">Leurs mots, après le travail.</h2>
+        </div>
+ 
+        <div class="pf-testi" aria-roledescription="carrousel" aria-label="Témoignages écrits">
+            <div class="pf-testi-viewport">
+                <div class="pf-testi-track" id="pfTestiTrack">
+ 
+                    <article class="pf-testi-slide" role="group" aria-label="1 sur 4">
+                        <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
+                        <p class="pf-testi-quote">Je suis vraiment scotché par les résultats qui se maintiennent dans le temps ! C’est incroyable comment ça m’aide, j’ai l’impression d’avoir appris à 33 ans comment fonctionne mon corps et comment respirer, je pense qu’on devrait tous passer par là, d’autant plus quand on a une vie stressante (entrepreneuriat,sport).</p>
+                        <div class="pf-testi-author">
+                            <span class="pf-testi-name">Simon.</span>
+                            <span class="pf-testi-role">Entrepreneur</span>
+                        </div>
+                    </article>
+ 
+                    <article class="pf-testi-slide" role="group" aria-label="2 sur 4">
+                        <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
+                        <p class="pf-testi-quote">je me sens beaucoup mieux physiquement et mentalement, la respiration me permet de mieux dormir et globalement d’avoir un métabolisme plus performant, mon système nerveux est aussi plus résilient donc j’absorbe mieux le stress..</p>
+                        <div class="pf-testi-author">
+                            <span class="pf-testi-name">Simon.</span>
+                            <span class="pf-testi-role">Entrepreneur</span>
+                        </div>
+                    </article>
+ 
+                    <article class="pf-testi-slide" role="group" aria-label="3 sur 4">
+                        <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
+                        <p class="pf-testi-quote">en plus d’une meilleure résistance au stress, j’ai retrouvé de l’inspiration et de la joie dans le travail ! C’est de nouveau agréable de travailler alors que rien a changé de ce côté là, seulement la respiration, je ne pensais pas que les effets se feraient ressentir jusque là.</p>
+                        <div class="pf-testi-author">
+                            <span class="pf-testi-name">Simon.</span>
+                            <span class="pf-testi-role">Entrepreneur</span>
+                        </div>
+                    </article>
+ 
+                    <article class="pf-testi-slide" role="group" aria-label="4 sur 4">
+                        <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
+                        <p class="pf-testi-quote">mes performances sportives sont aussi bien meilleures, j’ai plus d’endurance et plus de force, je maintiens les efforts plus longtemps en dépensant moins d’énergie, j’ai l’impression que l respiration me permet d’optimiser l’allocation de mon énergie dans mon corps pour la performance, c’est impressionnant !
+.</p>
+                        <div class="pf-testi-author">
+                            <span class="pf-testi-name">Simon.</span>
+                            <span class="pf-testi-role">Sportif Crossfit</span>
+                        </div>
+                    </article>
+ 
+                </div>
+            </div>
+ 
+            <div class="pf-testi-controls">
+                <button class="pf-testi-arrow" id="pfTestiPrev" aria-label="Témoignage précédent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div class="pf-testi-dots" id="pfTestiDots" role="tablist"></div>
+                <button class="pf-testi-arrow" id="pfTestiNext" aria-label="Témoignage suivant">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+ 
+    </div>
+</section>
+ 
+<style>
+    .pf-testi { max-width: 760px; margin: 0 auto; }
+    .pf-testi-viewport { overflow: hidden; }
+    .pf-testi-track {
+        display: flex;
+        transition: transform 0.7s cubic-bezier(0.65, 0.02, 0.18, 1);
+        will-change: transform;
+    }
+    .pf-testi-slide { flex: 0 0 100%; padding: 0 8px; text-align: center; }
+    .pf-testi-mark {
+        display: block;
+        font-family: Georgia, serif;
+        font-size: 64px;
+        line-height: 0.5;
+        color: #d4d3d0;
+        margin-bottom: 24px;
+    }
+    .pf-testi-quote {
+        font-size: clamp(20px, 3vw, 28px);
+        font-weight: 300;
+        line-height: 1.6;
+        letter-spacing: -0.3px;
+        color: #1f1e1d;
+        max-width: 600px;
+        margin: 0 auto 32px;
+    }
+    .pf-testi-author { display: flex; flex-direction: column; gap: 5px; }
+    .pf-testi-name { font-size: 15px; font-weight: 500; color: #1f1e1d; letter-spacing: 0.3px; }
+    .pf-testi-role { font-size: 12px; color: #999; letter-spacing: 1.5px; text-transform: uppercase; }
+    .pf-testi-controls {
+        display: flex; align-items: center; justify-content: center;
+        gap: 28px; margin-top: 48px;
+    }
+    .pf-testi-arrow {
+        width: 44px; height: 44px; border-radius: 50%;
+        border: 1px solid #e8e7e3; background: none; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        color: #1f1e1d;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .pf-testi-arrow:hover { border-color: #1f1e1d; }
+    .pf-testi-arrow:active { transform: scale(0.94); }
+    .pf-testi-arrow svg { width: 16px; height: 16px; }
+    .pf-testi-dots { display: flex; gap: 10px; align-items: center; }
+    .pf-testi-dot {
+        width: 7px; height: 7px; border-radius: 50%;
+        background: #d4d3d0; border: none; padding: 0; cursor: pointer;
+        transition: background 0.3s ease, width 0.3s ease;
+    }
+    .pf-testi-dot.is-active { background: #1f1e1d; width: 22px; border-radius: 4px; }
+    @media (max-width: 640px) {
+        .pf-testi-controls { gap: 18px; }
+        .pf-testi-mark { font-size: 48px; }
+    }
+</style>
+ 
+<script>
+    (function () {
+        function initPfTesti() {
+            var track = document.getElementById('pfTestiTrack');
+            if (!track) return;
+            var slides = Array.prototype.slice.call(track.children);
+            var dotsEl = document.getElementById('pfTestiDots');
+            var prev = document.getElementById('pfTestiPrev');
+            var next = document.getElementById('pfTestiNext');
+            var index = 0;
+ 
+            slides.forEach(function (_, i) {
+                var d = document.createElement('button');
+                d.className = 'pf-testi-dot';
+                d.setAttribute('aria-label', 'Aller au témoignage ' + (i + 1));
+                d.addEventListener('click', function () { go(i); });
+                dotsEl.appendChild(d);
+            });
+            var dots = Array.prototype.slice.call(dotsEl.children);
+ 
+            function update() {
+                track.style.transform = 'translateX(' + (-index * 100) + '%)';
+                dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
+            }
+            function go(i) { index = (i + slides.length) % slides.length; update(); }
+ 
+            next.addEventListener('click', function () { go(index + 1); });
+            prev.addEventListener('click', function () { go(index - 1); });
+ 
+            var startX = 0, delta = 0;
+            track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchmove', function (e) { delta = e.touches[0].clientX - startX; }, { passive: true });
+            track.addEventListener('touchend', function () {
+                if (Math.abs(delta) > 50) go(delta < 0 ? index + 1 : index - 1);
+                delta = 0;
+            });
+ 
+            update();
+        }
+        if (document.readyState !== 'loading') initPfTesti();
+        else document.addEventListener('DOMContentLoaded', initPfTesti);
+    })();
+</script>
         </section>
 
         <!-- Tarifs -->
