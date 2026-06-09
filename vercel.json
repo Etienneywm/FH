@@ -28,6 +28,5 @@
     { "source": "/mentions-legales", "destination": "/mentions-legales.html" },
     { "source": "/tarifs", "destination": "/tarifs.html" },
     { "source": "/a-propos", "destination": "/a-propos.html" }
-    { "source": "/blog", "destination": "/blog.html" }
   ]
 }
