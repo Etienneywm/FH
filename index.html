@@ -665,14 +665,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .offering-card { padding: 25px; }
         }
        /* === Sécurité responsive mobile === */
-        img { max-width: 100%; height: auto; }
-        svg, iframe, video { max-width: 100%; }
+img { max-width: 100%; height: auto; }
+svg, iframe, video { max-width: 100%; }
 
-        @media (max-width: 768px) {
-            .header-content { flex-direction: column; gap: 10px; text-align: center; }
-            #mechanism div[style*="width: 200px"],
-            #mechanism div[style*="width: 250px"],
-            #mechanism div[style*="width: 300px"] { max-width: 100%; }
+/* autorise les conteneurs flex à rétrécir */
+.container { min-width: 0; }
+.pf-testi-slide { min-width: 0; }
+/* coupe les mots trop longs (ex. "entrepreneuriat,sport") */
+.pf-testi-quote { overflow-wrap: break-word; word-break: break-word; }
+
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; gap: 10px; text-align: center; }
+    #mechanism div[style*="width: 200px"],
+    #mechanism div[style*="width: 250px"],
+    #mechanism div[style*="width: 300px"] { max-width: 100%; }
+}
+
+/* très petits écrans : les traits décoratifs des "3 phases" prennent toute la largeur */
+@media (max-width: 360px) {
+    #mechanism div[style*="width: 200px"],
+    #mechanism div[style*="width: 250px"],
+    #mechanism div[style*="width: 300px"] { width: 100% !important; }
         }
     </style>
 </head>
