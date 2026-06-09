@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Performance Fondamentale</title>
+  <meta name="description" content="Réflexions sur la respiration, le système nerveux et la performance durable. Articles d'Etienne Yong.">
+  <link rel="canonical" href="https://www.performancefondamentale.com/blog.html">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5CCTKJCL');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    :root{
+      --bg:#faf9f5; --text:#1d1b18; --muted:#8c857a;
+      --border:#e6e2d8; --accent:#1f1e1d; --excerpt:#5b564e;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-weight:300; line-height:1.6; -webkit-font-smoothing:antialiased;
+    }
+    a{ color:inherit; }
+
+    /* Header / nav */
+    .pf-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1.4rem 1.5rem; border-bottom:1px solid var(--border);
+      max-width:1080px; margin:0 auto;
+    }
+    .pf-head-brand{ font-size:1.05rem; letter-spacing:.02em; text-decoration:none; }
+    .pf-nav{ display:flex; gap:1.6rem; }
+    .pf-nav a{ text-decoration:none; font-size:.95rem; color:var(--text); opacity:.75; }
+    .pf-nav a:hover{ opacity:1; }
+    .pf-nav a.is-active{ opacity:1; border-bottom:1px solid var(--accent); padding-bottom:2px; }
+
+    /* Title */
+    .pf-blog-hero{ max-width:1080px; margin:0 auto; padding:4.5rem 1.5rem 2.5rem; }
+    .pf-blog-hero h1{ font-weight:300; font-size:2.6rem; letter-spacing:.01em; margin:0 0 .6rem; }
+    .pf-blog-hero p{ font-weight:300; color:var(--muted); margin:0; max-width:52ch; }
+
+    /* Grid */
+    .pf-blog{ max-width:1080px; margin:0 auto; padding:1rem 1.5rem 6rem; }
+    .pf-blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+    .pf-blog-card{
+      display:flex; flex-direction:column; border:1px solid var(--border);
+      background:#fff; text-decoration:none; color:inherit; overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .pf-blog-card:hover{ transform:translateY(-4px); box-shadow:0 12px 28px rgba(29,27,24,.08); }
+    .pf-blog-thumb{ aspect-ratio:16/10; width:100%; object-fit:cover; background:var(--border); display:block; }
+    .pf-blog-body{ padding:1.4rem 1.4rem 1.6rem; display:flex; flex-direction:column; gap:.6rem; flex:1; }
+    .pf-blog-date{ font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .pf-blog-card h3{ font-weight:300; font-size:1.2rem; line-height:1.35; margin:0; }
+    .pf-blog-excerpt{ font-size:.95rem; line-height:1.55; color:var(--excerpt); margin:0; }
+    .pf-blog-state{ color:var(--muted); }
+    .pf-blog-state a{ border-bottom:1px solid var(--accent); text-decoration:none; }
+
+    /* Footer */
+    .pf-foot{
+      border-top:1px solid var(--border); max-width:1080px; margin:0 auto;
+      padding:2.5rem 1.5rem; color:var(--muted); font-size:.9rem;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+    }
+    .pf-foot a{ text-decoration:none; }
+
+    @media (max-width:860px){
+      .pf-blog-grid{ grid-template-columns:1fr; }
+      .pf-blog-hero h1{ font-size:2.1rem; }
+      .pf-head{ flex-direction:column; gap:1rem; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CCTKJCL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ⚠️ Vérifie que ces liens/ancres correspondent à tes vraies sections sur index.html -->
+  <header>
+    <div class="pf-head">
+      <a class="pf-head-brand" href="index.html">Performance Fondamentale</a>
+      <nav class="pf-nav">
+        <a href="index.html#a-propos">À propos</a>
+        <a href="index.html#breathwork">Breathwork</a>
+        <a href="index.html#tarifs">Tarifs</a>
+        <a href="blog.html" class="is-active">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pf-blog-hero">
+    <h1>Le blog</h1>
+    <p>Réflexions sur la respiration, le système nerveux et la performance durable.</p>
+  </section>
+
+  <main class="pf-blog">
+    <div id="pf-blog-grid" class="pf-blog-grid" aria-live="polite">
+      <p class="pf-blog-state">Chargement des articles…</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="pf-foot">
+      <span>© <span id="pf-year"></span> Performance Fondamentale</span>
+      <a href="https://www.etienneyong.com" target="_blank" rel="noopener">etienneyong.com →</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("pf-year").textContent = new Date().getFullYear();
+
+    (function () {
+      // ============ À REMPLIR ============
+      var GHOST_URL       = "https://www.etienneyong.com";   // ton blog
+      var CONTENT_API_KEY = "TON_CONTENT_API_KEY_ICI";       // clé Content API (lecture seule)
+      var NB_ARTICLES     = 12;                               // nombre d'articles affichés
+      // ===================================
+
+      var grid = document.getElementById("pf-blog-grid");
+
+      var endpoint = GHOST_URL.replace(/\/$/, "") +
+        "/ghost/api/content/posts/?key=" + CONTENT_API_KEY +
+        "&limit=" + NB_ARTICLES +
+        "&fields=title,url,excerpt,feature_image,published_at" +
+        "&order=published_at%20desc";
+
+      fetch(endpoint)
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) {
+          var posts = (data && data.posts) || [];
+          if (!posts.length) { showFallback(); return; }
+
+          grid.innerHTML = posts.map(function (p) {
+            var date = new Date(p.published_at).toLocaleDateString("fr-FR",
+              { day: "numeric", month: "long", year: "numeric" });
+
+            var thumb = p.feature_image
+              ? '<img class="pf-blog-thumb" src="' + p.feature_image + '" alt="" loading="lazy">'
+              : '<span class="pf-blog-thumb"></span>';
+
+            var excerpt = p.excerpt
+              ? '<p class="pf-blog-excerpt">' + p.excerpt.slice(0, 140) +
+                  (p.excerpt.length > 140 ? "…" : "") + '</p>'
+              : '';
+
+            return '<a class="pf-blog-card" href="' + p.url + '" target="_blank" rel="noopener">' +
+                     thumb +
+                     '<div class="pf-blog-body">' +
+                       '<span class="pf-blog-date">' + date + '</span>' +
+                       '<h3>' + p.title + '</h3>' +
+                       excerpt +
+                     '</div>' +
+                   '</a>';
+          }).join("");
+        })
+        .catch(showFallback);
+
+      function showFallback() {
+        // Sur une page dédiée, on n'efface pas tout : on propose un lien direct vers le blog
+        grid.innerHTML = '<p class="pf-blog-state">Les articles sont disponibles sur ' +
+          '<a href="https://www.etienneyong.com" target="_blank" rel="noopener">etienneyong.com</a>.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>
