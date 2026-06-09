@@ -664,6 +664,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .offerings-grid { grid-template-columns: 1fr; gap: 15px; }
             .offering-card { padding: 25px; }
         }
+       /* === Sécurité responsive mobile === */
+        img { max-width: 100%; height: auto; }
+        svg, iframe, video { max-width: 100%; }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 10px; text-align: center; }
+            #mechanism div[style*="width: 200px"],
+            #mechanism div[style*="width: 250px"],
+            #mechanism div[style*="width: 300px"] { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -824,7 +834,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="element-description">Votre travail n'est pas de forcer, mais de permettre à ce processus de fonctionner pleinement.</p>
                     </div>
                 </div>
-            </div>
+             </div>
         </section>
 
         <!-- Navigation Menu Section -->
@@ -931,6 +941,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     ></iframe>
                 </div>
             </div>
+        </section>
            <section id="temoignages-ecrits" style="background: #faf9f5;">
     <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
  
@@ -1096,7 +1107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         else document.addEventListener('DOMContentLoaded', initPfTesti);
     })();
 </script>
-        </section>
+
 
         <!-- Tarifs -->
         <section id="tarifs" style="background: #faf9f5;">
