@@ -973,39 +973,215 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
-        <!-- Framework 3 phases Section -->
-        <section id="framework" style="background: #faf9f5;">
-            <div class="container">
-                <div class="mechanism-content">
-                    <h3 style="font-size: 28px; font-weight: 400; margin-top: 20px; margin-bottom: 30px; color: #1f1e1d; letter-spacing: -0.5px; text-align: center;">Performance Fondamentale agit en 3 phases</h3>
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework 3 phases — aperçu</title>
+<style>
+  html, body { margin: 0; background: #faf9f5; }
+</style>
+</head>
+<body>
 
-                    <div style="max-width: 600px; margin: 0 auto;">
-                        <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 30px;">
-                            <div style="text-align: left;">
-                                <div style="width: 200px; height: 2px; background: #1f1e1d; margin-bottom: 10px;"></div>
-                                <button class="phase-btn" data-phase="restaurer" style="background: none; border: none; padding: 0; cursor: pointer; font-size: 24px; font-weight: 400; color: #1f1e1d; text-align: left; letter-spacing: 0.5px;">Restaurer</button>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="width: 300px; height: 2px; background: #1f1e1d; margin-bottom: 10px;"></div>
-                                <button class="phase-btn" data-phase="reguler" style="background: none; border: none; padding: 0; cursor: pointer; font-size: 24px; font-weight: 400; color: #1f1e1d; text-align: center; letter-spacing: 0.5px;">Réguler</button>
-                            </div>
-                            <div style="text-align: right;">
-                                <div style="width: 250px; margin-left: auto; height: 2px; background: #1f1e1d; margin-bottom: 10px;"></div>
-                                <button class="phase-btn" data-phase="construire" style="background: none; border: none; padding: 0; cursor: pointer; font-size: 24px; font-weight: 400; color: #1f1e1d; text-align: right; letter-spacing: 0.5px;">Construire</button>
-                            </div>
-                        </div>
+<!-- ============================================================
+     FRAMEWORK 3 PHASES — bloc à coller dans index.html (#framework)
+     Copie tout, du <section> au </section> inclus (style + script compris).
+     ============================================================ -->
+<section class="pf-phases" id="pf-phases" style="background: #faf9f5;">
+  <style>
+    .pf-phases {
+      color: #1f1e1d;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      padding: clamp(56px, 9vw, 104px) 24px;
+    }
+    .pf-phases__inner { max-width: 1040px; margin: 0 auto; }
+    .pf-phases__title {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      text-align: center;
+      color: #1d1b18;
+      margin: 0 0 clamp(36px, 5vw, 64px);
+    }
+    .pf-phases__layout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(28px, 5vw, 72px);
+    }
+    .pf-phases__stage {
+      position: relative;
+      width: min(360px, 86vw);
+      aspect-ratio: 1 / 1;
+      flex: 0 0 auto;
+    }
+    .pf-phases__ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 66%; height: 66%;
+      transform: translate(-50%, -50%);
+      border: 1px solid #d8d3c8;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .pf-phases__node {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 27%; height: 27%;
+      margin: 0; padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.2;
+      font: inherit;
+      font-size: clamp(0.78rem, 1.6vw, 0.95rem);
+      color: #8c857a;
+      background: #faf9f5;
+      border: 1px solid #e6e2d8;
+      border-radius: 50%;
+      cursor: pointer;
+      will-change: transform;
+      transition: border-color .35s ease, color .35s ease, background-color .35s ease, box-shadow .35s ease;
+    }
+    .pf-phases__node:hover { border-color: #9c6f4e; color: #1f1e1d; }
+    .pf-phases__node:focus-visible { outline: 2px solid #9c6f4e; outline-offset: 3px; }
+    .pf-phases__node.is-active {
+      border-color: #9c6f4e;
+      color: #1f1e1d;
+      background: #f3ece4;
+      box-shadow: inset 0 0 0 1px #9c6f4e;
+    }
+    .pf-phases__panel { flex: 0 1 380px; max-width: 380px; min-height: 170px; }
+    .pf-phases__tick { width: 40px; height: 1px; background: #9c6f4e; margin: 0 0 20px; }
+    .pf-phases__phase-name {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      font-weight: 300;
+      color: #1d1b18;
+      margin: 0 0 16px;
+    }
+    .pf-phases__phase-text {
+      font-size: clamp(1rem, 1.7vw, 1.1rem);
+      line-height: 1.65;
+      color: #5f5a52;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .pf-phases__layout { flex-direction: column; }
+      .pf-phases__panel { text-align: center; }
+      .pf-phases__tick { margin-left: auto; margin-right: auto; }
+    }
+  </style>
 
-                        <div id="phase-description" style="margin-top: 30px; padding: 25px; background: rgba(31, 30, 29, 0.03); border-left: 2px solid #1f1e1d; border-radius: 2px; min-height: 100px; display: flex; align-items: center;">
-                            <div style="color: #666; font-size: 15px; line-height: 1.8;">
-                                <p id="restaurer" class="phase-content" style="display: none; margin: 0;"><strong>Restaurer</strong> — Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.</p>
-                                <p id="reguler" class="phase-content" style="display: none; margin: 0;"><strong>Réguler</strong> — Apprendre à basculer fluidement entre activation et récupération. Transformer vos états de vigilance en levier de performance.</p>
-                                <p id="construire" class="phase-content" style="display: none; margin: 0;"><strong>Construire</strong> — Développer votre capacité à encaisser la pression sans vous épuiser. Une résilience réelle qui vous garde lucide face aux turbulences.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <div class="pf-phases__inner">
+    <h2 class="pf-phases__title">Performance Fondamentale agit en 3 phases</h2>
+
+    <div class="pf-phases__layout">
+      <div class="pf-phases__stage" aria-label="Les trois phases, cliquez sur une phase pour voir sa description">
+        <div class="pf-phases__ring"></div>
+        <button class="pf-phases__node" type="button" data-phase="restaurer" aria-pressed="false">Restaurer</button>
+        <button class="pf-phases__node" type="button" data-phase="reguler" aria-pressed="false">Réguler</button>
+        <button class="pf-phases__node" type="button" data-phase="construire" aria-pressed="false">Construire</button>
+      </div>
+
+      <div class="pf-phases__panel" role="region" aria-live="polite" aria-atomic="true">
+        <div class="pf-phases__tick"></div>
+        <h3 class="pf-phases__phase-name">Restaurer</h3>
+        <p class="pf-phases__phase-text">Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    function init() {
+      var root = document.getElementById('pf-phases');
+      if (!root) return;
+      var stage  = root.querySelector('.pf-phases__stage');
+      var nodes  = Array.prototype.slice.call(root.querySelectorAll('.pf-phases__node'));
+      var nameEl = root.querySelector('.pf-phases__phase-name');
+      var textEl = root.querySelector('.pf-phases__phase-text');
+
+      // --- Textes des phases (Restaurer = ta copie ; Réguler / Construire à compléter) ---
+      var data = {
+        restaurer:  { name: 'Restaurer',  text: 'Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.' },
+        reguler:    { name: 'Réguler',    text: 'À compléter — colle ici ton texte pour la phase Réguler.' },
+        construire: { name: 'Construire', text: 'À compléter — colle ici ton texte pour la phase Construire.' }
+      };
+
+      // Positions de départ (en degrés) : Restaurer bas-gauche, Réguler haut, Construire bas-droite
+      var base = [150, -90, 30];
+
+      var rot = 0;
+      var paused = false;
+      var last = 0;
+      var R = 0;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function measure() { R = stage.clientWidth * 0.33; }
+
+      function place() {
+        for (var i = 0; i < nodes.length; i++) {
+          var a = (base[i] + rot) * Math.PI / 180;
+          var x = Math.cos(a) * R;
+          var y = Math.sin(a) * R;
+          nodes[i].style.transform = 'translate(-50%,-50%) translate(' + x + 'px,' + y + 'px)';
+        }
+      }
+
+      function select(key) {
+        nodes.forEach(function (n) {
+          var on = n.getAttribute('data-phase') === key;
+          n.classList.toggle('is-active', on);
+          n.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        nameEl.textContent = data[key].name;
+        textEl.textContent = data[key].text;
+      }
+
+      function loop(t) {
+        if (!last) last = t;
+        var dt = t - last;
+        last = t;
+        if (!paused && !reduce) {
+          rot += dt * 0.0075; // ~48 s par tour
+          if (rot >= 360) rot -= 360;
+        }
+        place();
+        requestAnimationFrame(loop);
+      }
+
+      nodes.forEach(function (n) {
+        n.addEventListener('click', function () { select(n.getAttribute('data-phase')); });
+      });
+
+      // On met la rotation en pause au survol / focus pour pouvoir cliquer facilement
+      stage.addEventListener('pointerenter', function () { paused = true; });
+      stage.addEventListener('pointerleave', function () { paused = false; });
+      stage.addEventListener('focusin',  function () { paused = true; });
+      stage.addEventListener('focusout', function () { paused = false; });
+      window.addEventListener('resize', measure);
+
+      measure();
+      select('restaurer');
+      requestAnimationFrame(loop);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+</section>
+
+</body>
+</html>
 
         <!-- Navigation Menu Section -->
         <section id="nav-menu" style="background: #faf9f5; padding: 20px 0;">
