@@ -943,103 +943,45 @@ svg, iframe, video { max-width: 100%; }
             .pf-testi-controls { gap: 18px; }
             .pf-testi-mark { font-size: 48px; }
         }
-     <!-- Formulaire de contact -->
-<section id="contact" style="background: #faf9f5;">
-    <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
-        <div class="pf-contact-header" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
-            <p class="pf-kicker" style="display: flex; justify-content: center;">Candidature</p>
-            <h2 id="pf-contact-title" style="font-size: 38px; font-weight: 300; letter-spacing: -0.5px; color: #16012E; margin-bottom: 16px;">Prêt(e) à retrouver votre système nerveux ?</h2>
-            <p style="font-size: 16px; color: #555; max-width: 480px; margin: 0 auto;">Soumettez votre candidature pour un premier appel d'évaluation. Nous échangerons sur vos objectifs et vérifierons que nous sommes les bons partenaires pour votre parcours.</p>
-        </div>
-        <form id="pfContactForm" class="pf-form"
-              action="https://formsubmit.co/etienneyong@performancefondamentale.com"
-              method="POST">
-            <input type="hidden" name="_subject" value="Nouvelle candidature — Performance Fondamentale">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
-
-            <div class="pf-form-row">
-                <div class="pf-form-field">
-                    <label for="pf-nom">Nom</label>
-                    <input type="text" id="pf-nom" name="Nom" required autocomplete="family-name" placeholder="Votre nom">
-                </div>
-                <div class="pf-form-field">
-                    <label for="pf-prenom">Prénom</label>
-                    <input type="text" id="pf-prenom" name="Prénom" required autocomplete="given-name" placeholder="Votre prénom">
-                </div>
-            </div>
-
-            <div class="pf-form-row">
-                <div class="pf-form-field">
-                    <label for="pf-email">Email</label>
-                    <input type="email" id="pf-email" name="Email" required autocomplete="email" placeholder="vous@exemple.com">
-                </div>
-                <div class="pf-form-field">
-                    <label for="pf-source">Comment avez-vous entendu parler de moi ?</label>
-                    <select id="pf-source" name="Source">
-                        <option value="Instagram">Instagram</option>
-                        <option value="LinkedIn">LinkedIn</option>
-                        <option value="Recommandation">Recommandation</option>
-                        <option value="Google / recherche">Google / recherche</option>
-                        <option value="Blog">Blog</option>
-                        <option value="Autre">Autre</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="pf-form-field">
-                <label for="pf-challenge">Quel est votre challenge principal ?</label>
-                <select id="pf-challenge" name="Challenge principal">
-                    <option value="Sommeil">Sommeil</option>
-                    <option value="Stress">Stress</option>
-                    <option value="Énergie">Énergie</option>
-                    <option value="Focus">Focus</option>
-                    <option value="Autre">Autre</option>
-                </select>
-            </div>
-
-            <div class="pf-form-field">
-                <label for="pf-objectif">Quel est votre objectif ?</label>
-                <textarea id="pf-objectif" name="Objectif" rows="3" required placeholder="Ce que vous aimeriez retrouver ou atteindre"></textarea>
-            </div>
-
-            <div class="pf-form-row">
-                <div class="pf-form-field">
-                    <label for="pf-motivation">Motivation pour ce travail <span class="pf-optional">(1 à 10)</span></label>
-                    <select id="pf-motivation" name="Motivation (1-10)" required>
-                        <option value="" disabled selected>Choisir un score</option>
-                        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                        <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-                        <option value="7">7</option><option value="8">8</option><option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-                <div class="pf-form-field">
-                    <label for="pf-investissement">Prêt(e) à vous investir <span class="pf-optional">(1 à 10)</span></label>
-                    <select id="pf-investissement" name="Investissement (1-10)" required>
-                        <option value="" disabled selected>Choisir un score</option>
-                        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                        <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-                        <option value="7">7</option><option value="8">8</option><option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="pf-form-field">
-                <label for="pf-commentaires">Commentaires supplémentaires <span class="pf-optional">(facultatif)</span></label>
-                <textarea id="pf-commentaires" name="Commentaires" rows="4" placeholder="Tout ce qui pourrait m'aider à mieux vous comprendre"></textarea>
-            </div>
-
-            <div class="pf-form-submit-wrap">
-                <button type="submit" class="pf-cta pf-form-submit">Envoyer ma candidature</button>
-                <p id="pfFormStatus" class="pf-form-status" role="status" aria-live="polite"></p>
-            </div>
-        </form>
-    </div>
-          }
-</section>
+        /* Formulaire de contact */
+        .pf-form { max-width: 640px; margin: 0 auto; }
+        .pf-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pf-form-field { display: flex; flex-direction: column; margin-bottom: 20px; }
+        .pf-form-field label {
+            font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+            color: #999; margin-bottom: 8px;
+        }
+        .pf-form-field .pf-optional { text-transform: none; letter-spacing: 0; }
+        .pf-form-field input,
+        .pf-form-field select,
+        .pf-form-field textarea {
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 300;
+            color: #16012E;
+            background: #faf9f5;
+            border: 1px solid #e8e7e3;
+            border-radius: 10px;
+            padding: 13px 14px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            width: 100%;
+        }
+        .pf-form-field textarea { resize: vertical; line-height: 1.6; }
+        .pf-form-field input::placeholder,
+        .pf-form-field textarea::placeholder { color: #bbb; }
+        .pf-form-field input:focus,
+        .pf-form-field select:focus,
+        .pf-form-field textarea:focus {
+            outline: none;
+            border-color: #6300FF;
+            box-shadow: 0 0 0 3px rgba(99, 0, 255, 0.10);
+        }
+        .pf-form-submit-wrap { text-align: center; margin-top: 16px; }
+        .pf-form-status { font-size: 14px; color: #555; margin-top: 18px; min-height: 20px; }
+        .pf-form-status.error { color: #a3392b; }
+        @media (max-width: 640px) {
+            .pf-form-row { grid-template-columns: 1fr; gap: 0; }
+        }
         /* Section "Pour aller plus loin" */
         .pf-readmore{ background:#faf9f5; color:#16012E; padding:5rem 1.5rem; border-top:1px solid #e6e2d8; }
         .pf-readmore-inner{ max-width:680px; margin:0 auto; text-align:center; }
@@ -1105,7 +1047,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
             <nav style="display: flex; gap: 28px; align-items: center;">
                 <a href="https://etienneyong.com/archive/?ref=performancefondamentale.com" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: #999; text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s;" onmouseover="this.style.color='#6300FF'" onmouseout="this.style.color='#999'">Blog</a>
-                <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=header&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta pf-cta--small">Réserver une session</a>
+                <a href="#contact" class="pf-cta pf-cta--small">Candidater</a>
             </nav>
         </div>
     </header>
@@ -1118,7 +1060,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="pf-kicker" style="margin-bottom: 20px;">Système nerveux · Respiration · Performance</p>
                         <h1 style="font-size: 56px; font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: #16012E; letter-spacing: -1px; max-width: 500px;">Le chemin de la performance</h1>
                         <p style="font-size: 18px; font-weight: 500; color: #333; margin-bottom: 30px; max-width: 480px;">Par le sommeil, la régulation du système nerveux et la respiration basée sur la science.</p>
-                        <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=hero&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta" style="margin-top: 10px;">Réserver une session</a>
+                        <a href="#contact" class="pf-cta" style="margin-top: 10px;">Candidater</a>
                     </div>
                 </div>
                 <div class="hero-right">
@@ -1241,7 +1183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <!-- CTA bas de section -->
             <div class="pf-cta-block" style="padding-top: 40px;">
-                <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=schema&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta">Réserver une session</a>
+                <a href="#contact" class="pf-cta">Candidater</a>
             </div>
         </section>
       <!-- Pain Point Section -->
@@ -1319,7 +1261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <!-- CTA milieu de page, avant les témoignages -->
                 <div class="pf-cta-block" style="padding-top: 40px; padding-bottom: 24px;">
-                    <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=milieu&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta">Réserver une session</a>
+                    <a href="#contact" class="pf-cta">Candidater</a>
                 </div>
             </div>
         </section>
@@ -1437,7 +1379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <!-- CTA bas de section -->
             <div class="pf-cta-block" style="padding-top: 48px; padding-bottom: 8px;">
-                <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=phases&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta">Réserver une session</a>
+                <a href="#contact" class="pf-cta">Candidater</a>
             </div>
           </div>
           <script>
@@ -1541,7 +1483,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <p class="pf-offer-from">À partir de</p>
                             <div class="pf-offer-price">800 €</div>
                             <p class="pf-offer-meta">8 sessions · Suivi 7j/7</p>
-                            <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=tarifs-home&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta">Réserver une session découverte</a>
+                            <a href="#contact" class="pf-cta">Candidater à un appel découverte</a>
                         </div>
                     </div>
                 </div>
@@ -1689,53 +1631,97 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <!-- CTA bas de section -->
                 <div class="pf-cta-block" style="padding-top: 48px; padding-bottom: 0;">
-                    <a href="https://calendly.com/yong-mkde/performance-fondamentale?utm_source=site&utm_medium=faq&utm_campaign=reservation" target="_blank" rel="noopener noreferrer" class="pf-cta">Réserver une session</a>
+                    <a href="#contact" class="pf-cta">Candidater</a>
                 </div>
             </div>
         </section>
         <!-- Formulaire de contact -->
         <section id="contact" style="background: #faf9f5;">
             <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+                <div class="pf-contact-header" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+                    <p class="pf-kicker" style="display: flex; justify-content: center;">Candidature</p>
+                    <h2 id="pf-contact-title" style="font-size: 38px; font-weight: 300; letter-spacing: -0.5px; color: #16012E; margin-bottom: 16px;">Prêt(e) à retrouver votre système nerveux ?</h2>
+                    <p style="font-size: 16px; color: #555; max-width: 480px; margin: 0 auto;">Soumettez votre candidature pour un premier appel d'évaluation. Nous échangerons sur vos objectifs et vérifierons que nous sommes les bons partenaires pour votre parcours.</p>
+                </div>
                 <form id="pfContactForm" class="pf-form"
                       action="https://formsubmit.co/etienneyong@performancefondamentale.com"
                       method="POST">
                     <!-- Configuration FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nouveau message — Performance Fondamentale">
+                    <input type="hidden" name="_subject" value="Nouvelle candidature — Performance Fondamentale">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="true">
                     <!-- Anti-spam (champ piège, laissé vide par les humains) -->
                     <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
                     <div class="pf-form-row">
                         <div class="pf-form-field">
-                            <label for="pf-name">Nom complet</label>
-                            <input type="text" id="pf-name" name="Nom" required autocomplete="name" placeholder="Votre nom">
+                            <label for="pf-nom">Nom</label>
+                            <input type="text" id="pf-nom" name="Nom" required autocomplete="family-name" placeholder="Votre nom">
                         </div>
                         <div class="pf-form-field">
-                            <label for="pf-email">Email</label>
-                            <input type="email" id="pf-email" name="Email" required autocomplete="email" placeholder="vous@exemple.com">
+                            <label for="pf-prenom">Prénom</label>
+                            <input type="text" id="pf-prenom" name="Prénom" required autocomplete="given-name" placeholder="Votre prénom">
                         </div>
                     </div>
                     <div class="pf-form-row">
                         <div class="pf-form-field">
+                            <label for="pf-email">Email</label>
+                            <input type="email" id="pf-email" name="Email" required autocomplete="email" placeholder="vous@exemple.com">
+                        </div>
+                        <div class="pf-form-field">
                             <label for="pf-phone">Téléphone <span class="pf-optional">(facultatif)</span></label>
                             <input type="tel" id="pf-phone" name="Téléphone" autocomplete="tel" placeholder="06 ...">
                         </div>
+                    </div>
+                    <div class="pf-form-row">
                         <div class="pf-form-field">
-                            <label for="pf-objet">Objet</label>
-                            <select id="pf-objet" name="Objet">
-                                <option value="Session 1:1">Session 1:1</option>
-                                <option value="Programme Performance Fondamentale">Programme Performance Fondamentale</option>
-                                <option value="Question générale">Question générale</option>
-                                <option value="Autre">Autre</option>
+                            <label for="pf-source">Comment avez-vous entendu parler de moi ?</label>
+                            <input type="text" id="pf-source" name="Source" placeholder="Instagram, LinkedIn, recommandation...">
+                        </div>
+                        <div class="pf-form-field">
+                            <label for="pf-challenge">Quel est votre challenge principal ?</label>
+                            <input type="text" id="pf-challenge" name="Challenge principal" placeholder="Sommeil, stress, énergie, focus...">
+                        </div>
+                    </div>
+                    <div class="pf-form-field">
+                        <label for="pf-objectif">Quel est votre objectif ?</label>
+                        <textarea id="pf-objectif" name="Objectif" rows="3" required placeholder="Ce que vous aimeriez retrouver ou atteindre"></textarea>
+                    </div>
+                    <div class="pf-form-row">
+                        <div class="pf-form-field">
+                            <label for="pf-motivation">Motivation pour ce travail <span class="pf-optional">(1 à 10)</span></label>
+                            <select id="pf-motivation" name="Motivation (1-10)" required>
+                                <option value="" disabled selected>Choisir un score</option>
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="pf-form-field">
+                            <label for="pf-investissement">Prêt(e) à vous investir <span class="pf-optional">(1 à 10)</span></label>
+                            <select id="pf-investissement" name="Investissement (1-10)" required>
+                                <option value="" disabled selected>Choisir un score</option>
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                                <option value="10">10</option>
                             </select>
                         </div>
                     </div>
                     <div class="pf-form-field">
-                        <label for="pf-message">Message</label>
-                        <textarea id="pf-message" name="Message" rows="5" required placeholder="Où en êtes-vous, et qu'aimeriez-vous changer ?"></textarea>
+                        <label for="pf-commentaires">Commentaires supplémentaires <span class="pf-optional">(facultatif)</span></label>
+                        <textarea id="pf-commentaires" name="Commentaires" rows="4" placeholder="Tout ce qui pourrait m'aider à mieux vous comprendre"></textarea>
+                    </div>
+                    <div class="pf-form-field">
+                        <label for="pf-contact-method">Comment puis-je vous contacter ?</label>
+                        <select id="pf-contact-method" name="Moyen de contact préféré" required>
+                            <option value="" disabled selected>Choisir</option>
+                            <option value="Email">Email</option>
+                            <option value="Téléphone">Téléphone</option>
+                        </select>
                     </div>
                     <div class="pf-form-submit-wrap">
-                        <button type="submit" class="pf-cta pf-form-submit">Envoyer le message</button>
+                        <button type="submit" class="pf-cta pf-form-submit">Envoyer ma candidature</button>
                         <p id="pfFormStatus" class="pf-form-status" role="status" aria-live="polite"></p>
                     </div>
                 </form>
@@ -1845,7 +1831,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     .then(function (r) { return r.json(); })
                     .then(function () {
                         form.reset();
-                        status.textContent = 'Merci, votre message a bien été envoyé. Réponse sous 48 h.';
+                        status.textContent = 'Merci, votre candidature a bien été envoyée. Réponse sous 48 h.';
                         btn.disabled = false;
                     })
                     .catch(function () {
