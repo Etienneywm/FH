@@ -943,44 +943,57 @@ svg, iframe, video { max-width: 100%; }
             .pf-testi-controls { gap: 18px; }
             .pf-testi-mark { font-size: 48px; }
         }
-        /* Formulaire de contact */
-        .pf-form { max-width: 640px; margin: 0 auto; }
-        .pf-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .pf-form-field { display: flex; flex-direction: column; margin-bottom: 20px; }
-        .pf-form-field label {
-            font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
-            color: #999; margin-bottom: 8px;
-        }
-        .pf-form-field .pf-optional { text-transform: none; letter-spacing: 0; }
-        .pf-form-field input,
-        .pf-form-field select,
-        .pf-form-field textarea {
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 300;
-            color: #16012E;
-            background: #faf9f5;
-            border: 1px solid #e8e7e3;
-            border-radius: 10px;
-            padding: 13px 14px;
-            transition: border-color 0.25s ease, box-shadow 0.25s ease;
-            width: 100%;
-        }
-        .pf-form-field textarea { resize: vertical; line-height: 1.6; }
-        .pf-form-field input::placeholder,
-        .pf-form-field textarea::placeholder { color: #bbb; }
-        .pf-form-field input:focus,
-        .pf-form-field select:focus,
-        .pf-form-field textarea:focus {
-            outline: none;
-            border-color: #6300FF;
-            box-shadow: 0 0 0 3px rgba(99, 0, 255, 0.10);
-        }
-        .pf-form-submit-wrap { text-align: center; margin-top: 16px; }
-        .pf-form-status { font-size: 14px; color: #555; margin-top: 18px; min-height: 20px; }
-        .pf-form-status.error { color: #a3392b; }
-        @media (max-width: 640px) {
-            .pf-form-row { grid-template-columns: 1fr; gap: 0; }
+       <!-- Formulaire de contact -->
+<section id="contact" style="background: #faf9f5;">
+    <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="pf-contact-header" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+            <p class="pf-kicker" style="display: flex; justify-content: center;">Candidature</p>
+            <h2 id="pf-contact-title" style="font-size: 38px; font-weight: 300; letter-spacing: -0.5px; color: #16012E; margin-bottom: 16px;">Prêt(e) à retrouver votre système nerveux ?</h2>
+            <p style="font-size: 16px; color: #555; max-width: 480px; margin: 0 auto;">Soumettez votre candidature pour un premier appel d'évaluation. Nous échangerons sur vos objectifs et vérifierons que nous sommes les bons partenaires pour votre parcours.</p>
+        </div>
+        <form id="pfContactForm" class="pf-form"
+              action="https://formsubmit.co/etienneyong@performancefondamentale.com"
+              method="POST">
+            <input type="hidden" name="_subject" value="Nouvelle candidature — Performance Fondamentale">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+            <div class="pf-form-row">
+                <div class="pf-form-field">
+                    <label for="pf-name">Nom complet</label>
+                    <input type="text" id="pf-name" name="Nom" required autocomplete="name" placeholder="Votre nom">
+                </div>
+                <div class="pf-form-field">
+                    <label for="pf-email">Email</label>
+                    <input type="email" id="pf-email" name="Email" required autocomplete="email" placeholder="vous@exemple.com">
+                </div>
+            </div>
+            <div class="pf-form-row">
+                <div class="pf-form-field">
+                    <label for="pf-phone">Téléphone <span class="pf-optional">(facultatif)</span></label>
+                    <input type="tel" id="pf-phone" name="Téléphone" autocomplete="tel" placeholder="06 ...">
+                </div>
+                <div class="pf-form-field">
+                    <label for="pf-objet">Objet</label>
+                    <select id="pf-objet" name="Objet">
+                        <option value="Session 1:1">Session 1:1</option>
+                        <option value="Programme Performance Fondamentale">Programme Performance Fondamentale</option>
+                        <option value="Question générale">Question générale</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pf-form-field">
+                <label for="pf-message">Message</label>
+                <textarea id="pf-message" name="Message" rows="5" required placeholder="Où en êtes-vous, et qu'aimeriez-vous changer ?"></textarea>
+            </div>
+            <div class="pf-form-submit-wrap">
+                <button type="submit" class="pf-cta pf-form-submit">Envoyer ma candidature</button>
+                <p id="pfFormStatus" class="pf-form-status" role="status" aria-live="polite"></p>
+            </div>
+        </form>
+    </div>
+</section>
         }
         /* Section "Pour aller plus loin" */
         .pf-readmore{ background:#faf9f5; color:#16012E; padding:5rem 1.5rem; border-top:1px solid #e6e2d8; }
