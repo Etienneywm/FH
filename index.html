@@ -21,12 +21,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:description" content="Retrouvez votre performance durable en régulant votre système nerveux. Une approche minimaliste basée sur la reconnexion corps-esprit.">
     <meta property="og:url" content="https://www.performancefondamentale.com">
     <meta property="og:site_name" content="Performance Fondamentale">
-    <meta property="og:image" content="https://www.performancefondamentale.com/og-image.jpg">
+    <meta property="og:image" content="https://www.performancefondamentale.com/og-image.png">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Performance Fondamentale - Etienne Yong">
     <meta name="twitter:description" content="Retrouvez votre performance durable en régulant votre système nerveux.">
-    <meta name="twitter:image" content="https://www.performancefondamentale.com/og-image.jpg">
+    <meta name="twitter:image" content="https://www.performancefondamentale.com/og-image.png">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.performancefondamentale.com">
     <!-- Favicon -->
@@ -132,11 +132,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- End Schema.org -->
     <style>
         /* ===================================================
-           DA unifiée — Piste 01
-           Base crème (PF) : #faf9f5 / #f5f4f1 / #f5f0e8
-           Encre violette (image)   : #16012E  → titres, footer, schéma
-           Violet marque (EY)       : #6300FF  → CTA, accents, liens actifs
-           Violet pâle              : #F0EBFF  → surfaces d'accent
+           Performance Fondamentale — v2 responsive
+           Même DA : crème / encre violette / violet marque
+           Espacements pilotés par tokens fluides (clamp) :
+           un seul padding vertical par section, jamais cumulé.
            =================================================== */
         :root {
             --pf-cream: #faf9f5;
@@ -147,890 +146,516 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --pf-violet-dark: #4B00C2;
             --pf-violet-pale: #F0EBFF;
             --pf-violet-soft: #D9C6FF;
+            --pf-text: #4f4a57;
+            --pf-muted: #6f6a7a;
+            --pf-line: #e8e7e3;
+            --pf-on-ink: #BDB3D0;
+
+            --gutter: clamp(20px, 5vw, 48px);
+            --section-y: clamp(56px, 8vw, 112px);
+            --stack-lg: clamp(32px, 5vw, 64px);
+            --stack-md: clamp(20px, 3vw, 36px);
+            --radius: clamp(14px, 2vw, 20px);
+            --header-h: 64px;
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: clip; -webkit-text-size-adjust: 100%; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: #faf9f5;
-            color: #16012E;
+            font-family: var(--font);
+            background: var(--pf-cream);
+            color: var(--pf-ink);
             line-height: 1.6;
+            overflow-x: clip;
         }
-        html, body {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        /* CTA principal — violet EY, pastille arrondie */
-        .pf-cta {
-            display: inline-block;
-            padding: 14px 38px;
-            background: var(--pf-violet);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border-radius: 100px;
-            font-size: 14px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .pf-cta:hover {
-            background: var(--pf-violet-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(99, 0, 255, 0.22);
-        }
-        .pf-cta--small { padding: 10px 24px; font-size: 12px; }
-        .pf-cta-block { text-align: center; padding: 8px 0 56px; }
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            background: #faf9f5;
-            border-bottom: 1px solid #e8e7e3;
-            padding: 20px 40px;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background-color: rgba(250, 249, 245, 0.8);
-        }
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #16012E;
-            text-decoration: none;
-        }
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        /* Sections */
-        section {
-            min-height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 20px 0;
-            position: relative;
-        }
-        section:nth-child(odd) {
-            background: #faf9f5;
-        }
-        section:nth-child(even) {
-            background: #f5f4f1;
-        }
-        /* Typography */
-        h1 {
-            font-size: 64px;
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            max-width: 900px;
-        }
-        h2 {
-            font-size: 48px;
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        p {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 1.8;
-            max-width: 700px;
-            color: #555;
-            margin-bottom: 12px;
-        }
-        .subtitle {
-            font-size: 24px;
-            font-weight: 300;
-            color: #999;
-            margin-bottom: 30px;
-        }
-        /* Schema Section */
-        .schema-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            align-items: flex-start;
-            row-gap: 10px;
-        }
-        .schema-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        svg {
-            width: 100%;
-            height: 100%;
-        }
-        .item-group {
-            cursor: pointer;
-        }
-        .center-circle {
-            fill: #6300FF;
-            opacity: 0.95;
-            transition: opacity 0.4s ease, r 0.4s ease;
-        }
-        .center-circle:hover {
-            opacity: 1;
-            r: 55;
-        }
-        .item-circle {
-            fill: #faf9f5;
-            stroke: rgba(250, 249, 245, 0.4);
-            stroke-width: 1;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: pointer;
-        }
-        .item-circle:hover {
-            fill: #6300FF;
-            stroke: #6300FF;
-            stroke-width: 2;
-        }
-        .item-group:hover .item-text {
-            fill: #fff;
-        }
-        .connection-line {
-            stroke: rgba(250, 249, 245, 0.35);
-            stroke-width: 1.5;
-            fill: none;
-            stroke-linecap: round;
-            stroke-dasharray: 5, 5;
-            opacity: 0.5;
-            transition: all 0.4s ease;
-        }
-        /* Text SVG */
-        .center-text {
-            font-size: 12px;
-            font-weight: 600;
-            fill: white;
-            text-anchor: middle;
-            dominant-baseline: middle;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            pointer-events: none;
-        }
-        .item-text {
-            font-size: 11px;
-            font-weight: 500;
-            fill: #16012E;
-            text-anchor: middle;
-            dominant-baseline: middle;
-            letter-spacing: 0.5px;
-            pointer-events: none;
-            transition: fill 0.4s ease;
-        }
-        /* Content Section */
-        .content {
-            max-width: 700px;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-height: auto;
-        }
-        @keyframes fadeInContent {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .element-detail {
-            display: none;
-            margin: 0;
-            padding: 0;
-        }
-        .element-detail.active {
-            display: block;
-            animation: fadeInContent 0.3s ease-in;
-        }
-        .element-title {
-            font-size: 32px;
-            font-weight: 400;
-            margin-bottom: 12px;
-            margin-top: 0;
-            color: #faf9f5;
-            letter-spacing: 0.5px;
-        }
-        .element-description {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #BDB3D0;
-            margin-bottom: 10px;
-            margin-top: 0;
-        }
-        /* Kickers de section — violet marque */
+        img { max-width: 100%; height: auto; display: block; }
+        svg, iframe, video { max-width: 100%; }
+        section[id] { scroll-margin-top: var(--header-h); }
+        a { color: inherit; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+        /* ---------- Typo ---------- */
+        h1 { font-size: clamp(34px, 5vw, 60px); font-weight: 300; line-height: 1.12; letter-spacing: -1px; }
+        h2 { font-size: clamp(28px, 3.8vw, 46px); font-weight: 300; line-height: 1.18; letter-spacing: -0.5px; }
+        p { font-size: clamp(15.5px, 1.2vw, 17px); font-weight: 300; line-height: 1.75; color: var(--pf-text); }
+        p strong { color: var(--pf-ink); font-weight: 500; }
         .pf-kicker {
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #6300FF;
-            font-weight: 500;
-            margin-bottom: 12px;
+            font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase;
+            color: var(--pf-violet); font-weight: 500; margin-bottom: 14px;
         }
-        /* Footer — encre violette */
-        footer {
-            background: #16012E;
-            color: #faf9f5;
-            padding: 40px;
-            text-align: center;
+        .pf-kicker--light { color: var(--pf-violet-soft); }
+        .lead { font-size: clamp(16.5px, 1.5vw, 19px); font-weight: 400; color: #333; }
+
+        /* ---------- Layout ---------- */
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: var(--gutter); min-width: 0; }
+        .section { padding-block: var(--section-y); position: relative; }
+        .section--cream { background: var(--pf-cream); }
+        .section--cream2 { background: var(--pf-cream-2); }
+        .section--cream3 { background: var(--pf-cream-3); }
+        .section--ink { background: var(--pf-ink); color: var(--pf-cream); }
+        .section--ink h2 { color: var(--pf-cream); }
+        .section-head { max-width: 720px; margin-bottom: var(--stack-lg); }
+        .section-head.center { text-align: center; margin-inline: auto; }
+        .section-head p { margin-top: 14px; }
+        .center { text-align: center; }
+        .cta-row { margin-top: var(--stack-lg); text-align: center; }
+
+        /* ---------- CTA ---------- */
+        .pf-cta {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 48px; padding: 12px 34px;
+            background: var(--pf-violet); color: #fff; text-decoration: none;
+            font: 500 14px/1.2 var(--font); letter-spacing: 0.6px; text-transform: uppercase; text-align: center;
+            border-radius: 100px; border: none; cursor: pointer;
+            transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
         }
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
+        .pf-cta:hover { background: var(--pf-violet-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,0,255,.22); }
+        .pf-cta:focus-visible { outline: 2px solid var(--pf-violet); outline-offset: 3px; }
+        .pf-cta--small { min-height: 38px; padding: 8px 20px; font-size: 12px; }
+        .pf-cta--block { width: 100%; }
+        .pf-link {
+            display: inline-flex; align-items: center; gap: 8px; min-height: 48px;
+            font-size: 14px; font-weight: 500; color: var(--pf-ink); text-decoration: none;
+            border-bottom: 1px solid transparent;
         }
-        footer p {
-            color: #9b8fb3;
-            margin-bottom: 8px;
+        .pf-link:hover { color: var(--pf-violet); }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(250,249,245,.86);
+            -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--pf-line);
         }
-        footer a {
-            color: #faf9f5;
-            text-decoration: none;
-            border-bottom: 1px solid #4B2E7A;
-            transition: border-color 0.3s ease;
+        .header-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter);
+            height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 16px;
         }
-        footer a:hover {
-            border-color: #D9C6FF;
+        .logo { text-decoration: none; color: var(--pf-ink); display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+        .logo-main { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; }
+        .logo-main span { color: var(--pf-violet); }
+        .logo-sub { font-size: 10.5px; letter-spacing: 1px; color: var(--pf-muted); text-transform: uppercase; margin-top: 3px; }
+        .header-nav { display: flex; align-items: center; gap: 24px; }
+        .header-link { font-size: 12px; color: var(--pf-muted); text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; }
+        .header-link:hover { color: var(--pf-violet); }
+        .menu-btn {
+            display: none; width: 42px; height: 42px; border-radius: 50%;
+            border: 1px solid var(--pf-line); background: transparent; color: var(--pf-ink); cursor: pointer;
+            align-items: center; justify-content: center;
         }
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .schema-section {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            h1 { font-size: 48px; }
-            h2 { font-size: 36px; }
-            .container { padding: 0 30px; }
-            header { padding: 15px 30px; }
+        .menu-btn svg { width: 18px; height: 18px; }
+        .menu-btn .i-close { display: none; }
+        .menu-btn[aria-expanded="true"] .i-open { display: none; }
+        .menu-btn[aria-expanded="true"] .i-close { display: block; }
+        .mobile-menu {
+            display: none; border-top: 1px solid var(--pf-line); background: var(--pf-cream);
+            padding: 8px var(--gutter) 20px;
         }
-        @media (max-width: 768px) {
-            h1 { font-size: 36px; margin-bottom: 15px; }
-            h2 { font-size: 28px; }
-            p { font-size: 16px; }
-            section { padding: 30px 0; min-height: auto; }
-            .container { padding: 0 20px; }
-            header { padding: 12px 20px; }
-            .schema-wrapper { max-width: 400px; }
-            .element-title { font-size: 24px; }
+        .mobile-menu.is-open { display: block; animation: fadeIn .25s ease; }
+        .mobile-menu a {
+            display: flex; justify-content: space-between; align-items: center;
+            min-height: 50px; border-bottom: 1px solid var(--pf-line);
+            font-size: 16px; color: var(--pf-ink); text-decoration: none;
         }
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .mobile-menu a::after { content: '→'; color: var(--pf-violet); }
+        @media (max-width: 767px) {
+            :root { --header-h: 60px; }
+            .header-link { display: none; }
+            .menu-btn { display: inline-flex; }
+            .header-nav { gap: 10px; }
+            .logo-main { font-size: 11.5px; letter-spacing: 1.6px; white-space: normal; display: flex; flex-direction: column; line-height: 1.25; }
+            .logo-sub { display: none; }
         }
-        @keyframes breathing {
-            0%, 100% { r: 45; opacity: 0.9; }
-            50% { r: 55; opacity: 1; }
+        @media (max-width: 359px) {
+            .logo-main { font-size: 10.5px; letter-spacing: 1.2px; }
+            .pf-cta--small { padding: 8px 14px; }
         }
-        @keyframes itemBreathing {
-            0%, 100% { r: 40; opacity: 0.5; }
-            50% { r: 48; opacity: 0.7; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            display: grid; grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - var(--header-h));
+            min-height: calc(100svh - var(--header-h));
+            background: var(--pf-cream-3); position: relative;
         }
-        @keyframes float1 {
-            0%, 100% { transform: translate(0px, 0px); }
-            25% { transform: translate(4px, -3px); }
-            50% { transform: translate(-2px, 4px); }
-            75% { transform: translate(3px, 2px); }
+        .hero-text { display: flex; align-items: center; padding: var(--section-y) var(--gutter) var(--section-y) max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter))); }
+        .hero-content { max-width: 500px; }
+        .hero h1 { margin-bottom: 20px; }
+        .hero .lead { margin-bottom: 32px; max-width: 460px; }
+        .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
+        .hero-media { position: relative; overflow: hidden; min-height: 320px; }
+        .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+        .scroll-indicator {
+            position: absolute; bottom: 24px; left: 25%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+            background: none; border: none; cursor: pointer; color: var(--pf-ink);
+            font: 500 11px/1 var(--font); letter-spacing: 2px; text-transform: uppercase;
+            animation: bounce 2.2s ease-in-out infinite;
         }
-        @keyframes float2 {
-            0%, 100% { transform: translate(0px, 0px); }
-            25% { transform: translate(-3px, 4px); }
-            50% { transform: translate(4px, -2px); }
-            75% { transform: translate(-2px, -3px); }
+        .scroll-indicator svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+        @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+        @media (max-width: 899px) {
+            .hero { grid-template-columns: 1fr; min-height: 0; }
+            .hero-text { padding: clamp(32px, 7vw, 56px) var(--gutter) 28px; }
+            .hero .lead { margin-bottom: 24px; }
+            .hero-media { min-height: 0; aspect-ratio: 4 / 5; max-height: 52svh; width: 100%; }
+            .scroll-indicator { display: none; }
+            .hero .pf-kicker { letter-spacing: 2px; font-size: 11px; }
         }
-        @keyframes float3 {
-            0%, 100% { transform: translate(0px, 0px); }
-            25% { transform: translate(2px, 3px); }
-            50% { transform: translate(-3px, -4px); }
-            75% { transform: translate(4px, -1px); }
+        @media (max-width: 480px) {
+            .hero-actions .pf-cta { flex: 1 1 100%; }
+            .hero-actions .pf-link { margin-inline: auto; }
         }
-        @keyframes float4 {
-            0%, 100% { transform: translate(0px, 0px); }
-            25% { transform: translate(-4px, -2px); }
-            50% { transform: translate(3px, 4px); }
-            75% { transform: translate(-3px, 1px); }
+
+        /* ---------- Système (9 piliers) ---------- */
+        .system {
+            display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: var(--stack-lg); align-items: center;
         }
-        @keyframes float5 {
-            0%, 100% { transform: translate(0px, 0px); }
-            25% { transform: translate(3px, -4px); }
-            50% { transform: translate(-4px, 2px); }
-            75% { transform: translate(2px, 3px); }
+        .system-stage { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; margin: 0 auto; }
+        .system-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+        .system-lines line {
+            stroke: rgba(250,249,245,.35); stroke-width: 1.2; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke;
+            animation: connectionPulse 4s ease-in-out infinite; transition: stroke .35s ease;
         }
-        .center-circle { animation: breathing 4s ease-in-out infinite; }
-        .item-circle { animation: itemBreathing 4s ease-in-out infinite; transform-origin: center; }
-        .item-group[data-item="serenite"] { animation: float1 6s ease-in-out infinite; }
-        .item-group[data-item="emotion"] { animation: float2 7s ease-in-out infinite; }
-        .item-group[data-item="securite"] { animation: float3 6.5s ease-in-out infinite; }
-        .item-group[data-item="clarte"] { animation: float4 7.5s ease-in-out infinite; }
-        .item-group[data-item="resilience"] { animation: float5 6s ease-in-out infinite; }
-        .item-group[data-item="conscience"] { animation: float1 7s ease-in-out infinite; }
-        .item-group[data-item="performance"] { animation: float2 6.5s ease-in-out infinite; }
-        .item-group[data-item="controle"] { animation: float3 7.5s ease-in-out infinite; }
-        .item-group[data-item="regulation"] { animation: float4 6s ease-in-out infinite; }
-        @keyframes connectionPulse {
-            0%, 100% { stroke-width: 1.5; opacity: 0.4; }
-            50% { stroke-width: 2; opacity: 0.7; }
+        .system-lines line.is-active { stroke: var(--pf-violet-soft); animation: none; opacity: 1; }
+        @keyframes connectionPulse { 0%,100% { opacity: .45; } 50% { opacity: .9; } }
+        .system-core {
+            position: absolute; left: 50%; top: 50%; width: 19%; aspect-ratio: 1; translate: -50% -50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: clamp(11px, 1.4vw, 13px); font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
         }
-        .connection-line { animation: connectionPulse 4s ease-in-out infinite; }
-        /* Hero Section */
-        #hero {
-            position: relative;
-            padding: 0 !important;
-            min-height: 100vh !important;
+        .system-core::before {
+            content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--pf-violet); z-index: -1;
+            box-shadow: 0 0 40px rgba(99,0,255,.55);
+            animation: breathing 4s ease-in-out infinite;
         }
-        #hero .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            animation: bounce 2s infinite;
-            cursor: pointer;
+        .system-core { z-index: 1; isolation: isolate; }
+        @keyframes breathing { 0%,100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.18); opacity: 1; } }
+        .system-node {
+            position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%);
+            width: 22%; aspect-ratio: 1; translate: -50% -50%;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            border: none; background: none; cursor: pointer; isolation: isolate;
+            font: 500 clamp(10.5px, 1.25vw, 13px)/1.1 var(--font); letter-spacing: .2px; color: var(--pf-ink);
+            animation: var(--float) var(--dur) ease-in-out infinite;
+            -webkit-tap-highlight-color: transparent;
         }
-        /* Hero Split Layout */
-        .hero-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            height: 100vh;
-            width: 100%;
+        .system-node::before {
+            content: ''; position: absolute; inset: 0; border-radius: 50%; z-index: -1;
+            background: var(--pf-cream); opacity: .62;
+            border: 1px solid rgba(250,249,245,.4);
+            animation: itemBreathing 4s ease-in-out infinite;
+            transition: background .35s ease, opacity .35s ease, box-shadow .35s ease;
         }
-        .hero-left {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 60px 40px 60px 60px;
-            background: #f5f0e8;
+        .system-node:hover::before { opacity: .9; }
+        .system-node.is-active { color: #fff; }
+        .system-node.is-active::before { background: var(--pf-violet); opacity: 1; border-color: var(--pf-violet); box-shadow: 0 0 28px rgba(99,0,255,.6); }
+        .system-node:focus-visible { outline: none; }
+        .system-node:focus-visible::before { box-shadow: 0 0 0 3px var(--pf-violet-soft); }
+        @keyframes itemBreathing { 0%,100% { transform: scale(.9); } 50% { transform: scale(1.04); } }
+        @keyframes float1 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(4px,-3px); } 50% { transform: translate(-2px,4px); } 75% { transform: translate(3px,2px); } }
+        @keyframes float2 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-3px,4px); } 50% { transform: translate(4px,-2px); } 75% { transform: translate(-2px,-3px); } }
+        @keyframes float3 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(2px,3px); } 50% { transform: translate(-3px,-4px); } 75% { transform: translate(4px,-1px); } }
+        @keyframes float4 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-4px,-2px); } 50% { transform: translate(3px,4px); } 75% { transform: translate(-3px,1px); } }
+        .system-detail { position: relative; min-height: 210px; }
+        .system-hint { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pf-on-ink); margin-bottom: 18px; opacity: .8; }
+        .system-hint .touch { display: none; }
+        @media (hover: none) { .system-hint .touch { display: inline; } .system-hint .mouse { display: none; } }
+        .element-detail { display: none; }
+        .element-detail.active { display: block; animation: fadeIn .35s ease; }
+        .element-title { font-size: clamp(24px, 2.6vw, 32px); font-weight: 400; color: var(--pf-cream); margin-bottom: 12px; }
+        .element-description { color: var(--pf-on-ink); margin-bottom: 10px; max-width: 520px; }
+        .detail-nav { display: flex; gap: 10px; margin-top: 18px; }
+        .detail-nav button {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(250,249,245,.25);
+            background: none; color: var(--pf-cream); cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
         }
-        .hero-content { max-width: 480px; }
-        .hero-right {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f5f0e8;
-            overflow: hidden;
+        .detail-nav button:hover { border-color: var(--pf-violet-soft); }
+        .detail-nav svg { width: 16px; height: 16px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+        @media (max-width: 899px) {
+            .system { grid-template-columns: 1fr; gap: 28px; }
+            .system-stage { max-width: 440px; }
+            .system-detail { min-height: 230px; text-align: left; }
         }
-        .hero-right img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @media (max-width: 1024px) {
-            .hero-split { grid-template-columns: 1fr; height: auto; min-height: 100vh; }
-            .hero-left { padding: 60px 40px; min-height: 50vh; justify-content: center; }
-            .hero-right { min-height: 50vh; }
-            .hero-left h1 { font-size: 40px !important; }
-            .hero-left p { font-size: 16px !important; }
-        }
-        @media (max-width: 640px) {
-            .hero-left { padding: 40px 20px; min-height: 40vh; }
-            .hero-right { min-height: 40vh; }
-            .hero-left h1 { font-size: 32px !important; }
-            .hero-left p { font-size: 14px !important; }
-        }
-        .scroll-indicator span {
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #16012E;
-        }
-        .scroll-indicator svg {
-            width: 20px;
-            height: 20px;
-            stroke: #16012E;
-            stroke-width: 2;
-            fill: none;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
-        }
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-        /* Pain Section */
-        .pain-content {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .pain-content p {
-            font-size: 16px;
-            line-height: 1.9;
-            color: #555;
-            margin-bottom: 16px;
-        }
-        .pain-content p strong { color: #16012E; font-weight: 500; }
-        /* Mechanism Section */
-        .mechanism-content { max-width: 100%; margin: 0 auto; }
-        .mechanism-content p { font-size: 16px; line-height: 1.9; color: #555; margin-bottom: 16px; }
-        .mechanism-content p strong { color: #16012E; font-weight: 500; }
-        /* Navigation Menu */
-        .nav-menu-wrapper {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            align-items: center;
-        }
-        .nav-menu-item {
-            font-size: 16px;
-            font-weight: 600;
-            color: #16012E;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-            letter-spacing: 0.5px;
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            font-family: inherit;
-        }
-        .nav-menu-item:hover { opacity: 0.6; }
-        @media (max-width: 768px) {
-            .nav-menu-wrapper { gap: 20px; flex-wrap: wrap; }
-            .nav-menu-item { font-size: 14px; }
-        }
-        /* Offerings Grid */
-        .offerings-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .offering-card {
-            padding: 40px;
-            background: white;
-            border: 1px solid #e8e7e3;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        .offering-card:hover {
-            border-color: #6300FF;
-            box-shadow: 0 4px 16px rgba(99, 0, 255, 0.10);
-        }
-        @media (max-width: 1024px) { .offerings-grid { grid-template-columns: 1fr; gap: 20px; } }
-        @media (max-width: 640px) {
-            .offerings-grid { grid-template-columns: 1fr; gap: 15px; }
-            .offering-card { padding: 25px; }
-        }
-        /* Section Votre histoire — titre impact + carte signaux */
+
+        /* ---------- Pain ---------- */
         .pf-pain-title {
-            font-size: clamp(32px, 4.6vw, 54px);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            line-height: 1.15;
-            color: #16012E;
-            max-width: 760px;
-            margin-bottom: 28px;
+            font-size: clamp(28px, 4.4vw, 52px); font-weight: 500; text-transform: uppercase;
+            letter-spacing: -0.5px; line-height: 1.12; color: var(--pf-ink); max-width: 780px; margin-bottom: 20px;
         }
-        .pf-challenges-card {
-            border: 1.5px solid #16012E;
-            border-radius: 20px;
-            padding: clamp(28px, 4vw, 48px);
-        }
-        .pf-challenges-kicker {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #16012E;
-            margin-bottom: 40px;
-            max-width: 100%;
-        }
-        .pf-challenges-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 36px;
-        }
+        .pain-intro { max-width: 640px; margin-bottom: var(--stack-lg); }
+        .pf-challenges-card { border: 1.5px solid var(--pf-ink); border-radius: var(--radius); padding: clamp(22px, 4vw, 48px); }
+        .pf-challenges-kicker { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--pf-ink); margin-bottom: var(--stack-md); }
+        .pf-challenges-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 36px); }
         .pf-challenge-icon {
-            width: 72px; height: 72px;
-            border: 1.5px solid #6300FF;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #6300FF;
-            margin-bottom: 20px;
+            width: 60px; height: 60px; border: 1.5px solid var(--pf-violet); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: var(--pf-violet); margin-bottom: 16px; flex-shrink: 0;
         }
-        .pf-challenge-icon svg { width: 30px; height: 30px; }
-        .pf-challenge h3 {
-            font-size: 19px;
-            font-weight: 600;
-            color: #16012E;
-            line-height: 1.3;
-            margin-bottom: 10px;
+        .pf-challenge-icon svg { width: 26px; height: 26px; }
+        .pf-challenge h3 { font-size: 18px; font-weight: 600; color: var(--pf-ink); line-height: 1.3; margin-bottom: 8px; }
+        .pf-challenge p { font-size: 14.5px; line-height: 1.65; margin: 0; }
+        .pain-punch { text-align: center; max-width: 700px; margin: var(--stack-lg) auto 0; }
+        .pain-punch .big { font-size: clamp(20px, 2.2vw, 26px); font-weight: 300; color: var(--pf-ink); line-height: 1.45; }
+        .pain-punch .big strong { display: block; font-weight: 600; color: var(--pf-violet); }
+        .pain-punch p + p { margin-top: 14px; }
+        @media (max-width: 1023px) { .pf-challenges-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 599px) {
+            .pf-challenges-grid { grid-template-columns: 1fr; gap: 0; }
+            .pf-challenge { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; padding: 16px 0; border-top: 1px solid var(--pf-line); }
+            .pf-challenge:first-child { border-top: none; padding-top: 0; }
+            .pf-challenge:last-child { padding-bottom: 0; }
+            .pf-challenge-icon { width: 44px; height: 44px; margin: 2px 0 0; grid-row: span 2; }
+            .pf-challenge-icon svg { width: 20px; height: 20px; }
+            .pf-challenge h3 { font-size: 16.5px; margin-bottom: 4px; }
         }
-        .pf-challenge p {
-            font-size: 14.5px;
-            line-height: 1.7;
-            color: #555;
-            margin: 0;
-        }
-        @media (max-width: 1024px) { .pf-challenges-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 560px) { .pf-challenges-grid { grid-template-columns: 1fr; } }
-        /* Diagramme ESPRIT — SYSTÈME NERVEUX — CORPS */
-        .pf-disso-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 64px;
-            align-items: center;
-            max-width: 1060px;
-            margin: 0 auto;
-        }
-        @media (max-width: 900px) {
-            .pf-disso-layout { grid-template-columns: 1fr; gap: 40px; }
-        }
-        .pf-bridge {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 460px;
-            margin: 0 auto;
-        }
+
+        /* ---------- Dissociation / pont ---------- */
+        .pf-disso-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--stack-lg); align-items: center; max-width: 1060px; margin: 0 auto; }
+        .pf-disso-text .open { font-size: clamp(19px, 2vw, 22px); font-weight: 300; color: var(--pf-ink); margin-bottom: 16px; }
+        .pf-disso-text .key { font-size: clamp(16.5px, 1.5vw, 18px); color: var(--pf-ink); font-weight: 500; margin: 20px 0; }
+        .pf-bridge { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 440px; }
         .pf-bridge__node {
-            width: 110px; height: 110px;
-            border-radius: 50%;
-            background: #faf9f5;
-            border: 1.5px solid #16012E;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 13px; letter-spacing: 1.5px; font-weight: 600;
-            color: #16012E;
-            flex-shrink: 0;
+            width: 108px; height: 108px; border-radius: 50%; background: var(--pf-cream); border: 1.5px solid var(--pf-ink);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            font-size: 13px; letter-spacing: 1.5px; font-weight: 600; color: var(--pf-ink);
+            animation: nodeBreath 5s ease-in-out infinite;
         }
-        .pf-bridge__line { flex: 1; min-height: 56px; width: 0; border-left: 2px dashed #6300FF; opacity: 0.5; }
+        .pf-bridge__node:last-child { animation-delay: -2.5s; }
+        @keyframes nodeBreath { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .pf-bridge__line { position: relative; flex: 1; min-height: 56px; width: 0; border-left: 2px dashed rgba(99,0,255,.5); }
+        .pf-bridge__line::after {
+            content: ''; position: absolute; left: -5px; width: 8px; height: 8px; border-radius: 50%; background: var(--pf-violet);
+            box-shadow: 0 0 10px rgba(99,0,255,.6); animation: travelY 2.6s ease-in-out infinite;
+        }
+        .pf-bridge__line + .pf-bridge__center + .pf-bridge__line::after { animation-direction: reverse; }
+        @keyframes travelY { 0% { top: 0; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { top: calc(100% - 8px); opacity: 0; } }
+        @keyframes travelX { 0% { left: 0; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { left: calc(100% - 8px); opacity: 0; } }
         .pf-bridge__center {
-            background: #6300FF;
-            color: #fff;
-            border-radius: 100px;
-            padding: 14px 22px;
-            font-size: 12px; letter-spacing: 1.5px; font-weight: 600;
-            text-transform: uppercase;
-            white-space: nowrap;
-            margin: -6px 0;
-            z-index: 1;
-            box-shadow: 0 8px 24px rgba(99, 0, 255, 0.25);
+            background: var(--pf-violet); color: #fff; border-radius: 100px; padding: 13px 22px;
+            font-size: 12px; letter-spacing: 1.5px; font-weight: 600; text-transform: uppercase; white-space: nowrap;
+            margin: -6px 0; z-index: 1; box-shadow: 0 8px 24px rgba(99,0,255,.25);
         }
-        @media (max-width: 560px) {
-            .pf-bridge { min-height: 360px; }
-            .pf-bridge__node { width: 84px; height: 84px; font-size: 11px; }
-            .pf-bridge__line { min-height: 40px; }
-            .pf-bridge__center { padding: 10px 16px; font-size: 10px; }
+        @media (max-width: 899px) {
+            .pf-disso-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+            .pf-bridge { order: -1; flex-direction: row; min-height: 0; width: 100%; max-width: 440px; margin: 0 auto; }
+            .pf-bridge__node { width: 76px; height: 76px; font-size: 10.5px; letter-spacing: 1px; }
+            .pf-bridge__line { min-height: 0; min-width: 14px; height: 0; width: auto; border-left: none; border-top: 2px dashed rgba(99,0,255,.5); }
+            .pf-bridge__line::after { top: -5px; left: 0; animation-name: travelX; }
+            .pf-bridge__center { margin: 0 -6px; padding: 10px 14px; font-size: 10px; letter-spacing: 1px; }
         }
-        /* Carte offre horizontale */
-        .pf-offer-layout {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 44px;
-            align-items: center;
-            text-align: left;
+        @media (max-width: 379px) {
+            .pf-bridge__node { width: 62px; height: 62px; font-size: 9.5px; letter-spacing: .5px; }
+            .pf-bridge__center { padding: 9px 10px; font-size: 9px; letter-spacing: .5px; }
         }
-        .pf-offer-right {
-            background: #F0EBFF;
-            border-radius: 16px;
-            padding: 36px 28px;
-            text-align: center;
+
+        /* ---------- Système / fondations ---------- */
+        .system-claim { max-width: 720px; margin: 0 auto; text-align: center; }
+        .system-claim h2 { margin-bottom: 20px; }
+        .system-claim h2 span { color: var(--pf-violet); font-weight: 400; display: block; }
+        .system-claim .key { font-size: clamp(16.5px, 1.5vw, 18px); color: var(--pf-ink); font-weight: 500; margin-top: 18px; }
+
+        /* ---------- 3 phases ---------- */
+        .pf-phases { background: linear-gradient(180deg, #1E0838 0%, #16012E 100%); color: var(--pf-cream); }
+        .pf-phases__title { text-align: center; margin-bottom: var(--stack-lg); }
+        .pf-phases__layout { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 72px); }
+        .pf-phases__stage { position: relative; width: min(360px, 78vw); aspect-ratio: 1 / 1; flex: 0 0 auto; }
+        .pf-phases__stage::before {
+            content: ''; position: absolute; top: 50%; left: 50%; width: 110%; height: 110%; transform: translate(-50%,-50%);
+            background: radial-gradient(circle, rgba(99,0,255,.30) 0%, transparent 65%); pointer-events: none;
         }
-        .pf-offer-premium {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #6300FF;
-            font-weight: 600;
-            margin-bottom: 20px;
+        .pf-phases__ring { position: absolute; top: 50%; left: 50%; width: 66%; height: 66%; transform: translate(-50%,-50%); border: 1px solid rgba(250,249,245,.25); border-radius: 50%; pointer-events: none; }
+        .pf-phases__node {
+            position: absolute; top: 50%; left: 50%; width: 28%; height: 28%;
+            display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.2;
+            font: 400 clamp(0.8rem, 1.6vw, 0.95rem) var(--font); color: var(--pf-ink);
+            background: var(--pf-cream); border: 1px solid rgba(250,249,245,.5); border-radius: 50%; cursor: pointer;
+            will-change: transform; transition: border-color .35s, color .35s, background-color .35s, box-shadow .35s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .pf-offer-from { font-size: 13px; color: #555; margin-bottom: 2px; }
-        .pf-offer-price {
-            font-size: 54px;
-            font-weight: 300;
-            color: #16012E;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 6px;
+        .pf-phases__node:hover { border-color: var(--pf-violet); box-shadow: 0 0 24px rgba(99,0,255,.35); }
+        .pf-phases__node:focus-visible { outline: 2px solid var(--pf-violet); outline-offset: 3px; }
+        .pf-phases__node.is-active { border-color: var(--pf-violet); color: #fff; background: var(--pf-violet); box-shadow: 0 0 34px rgba(99,0,255,.55); }
+        .pf-phases__panel { flex: 0 1 380px; max-width: 380px; }
+        .pf-phases__step { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--pf-violet-soft); margin-bottom: 10px; }
+        .pf-phases__tick { width: 40px; height: 1px; background: var(--pf-violet); margin: 0 0 18px; }
+        .pf-phases__phase-name { font-size: clamp(1.35rem, 2.6vw, 1.7rem); font-weight: 300; color: var(--pf-cream); margin: 0 0 12px; }
+        .pf-phases__phase-text { color: var(--pf-on-ink); margin: 0; min-height: 3.5em; }
+        .pf-phases__tabs { display: flex; gap: 8px; margin-top: 20px; }
+        .pf-phases__tabs button {
+            flex: 1; min-height: 40px; border-radius: 100px; border: 1px solid rgba(250,249,245,.22); background: none; color: var(--pf-on-ink);
+            font: 500 12px/1 var(--font); letter-spacing: .5px; cursor: pointer; transition: all .25s;
         }
-        .pf-offer-meta { font-size: 14px; color: #999; margin-bottom: 28px; }
-        @media (max-width: 760px) {
-            .pf-offer-layout { grid-template-columns: 1fr; gap: 32px; }
+        .pf-phases__tabs button[aria-selected="true"] { background: rgba(99,0,255,.25); border-color: var(--pf-violet); color: #fff; }
+        @media (max-width: 767px) {
+            .pf-phases__layout { flex-direction: column; }
+            .pf-phases__stage { width: min(300px, 76vw); }
+            .pf-phases__panel { text-align: center; flex-basis: auto; width: 100%; }
+            .pf-phases__tick { margin-inline: auto; }
         }
-        /* FAQ 2 colonnes */
-        .pf-faq-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 56px;
-            align-items: start;
+
+        /* ---------- Offre ---------- */
+        .pf-phases + #tarifs { padding-top: clamp(8px, 2vw, 24px); }
+        .offer-card {
+            background: var(--pf-cream); border-top: 3px solid var(--pf-violet); border-radius: var(--radius);
+            padding: clamp(22px, 4vw, 48px); max-width: 920px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,.35);
+            display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 4vw, 44px); align-items: center;
         }
-        @media (max-width: 820px) { .pf-faq-grid { grid-template-columns: 1fr; } }
-        /* Section Qui suis-je */
-        .pf-who-layout {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 64px;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
+        .offer-card h3 { font-size: clamp(22px, 2.4vw, 28px); font-weight: 400; color: var(--pf-ink); margin-bottom: 20px; }
+        .offer-list { list-style: none; display: grid; gap: 12px; }
+        .offer-list li { display: flex; gap: 12px; font-size: 15px; color: var(--pf-text); line-height: 1.5; }
+        .offer-list li::before { content: '—'; color: var(--pf-violet); flex-shrink: 0; }
+        .offer-price-box { background: var(--pf-violet-pale); border-radius: 16px; padding: clamp(24px, 3vw, 36px) clamp(18px, 2.5vw, 28px); text-align: center; }
+        .pf-offer-premium { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--pf-violet); font-weight: 600; margin-bottom: 14px; }
+        .pf-offer-from { font-size: 13px; color: var(--pf-muted); }
+        .pf-offer-price { font-size: clamp(44px, 5vw, 54px); font-weight: 300; color: var(--pf-ink); letter-spacing: -2px; line-height: 1.1; margin: 2px 0 6px; }
+        .pf-offer-meta { font-size: 14px; color: var(--pf-muted); margin-bottom: 22px; }
+        .offer-note { font-size: 12.5px; color: var(--pf-muted); margin-top: 12px; }
+        @media (max-width: 767px) { .offer-card { grid-template-columns: 1fr; } }
+
+        /* ---------- Qui suis-je ---------- */
+        .who {
+            display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); column-gap: var(--stack-lg);
+            grid-template-areas: "intro side" "stats side" "story side";
+            grid-template-rows: auto auto 1fr;
+            max-width: 1100px; margin: 0 auto; align-items: start;
         }
-        .pf-who-photo {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            max-height: 580px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(22, 1, 46, 0.15);
+        .who-intro { grid-area: intro; }
+        .who-intro h2 { margin-bottom: 12px; }
+        .who-intro .lead { color: var(--pf-ink); margin-bottom: 28px; }
+        .who-stats { grid-area: stats; display: flex; gap: 44px; margin-bottom: 28px; }
+        .who-stat-num { font-size: clamp(34px, 3.4vw, 42px); font-weight: 300; color: var(--pf-violet); display: block; line-height: 1.1; letter-spacing: -1px; }
+        .who-stat-label { font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pf-text); }
+        .who-story { grid-area: story; }
+        .who-story p { margin-bottom: 14px; max-width: 560px; }
+        .who-more-btn { display: none; }
+        .who-side { grid-area: side; display: flex; flex-direction: column; gap: 16px; position: sticky; top: calc(var(--header-h) + 24px); }
+        .who-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 60%; border-radius: var(--radius); box-shadow: 0 20px 60px rgba(22,1,46,.15); }
+        .who-certs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .who-cert { background: var(--pf-cream); border: 1px solid var(--pf-line); border-radius: 14px; padding: 16px; }
+        .who-cert-title { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pf-violet); font-weight: 600; margin-bottom: 6px; }
+        .who-cert p { font-size: 13px; line-height: 1.6; }
+        @media (max-width: 899px) {
+            .who { grid-template-columns: 1fr; grid-template-areas: "intro" "media" "stats" "story" "certs"; grid-template-rows: none; }
+            .who-side { display: contents; }
+            .who-photo { grid-area: media; aspect-ratio: 5 / 4; object-position: 50% 72%; margin-bottom: 24px; }
+            .who-certs { grid-area: certs; margin-top: 12px; }
+            .who-more { display: none; }
+            .who-more.is-open { display: block; animation: fadeIn .3s ease; }
+            .who-more-btn {
+                display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 0 0 8px;
+                background: none; border: none; color: var(--pf-violet); font: 500 14px/1 var(--font); cursor: pointer; padding: 0;
+            }
+            .who-more-btn svg { width: 16px; height: 16px; transition: transform .25s; }
+            .who-more-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
         }
-        .pf-who-text p {
-            font-size: 16px;
-            line-height: 1.9;
-            color: #555;
-            margin-bottom: 16px;
-            max-width: 560px;
+        @media (max-width: 479px) { .who-certs { grid-template-columns: 1fr; } .who-stats { gap: 32px; } }
+
+        /* ---------- Témoignages ---------- */
+        .testi-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--stack-lg); align-items: center; max-width: 1100px; margin: 0 auto; }
+        .testi { min-width: 0; }
+        .testi-track {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none; overscroll-behavior-x: contain;
         }
-        .pf-who-text p strong { color: #16012E; font-weight: 500; }
-        .pf-who-quote {
-            border-left: 2px solid #6300FF;
-            padding: 6px 0 6px 22px;
-            margin: 24px 0;
-            font-size: 20px;
-            font-weight: 300;
-            font-style: italic;
-            color: #16012E;
-            letter-spacing: -0.3px;
+        .testi-track::-webkit-scrollbar { display: none; }
+        .testi-slide {
+            flex: 0 0 100%; min-width: 0; scroll-snap-align: center; padding: 0 clamp(4px, 2vw, 16px);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
-        @media (max-width: 900px) {
-            .pf-who-layout { grid-template-columns: 1fr; gap: 36px; }
-            .pf-who-photo { max-width: 420px; margin: 0 auto; }
+        .testi-mark { font-family: Georgia, serif; font-size: 56px; line-height: .5; color: var(--pf-violet-soft); margin-bottom: 20px; }
+        .testi-quote { font-size: clamp(16px, 1.6vw, 20px); font-weight: 300; line-height: 1.65; color: var(--pf-ink); max-width: 540px; margin: 0 auto 22px; overflow-wrap: break-word; }
+        .testi-name { font-size: 15px; font-weight: 500; color: var(--pf-ink); display: block; }
+        .testi-role { font-size: 11.5px; color: var(--pf-violet); letter-spacing: 1.5px; text-transform: uppercase; }
+        .testi-controls { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 28px; }
+        .testi-arrow {
+            width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--pf-line); background: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; color: var(--pf-ink); transition: border-color .3s, color .3s;
         }
-/* === Sécurité responsive mobile === */
-img { max-width: 100%; height: auto; }
-svg, iframe, video { max-width: 100%; }
-/* autorise les conteneurs flex à rétrécir */
-.container { min-width: 0; }
-.pf-testi-slide { min-width: 0; }
-/* coupe les mots trop longs (ex. "entrepreneuriat,sport") */
-.pf-testi-quote { overflow-wrap: break-word; word-break: break-word; }
-@media (max-width: 768px) {
-    .header-content { flex-direction: column; gap: 10px; text-align: center; }
-    .header-content nav { flex-wrap: wrap; justify-content: center; }
-    #mechanism div[style*="width: 200px"],
-    #mechanism div[style*="width: 250px"],
-    #mechanism div[style*="width: 300px"],
-    #framework div[style*="width: 200px"],
-    #framework div[style*="width: 250px"],
-    #framework div[style*="width: 300px"] { max-width: 100%; }
-}
-@media (max-width: 360px) {
-    #mechanism div[style*="width: 200px"],
-    #mechanism div[style*="width: 250px"],
-    #mechanism div[style*="width: 300px"],
-    #framework div[style*="width: 200px"],
-    #framework div[style*="width: 250px"],
-    #framework div[style*="width: 300px"] { width: 100% !important; }
-}
-        /* Témoignages — section unifiée (écrits à gauche, vidéo à droite) */
-        .pf-testi-layout {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 56px;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
+        .testi-arrow:hover { border-color: var(--pf-violet); color: var(--pf-violet); }
+        .testi-arrow svg { width: 16px; height: 16px; }
+        .testi-dots { display: flex; gap: 8px; align-items: center; }
+        .testi-dot { width: 7px; height: 7px; border-radius: 4px; background: #d4d3d0; border: none; padding: 0; cursor: pointer; transition: background .3s, width .3s; }
+        .testi-dot.is-active { background: var(--pf-violet); width: 22px; }
+        .testi-video { width: 100%; max-width: 440px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 40px rgba(22,1,46,.12); aspect-ratio: 16 / 9; position: relative; background: var(--pf-ink); }
+        .testi-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        @media (max-width: 899px) { .testi-layout { grid-template-columns: 1fr; } .testi-video { max-width: 560px; } }
+
+        /* ---------- FAQ ---------- */
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; align-items: start; }
+        .faq-grid details { border-bottom: 1px solid var(--pf-line); }
+        .faq-grid summary {
+            list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            padding: 20px 0; font-size: 16.5px; font-weight: 500; color: var(--pf-ink); min-height: 56px;
         }
-        .pf-testi-video {
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 40px rgba(22, 1, 46, 0.12);
-            aspect-ratio: 16 / 9;
-            position: relative;
-        }
-        .pf-testi-video iframe {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%; border: none;
-        }
-        @media (max-width: 900px) {
-            .pf-testi-layout { grid-template-columns: 1fr; gap: 40px; }
-            .pf-testi-video { max-width: 560px; }
-        }
-        /* Témoignages écrits (carrousel vertical) */
-        .pf-testi { width: 100%; }
-        .pf-testi-viewport { overflow: hidden; height: 400px; }
-        .pf-testi-track {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            transition: transform 0.7s cubic-bezier(0.65, 0.02, 0.18, 1);
-            will-change: transform;
-        }
-        .pf-testi-slide {
-            flex: 0 0 100%;
-            height: 100%;
-            padding: 0 8px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .pf-testi-mark {
-            display: block;
-            font-family: Georgia, serif;
-            font-size: 64px;
-            line-height: 0.5;
-            color: #D9C6FF;
-            margin-bottom: 24px;
-        }
-        .pf-testi-quote {
-            font-size: clamp(16px, 1.6vw, 21px);
-            font-weight: 300;
-            line-height: 1.65;
-            letter-spacing: -0.3px;
-            color: #16012E;
-            max-width: 540px;
-            margin: 0 auto 28px;
-        }
-        .pf-testi-author { display: flex; flex-direction: column; gap: 5px; }
-        .pf-testi-name { font-size: 15px; font-weight: 500; color: #16012E; letter-spacing: 0.3px; }
-        .pf-testi-role { font-size: 12px; color: #6300FF; letter-spacing: 1.5px; text-transform: uppercase; }
-        .pf-testi-controls {
-            display: flex; align-items: center; justify-content: center;
-            gap: 28px; margin-top: 32px;
-        }
-        .pf-testi-arrow {
-            width: 44px; height: 44px; border-radius: 50%;
-            border: 1px solid #e8e7e3; background: none; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            color: #16012E;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-        .pf-testi-arrow:hover { border-color: #6300FF; color: #6300FF; }
-        .pf-testi-arrow:active { transform: scale(0.94); }
-        .pf-testi-arrow svg { width: 16px; height: 16px; }
-        .pf-testi-dots { display: flex; gap: 10px; align-items: center; }
-        .pf-testi-dot {
-            width: 7px; height: 7px; border-radius: 50%;
-            background: #d4d3d0; border: none; padding: 0; cursor: pointer;
-            transition: background 0.3s ease, width 0.3s ease;
-        }
-        .pf-testi-dot.is-active { background: #6300FF; width: 22px; border-radius: 4px; }
-        @media (max-width: 640px) {
-            .pf-testi-controls { gap: 18px; }
-            .pf-testi-mark { font-size: 48px; }
-        }
-        /* Formulaire de contact */
+        .faq-grid summary::-webkit-details-marker { display: none; }
+        .faq-grid summary::after { content: '+'; font-size: 24px; font-weight: 300; color: var(--pf-violet); flex-shrink: 0; transition: transform .25s; }
+        .faq-grid details[open] summary::after { transform: rotate(45deg); }
+        .faq-grid details p { padding-bottom: 20px; font-size: 15px; }
+        @media (max-width: 819px) { .faq-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- Formulaire ---------- */
         .pf-form { max-width: 640px; margin: 0 auto; }
-        .pf-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .pf-form-field { display: flex; flex-direction: column; margin-bottom: 20px; }
-        .pf-form-field label {
-            font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
-            color: #999; margin-bottom: 8px;
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: end; }
+        .form-field { display: flex; flex-direction: column; margin-bottom: 18px; min-width: 0; }
+        .form-field label, .form-field legend { font-size: 11.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--pf-muted); margin-bottom: 8px; line-height: 1.4; }
+        .form-field .opt { text-transform: none; letter-spacing: 0; }
+        .form-field input, .form-field select, .form-field textarea {
+            font: 300 16px/1.4 var(--font); color: var(--pf-ink); background: #fff; border: 1px solid var(--pf-line);
+            border-radius: 10px; padding: 12px 14px; width: 100%; min-height: 48px; transition: border-color .25s, box-shadow .25s;
+            -webkit-appearance: none; appearance: none;
         }
-        .pf-form-field .pf-optional { text-transform: none; letter-spacing: 0; }
-        .pf-form-field input,
-        .pf-form-field select,
-        .pf-form-field textarea {
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 300;
-            color: #16012E;
-            background: #faf9f5;
-            border: 1px solid #e8e7e3;
-            border-radius: 10px;
-            padding: 13px 14px;
-            transition: border-color 0.25s ease, box-shadow 0.25s ease;
-            width: 100%;
+        .form-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316012E' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 36px; }
+        .form-field textarea { resize: vertical; line-height: 1.6; }
+        .form-field input::placeholder, .form-field textarea::placeholder { color: #aaa6b0; }
+        .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--pf-violet); box-shadow: 0 0 0 3px rgba(99,0,255,.10); }
+        fieldset.form-field { border: none; }
+        .pill-group { display: flex; gap: 10px; }
+        .pill-group label { flex: 1; margin: 0; }
+        .pill-group input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+        .pill-group span {
+            display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 10px;
+            border: 1px solid var(--pf-line); background: #fff; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--pf-ink); cursor: pointer; transition: all .2s;
         }
-        .pf-form-field textarea { resize: vertical; line-height: 1.6; }
-        .pf-form-field input::placeholder,
-        .pf-form-field textarea::placeholder { color: #bbb; }
-        .pf-form-field input:focus,
-        .pf-form-field select:focus,
-        .pf-form-field textarea:focus {
-            outline: none;
-            border-color: #6300FF;
-            box-shadow: 0 0 0 3px rgba(99, 0, 255, 0.10);
+        .pill-group input:checked + span { border-color: var(--pf-violet); background: var(--pf-violet-pale); color: var(--pf-violet); font-weight: 500; }
+        .pill-group input:focus-visible + span { box-shadow: 0 0 0 3px rgba(99,0,255,.2); }
+        .form-submit { text-align: center; margin-top: 8px; }
+        .form-status { font-size: 14px; margin-top: 14px; min-height: 20px; }
+        .form-status.error { color: #a3392b; }
+        @media (max-width: 599px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .form-row--keep { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .form-submit .pf-cta { width: 100%; }
         }
-        .pf-form-submit-wrap { text-align: center; margin-top: 16px; }
-        .pf-form-status { font-size: 14px; color: #555; margin-top: 18px; min-height: 20px; }
-        .pf-form-status.error { color: #a3392b; }
-        @media (max-width: 640px) {
-            .pf-form-row { grid-template-columns: 1fr; gap: 0; }
-        }
-        /* Section "Pour aller plus loin" */
-        .pf-readmore{ background:#faf9f5; color:#16012E; padding:5rem 1.5rem; border-top:1px solid #e6e2d8; }
-        .pf-readmore-inner{ max-width:680px; margin:0 auto; text-align:center; }
-        .pf-readmore-kicker{ font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
-            color:#6300FF; font-weight:500; margin:0 0 .8rem; }
-        .pf-readmore-title{ font-weight:300; font-size:2rem; margin:0 0 .8rem; letter-spacing:.01em; }
-        .pf-readmore-text{ font-weight:300; color:#5b564e; margin:0 0 2rem; }
-        .pf-readmore-btn{ display:inline-block; font-weight:400; color:#faf9f5; background:#16012E;
-            text-decoration:none; padding:.85rem 1.8rem; border:1px solid #16012E; border-radius:100px; transition:opacity .2s ease; }
-        .pf-readmore-btn:hover{ opacity:.85; }
-        /* Menu pastilles (scroll-spy) */
-        .pf-dotnav {
-            position: fixed;
-            top: 50%; right: 28px;
-            transform: translateY(-50%);
-            z-index: 90;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 18px;
-        }
-        .pf-dotnav__item {
-            display: flex; align-items: center; gap: 12px;
-            background: none; border: none; padding: 0; margin: 0; cursor: pointer;
-            font-family: inherit;
-        }
-        .pf-dotnav__label {
-            font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
-            color: #8c857a; white-space: nowrap; pointer-events: none;
-            opacity: 0; transform: translateX(6px);
-            transition: opacity .3s ease, transform .3s ease, color .3s ease;
-        }
-        .pf-dotnav__dot {
-            width: 9px; height: 9px; border-radius: 50%;
-            background: #d4d3d0; flex-shrink: 0;
-            transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
-        }
-        .pf-dotnav__item:hover .pf-dotnav__label { opacity: 1; transform: translateX(0); color: #16012E; }
-        .pf-dotnav__item:hover .pf-dotnav__dot { background: #6300FF; }
-        .pf-dotnav__item.is-active .pf-dotnav__label { opacity: 1; transform: translateX(0); color: #16012E; }
-        .pf-dotnav__item.is-active .pf-dotnav__dot {
-            background: #6300FF; transform: scale(1.35);
-            box-shadow: 0 0 0 4px rgba(99, 0, 255, 0.15);
-        }
+
+        /* ---------- Footer ---------- */
+        .readmore { background: var(--pf-cream-2); padding-block: clamp(44px, 6vw, 72px); text-align: center; border-top: 1px solid var(--pf-line); }
+        .readmore h2 { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 8px; }
+        .readmore p { margin: 0 auto 22px; max-width: 480px; }
+        .readmore a { display: inline-flex; align-items: center; min-height: 46px; color: var(--pf-cream); background: var(--pf-ink); text-decoration: none; padding: 0 26px; border-radius: 100px; transition: opacity .2s; }
+        .readmore a:hover { opacity: .85; }
+        footer { background: var(--pf-ink); color: var(--pf-cream); padding: 36px var(--gutter); text-align: center; }
+        footer p { color: #9b8fb3; font-size: 14px; }
+        footer .small { font-size: 12px; margin-top: 8px; }
+        footer a { color: #9b8fb3; text-decoration: none; border-bottom: 1px solid #4B2E7A; }
+        footer a:hover { border-color: var(--pf-violet-soft); }
+
+        /* ---------- Dot nav (desktop large) ---------- */
+        .pf-dotnav { position: fixed; top: 50%; right: 24px; transform: translateY(-50%); z-index: 90; display: none; flex-direction: column; align-items: flex-end; gap: 16px; }
+        @media (min-width: 1100px) { .pf-dotnav { display: flex; } }
+        .pf-dotnav__item { display: flex; align-items: center; gap: 12px; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; }
+        .pf-dotnav__label { font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--pf-muted); white-space: nowrap; pointer-events: none; opacity: 0; transform: translateX(6px); transition: opacity .3s, transform .3s; background: rgba(250,249,245,.92); padding: 2px 8px; border-radius: 6px; }
+        .pf-dotnav__dot { width: 9px; height: 9px; border-radius: 50%; background: #cfcdd6; flex-shrink: 0; transition: background .3s, transform .3s, box-shadow .3s; box-shadow: 0 0 0 2px rgba(250,249,245,.7); }
+        .pf-dotnav:hover .pf-dotnav__label, .pf-dotnav__item:focus-visible .pf-dotnav__label { opacity: 1; transform: none; }
+        .pf-dotnav__item.is-active .pf-dotnav__label { color: var(--pf-ink); }
+        .pf-dotnav__item.is-active .pf-dotnav__dot { background: var(--pf-violet); transform: scale(1.35); box-shadow: 0 0 0 4px rgba(99,0,255,.15); }
         .pf-dotnav__item:focus-visible { outline: none; }
-        .pf-dotnav__item:focus-visible .pf-dotnav__dot { outline: 2px solid #6300FF; outline-offset: 3px; }
-        @media (max-width: 768px) { .pf-dotnav { display: none; } }
+        .pf-dotnav__item:focus-visible .pf-dotnav__dot { outline: 2px solid var(--pf-violet); outline-offset: 3px; }
+
+        /* ---------- Mouvement réduit ---------- */
         @media (prefers-reduced-motion: reduce) {
-            .pf-dotnav__label, .pf-dotnav__dot { transition: none; }
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
         }
     </style>
 </head>
@@ -1039,209 +664,193 @@ svg, iframe, video { max-width: 100%; }
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CCTKJCL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <header>
-        <div class="header-content">
-            <a href="https://www.performancefondamentale.com" class="logo">
-                <div>PERFORMANCE <span style="color: #6300FF;">FONDAMENTALE</span></div>
-                <div style="font-size: 11px; letter-spacing: 1px; color: #999; text-transform: uppercase; margin-top: 4px;">par Etienne Yong</div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://www.performancefondamentale.com" class="logo" aria-label="Performance Fondamentale, accueil">
+                <span class="logo-main">Performance <span>Fondamentale</span></span>
+                <span class="logo-sub">par Etienne Yong</span>
             </a>
-            <nav style="display: flex; gap: 28px; align-items: center;">
-                <a href="https://etienneyong.com/archive/?ref=performancefondamentale.com" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: #999; text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s;" onmouseover="this.style.color='#6300FF'" onmouseout="this.style.color='#999'">Blog</a>
+            <nav class="header-nav" aria-label="Navigation principale">
+                <a class="header-link" href="https://etienneyong.com/archive/?ref=performancefondamentale.com" target="_blank" rel="noopener noreferrer">Blog</a>
                 <a href="#contact" class="pf-cta pf-cta--small">Candidater</a>
+                <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+                    <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+                    <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+                </button>
             </nav>
         </div>
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Sections de la page">
+            <a href="#schema">Le système</a>
+            <a href="#pain">Votre situation</a>
+            <a href="#pf-phases">La méthode en 3 phases</a>
+            <a href="#tarifs">Programme &amp; tarif</a>
+            <a href="#qui-suis-je">Qui suis-je</a>
+            <a href="#testimonial">Témoignages</a>
+            <a href="#faq">Questions fréquentes</a>
+            <a href="https://etienneyong.com/archive/?ref=performancefondamentale.com" target="_blank" rel="noopener noreferrer">Blog</a>
+        </nav>
     </header>
+
     <main>
-        <!-- Hero Section -->
-        <section id="hero" style="background: #f5f0e8; min-height: 100vh; padding: 0;">
-            <div class="hero-split">
-                <div class="hero-left">
-                    <div class="hero-content">
-                        <p class="pf-kicker" style="margin-bottom: 20px;">Système nerveux · Respiration · Performance</p>
-                        <h1 style="font-size: 56px; font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: #16012E; letter-spacing: -1px; max-width: 500px;">Le chemin de la performance</h1>
-                        <p style="font-size: 18px; font-weight: 500; color: #333; margin-bottom: 30px; max-width: 480px;">Par le sommeil, la régulation du système nerveux et la respiration basée sur la science.</p>
-                        <a href="#contact" class="pf-cta" style="margin-top: 10px;">Candidater</a>
+        <!-- Hero -->
+        <section id="hero" class="hero">
+            <div class="hero-text">
+                <div class="hero-content">
+                    <p class="pf-kicker">Système nerveux · Respiration · Performance</p>
+                    <h1>Le chemin de la performance</h1>
+                    <p class="lead">Par le sommeil, la régulation du système nerveux et la respiration basée sur la science.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="pf-cta">Candidater</a>
+                        <a href="#schema" class="pf-link">Découvrir l'approche <span aria-hidden="true">↓</span></a>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <img src="etienne.jpg" alt="Etienne Yong - Performance Fondamentale" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
             </div>
-            <div class="scroll-indicator">
+            <div class="hero-media">
+                <img src="etienne.jpg" alt="Etienne Yong - Performance Fondamentale" width="1200" height="1500" fetchpriority="high">
+            </div>
+            <button class="scroll-indicator" type="button" data-scroll="schema" aria-label="Descendre pour découvrir">
                 <span>Découvrir</span>
-                <svg viewBox="0 0 24 24" aria-label="Flèche vers le bas" role="img">
-                    <title>Descendre pour découvrir</title>
-                    <polyline points="18 7 12 13 6 7"></polyline>
-                </svg>
-            </div>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 7 12 13 6 7"></polyline></svg>
+            </button>
         </section>
-        <!-- Schema Section — fond bleu nuit -->
-        <section id="schema" style="background: #16012E;">
+
+        <!-- Vous êtes un système -->
+        <section id="schema" class="section section--ink">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 20px; color: #faf9f5;">Vous êtes un système</h2>
-            </div>
-            <div class="container schema-section">
-                <div class="schema-wrapper">
-                    <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-label="Diagramme des 9 piliers de la santé fondamentale" role="img">
-                        <title>Schéma interactif : Vous êtes un système avec 9 piliers</title>
-                        <circle class="center-circle" cx="300" cy="300" r="45" />
-                        <text class="center-text" x="300" y="300">VOUS</text>
-                        <line class="connection-line" x1="280" y1="270" x2="200" y2="160" />
-                        <g class="item-group" data-item="serenite">
-                            <circle class="item-circle" cx="140" cy="110" r="40" />
-                            <text class="item-text" x="140" y="115">SERENITE</text>
-                        </g>
-                        <line class="connection-line" x1="300" y1="255" x2="300" y2="160" />
-                        <g class="item-group" data-item="emotion">
-                            <circle class="item-circle" cx="300" cy="100" r="40" />
-                            <text class="item-text" x="300" y="105">EMOTION</text>
-                        </g>
-                        <line class="connection-line" x1="320" y1="270" x2="400" y2="160" />
-                        <g class="item-group" data-item="securite">
-                            <circle class="item-circle" cx="460" cy="110" r="40" />
-                            <text class="item-text" x="460" y="115">SECURITE</text>
-                        </g>
-                        <line class="connection-line" x1="265" y1="310" x2="160" y2="310" />
-                        <g class="item-group" data-item="clarte">
-                            <circle class="item-circle" cx="100" cy="310" r="40" />
-                            <text class="item-text" x="100" y="315">CLARTE</text>
-                        </g>
-                        <line class="connection-line" x1="335" y1="310" x2="440" y2="310" />
-                        <g class="item-group" data-item="resilience">
-                            <circle class="item-circle" cx="500" cy="310" r="40" />
-                            <text class="item-text" x="500" y="315">RESILIENCE</text>
-                        </g>
-                        <line class="connection-line" x1="280" y1="330" x2="200" y2="440" />
-                        <g class="item-group" data-item="conscience">
-                            <circle class="item-circle" cx="140" cy="490" r="40" />
-                            <text class="item-text" x="140" y="495">CONSCIENCE</text>
-                        </g>
-                        <line class="connection-line" x1="320" y1="330" x2="400" y2="440" />
-                        <g class="item-group" data-item="performance">
-                            <circle class="item-circle" cx="460" cy="490" r="40" />
-                            <text class="item-text" x="460" y="495">PERFORMANCE</text>
-                        </g>
-                        <line class="connection-line" x1="290" y1="345" x2="230" y2="480" />
-                        <g class="item-group" data-item="controle">
-                            <circle class="item-circle" cx="230" cy="530" r="40" />
-                            <text class="item-text" x="230" y="535">CONTROLE</text>
-                        </g>
-                        <line class="connection-line" x1="310" y1="345" x2="370" y2="480" />
-                        <g class="item-group" data-item="regulation">
-                            <circle class="item-circle" cx="370" cy="530" r="40" />
-                            <text class="item-text" x="370" y="535">REGULATION</text>
-                        </g>
-                    </svg>
+                <div class="section-head center">
+                    <p class="pf-kicker pf-kicker--light">9 piliers · 1 système</p>
+                    <h2>Vous êtes un système</h2>
                 </div>
-                <div class="content">
-                    <div id="serenite" class="element-detail active">
-                        <h2 class="element-title">Sérénité</h2>
-                        <p class="element-description">La sérénité est l'état fondamental d'absence de turbulence interne. C'est quand votre système nerveux trouve son repos naturel, sans lutte, sans effort forcé.</p>
-                        <p class="element-description">Dans notre approche, la sérénité n'est pas une performance à atteindre, mais un retour à ce qui est déjà présent quand nous cessons de nous agiter.</p>
+                <div class="system">
+                    <div class="system-stage" role="group" aria-label="Schéma interactif : les 9 piliers du système">
+                        <svg class="system-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <line x1="50" y1="50" x2="50"   y2="12"   data-for="serenite"/>
+                            <line x1="50" y1="50" x2="74.4" y2="20.9" data-for="emotion"/>
+                            <line x1="50" y1="50" x2="87.4" y2="43.4" data-for="securite"/>
+                            <line x1="50" y1="50" x2="82.9" y2="69"   data-for="clarte"/>
+                            <line x1="50" y1="50" x2="63"   y2="85.7" data-for="resilience"/>
+                            <line x1="50" y1="50" x2="37"   y2="85.7" data-for="conscience"/>
+                            <line x1="50" y1="50" x2="17.1" y2="69"   data-for="performance"/>
+                            <line x1="50" y1="50" x2="12.6" y2="43.4" data-for="controle"/>
+                            <line x1="50" y1="50" x2="25.6" y2="20.9" data-for="regulation"/>
+                        </svg>
+                        <div class="system-core" aria-hidden="true">Vous</div>
+                        <button class="system-node" type="button" data-item="serenite"    aria-pressed="true"  style="--x:50;--y:12;--float:float1;--dur:6s">Sérénité</button>
+                        <button class="system-node" type="button" data-item="emotion"     aria-pressed="false" style="--x:74.4;--y:20.9;--float:float2;--dur:7s">Émotion</button>
+                        <button class="system-node" type="button" data-item="securite"    aria-pressed="false" style="--x:87.4;--y:43.4;--float:float3;--dur:6.5s">Sécurité</button>
+                        <button class="system-node" type="button" data-item="clarte"      aria-pressed="false" style="--x:82.9;--y:69;--float:float4;--dur:7.5s">Clarté</button>
+                        <button class="system-node" type="button" data-item="resilience"  aria-pressed="false" style="--x:63;--y:85.7;--float:float1;--dur:6s">Résilience</button>
+                        <button class="system-node" type="button" data-item="conscience"  aria-pressed="false" style="--x:37;--y:85.7;--float:float2;--dur:7s">Conscience</button>
+                        <button class="system-node" type="button" data-item="performance" aria-pressed="false" style="--x:17.1;--y:69;--float:float3;--dur:6.5s">Performance</button>
+                        <button class="system-node" type="button" data-item="controle"    aria-pressed="false" style="--x:12.6;--y:43.4;--float:float4;--dur:7.5s">Contrôle</button>
+                        <button class="system-node" type="button" data-item="regulation"  aria-pressed="false" style="--x:25.6;--y:20.9;--float:float1;--dur:6s">Régulation</button>
                     </div>
-                    <div id="emotion" class="element-detail">
-                        <h2 class="element-title">Émotion</h2>
-                        <p class="element-description">Les émotions sont les messagers de votre corps. Elles ne sont ni bonnes ni mauvaises - elles sont des signaux importants.</p>
-                        <p class="element-description">Le chemin vers la santé passe par l'écoute authentique de vos émotions, pas par leur contrôle ou leur suppression.</p>
-                    </div>
-                    <div id="securite" class="element-detail">
-                        <h2 class="element-title">Sécurité</h2>
-                        <p class="element-description">La sécurité du corps est le fondement de tout. Votre système nerveux doit se sentir sûr pour se détendre et se régénérer vraiment.</p>
-                        <p class="element-description">Cette sécurité vient de la confiance dans votre respiration, votre enracinement, votre présence.</p>
-                    </div>
-                    <div id="clarte" class="element-detail">
-                        <h2 class="element-title">Clarté</h2>
-                        <p class="element-description">La clarté mentale émerge quand le bruit interne s'apaise. C'est la vision nette de ce qui est, sans le filtre des interprétations.</p>
-                        <p class="element-description">Respirer consciemment crée l'espace pour que la clarté émerge naturellement.</p>
-                    </div>
-                    <div id="resilience" class="element-detail">
-                        <h2 class="element-title">Résilience</h2>
-                        <p class="element-description">La résilience n'est pas la capacité à supporter plus. C'est la capacité de votre système à se rétablir rapidement.</p>
-                        <p class="element-description">Un corps qui respire correctement se récupère mieux. Un esprit calme rebondit plus vite.</p>
-                    </div>
-                    <div id="conscience" class="element-detail">
-                        <h2 class="element-title">Conscience</h2>
-                        <p class="element-description">La conscience du moment présent est votre ancre. C'est quand vous êtes vraiment ici, dans votre corps, dans votre respiration.</p>
-                        <p class="element-description">C'est là que la transformation commence - pas dans l'idée, mais dans la présence.</p>
-                    </div>
-                    <div id="performance" class="element-detail">
-                        <h2 class="element-title">Performance</h2>
-                        <p class="element-description">La vraie performance émerge du repos, pas de l'effort. Quand votre corps est régulé, vos capacités se déploient naturellement.</p>
-                        <p class="element-description">Ralentir pour accélérer. C'est le paradoxe du champion.</p>
-                    </div>
-                    <div id="controle" class="element-detail">
-                        <h2 class="element-title">Contrôle</h2>
-                        <p class="element-description">Le vrai contrôle vient de la libération, pas de la rigidité. C'est l'équilibre entre l'intention et l'abandon.</p>
-                        <p class="element-description">Votre respiration vous montre le chemin - elle est à la fois consciente et involontaire.</p>
-                    </div>
-                    <div id="regulation" class="element-detail">
-                        <h2 class="element-title">Régulation</h2>
-                        <p class="element-description">La régulation est l'intelligence innée de votre corps. C'est sa capacité naturelle à s'auto-équilibrer.</p>
-                        <p class="element-description">Votre travail n'est pas de forcer, mais de permettre à ce processus de fonctionner pleinement.</p>
+                    <div class="system-detail" aria-live="polite">
+                        <p class="system-hint"><span class="mouse">Survolez un pilier pour l'explorer</span><span class="touch">Touchez un pilier pour l'explorer</span></p>
+                        <div id="serenite" class="element-detail active">
+                            <h3 class="element-title">Sérénité</h3>
+                            <p class="element-description">La sérénité est l'état fondamental d'absence de turbulence interne. C'est quand votre système nerveux trouve son repos naturel, sans lutte, sans effort forcé.</p>
+                            <p class="element-description">Dans notre approche, la sérénité n'est pas une performance à atteindre, mais un retour à ce qui est déjà présent quand nous cessons de nous agiter.</p>
+                        </div>
+                        <div id="emotion" class="element-detail">
+                            <h3 class="element-title">Émotion</h3>
+                            <p class="element-description">Les émotions sont les messagers de votre corps. Elles ne sont ni bonnes ni mauvaises - elles sont des signaux importants.</p>
+                            <p class="element-description">Le chemin vers la santé passe par l'écoute authentique de vos émotions, pas par leur contrôle ou leur suppression.</p>
+                        </div>
+                        <div id="securite" class="element-detail">
+                            <h3 class="element-title">Sécurité</h3>
+                            <p class="element-description">La sécurité du corps est le fondement de tout. Votre système nerveux doit se sentir sûr pour se détendre et se régénérer vraiment.</p>
+                            <p class="element-description">Cette sécurité vient de la confiance dans votre respiration, votre enracinement, votre présence.</p>
+                        </div>
+                        <div id="clarte" class="element-detail">
+                            <h3 class="element-title">Clarté</h3>
+                            <p class="element-description">La clarté mentale émerge quand le bruit interne s'apaise. C'est la vision nette de ce qui est, sans le filtre des interprétations.</p>
+                            <p class="element-description">Respirer consciemment crée l'espace pour que la clarté émerge naturellement.</p>
+                        </div>
+                        <div id="resilience" class="element-detail">
+                            <h3 class="element-title">Résilience</h3>
+                            <p class="element-description">La résilience n'est pas la capacité à supporter plus. C'est la capacité de votre système à se rétablir rapidement.</p>
+                            <p class="element-description">Un corps qui respire correctement se récupère mieux. Un esprit calme rebondit plus vite.</p>
+                        </div>
+                        <div id="conscience" class="element-detail">
+                            <h3 class="element-title">Conscience</h3>
+                            <p class="element-description">La conscience du moment présent est votre ancre. C'est quand vous êtes vraiment ici, dans votre corps, dans votre respiration.</p>
+                            <p class="element-description">C'est là que la transformation commence - pas dans l'idée, mais dans la présence.</p>
+                        </div>
+                        <div id="performance" class="element-detail">
+                            <h3 class="element-title">Performance</h3>
+                            <p class="element-description">La vraie performance émerge du repos, pas de l'effort. Quand votre corps est régulé, vos capacités se déploient naturellement.</p>
+                            <p class="element-description">Ralentir pour accélérer. C'est le paradoxe du champion.</p>
+                        </div>
+                        <div id="controle" class="element-detail">
+                            <h3 class="element-title">Contrôle</h3>
+                            <p class="element-description">Le vrai contrôle vient de la libération, pas de la rigidité. C'est l'équilibre entre l'intention et l'abandon.</p>
+                            <p class="element-description">Votre respiration vous montre le chemin - elle est à la fois consciente et involontaire.</p>
+                        </div>
+                        <div id="regulation" class="element-detail">
+                            <h3 class="element-title">Régulation</h3>
+                            <p class="element-description">La régulation est l'intelligence innée de votre corps. C'est sa capacité naturelle à s'auto-équilibrer.</p>
+                            <p class="element-description">Votre travail n'est pas de forcer, mais de permettre à ce processus de fonctionner pleinement.</p>
+                        </div>
+                        <div class="detail-nav">
+                            <button type="button" data-step="-1" aria-label="Pilier précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+                            <button type="button" data-step="1" aria-label="Pilier suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- CTA bas de section -->
-            <div class="pf-cta-block" style="padding-top: 40px;">
-                <a href="#contact" class="pf-cta">Candidater</a>
             </div>
         </section>
-      <!-- Pain Point Section -->
-        <section class="pain-section" id="pain" style="background: #f5f4f1;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+
+        <!-- Pain -->
+        <section id="pain" class="section section--cream2">
+            <div class="container">
                 <h2 class="pf-pain-title">Pris dans le cycle du stress et de l'épuisement&nbsp;?</h2>
-                <p style="font-size: 18px; font-weight: 400; color: #333; max-width: 640px; margin-bottom: 56px;">Vous tournez à plein régime depuis des années — et ça a toujours marché. Vous faites tout pour rester en bonne santé : sport, yoga, méditation, alimentation. Pourtant, la performance s'éloigne.</p>
+                <p class="lead pain-intro">Vous tournez à plein régime depuis des années — et ça a toujours marché. Vous faites tout pour rester en bonne santé : sport, yoga, méditation, alimentation. Pourtant, la performance s'éloigne.</p>
                 <div class="pf-challenges-card">
                     <p class="pf-challenges-kicker">Executive ou athlète, vous reconnaissez peut-être ces signaux :</p>
                     <div class="pf-challenges-grid">
                         <div class="pf-challenge">
-                            <div class="pf-challenge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="18" height="8" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><rect x="5" y="11" width="4" height="2" fill="currentColor" stroke="none"/></svg>
-                            </div>
+                            <div class="pf-challenge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="18" height="8" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><rect x="5" y="11" width="4" height="2" fill="currentColor" stroke="none"/></svg></div>
                             <h3>Énergie qui s'effrite</h3>
                             <p>Une fatigue constante qui vous empêche de performer à votre niveau — et d'être présent pour vos proches.</p>
                         </div>
                         <div class="pf-challenge">
-                            <div class="pf-challenge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
-                            </div>
+                            <div class="pf-challenge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
                             <h3>Lucidité en baisse</h3>
                             <p>Cette sensation de forcer là où avant tout coulait. Le brouillard mental s'installe, les décisions pèsent.</p>
                         </div>
                         <div class="pf-challenge">
-                            <div class="pf-challenge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 7 12 10 5 14 19 17 12 22 12"/></svg>
-                            </div>
+                            <div class="pf-challenge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 7 12 10 5 14 19 17 12 22 12"/></svg></div>
                             <h3>Alerte permanente</h3>
                             <p>Vous « gérez », mais derrière c'est le chaos. Le sommeil ne répare plus, le stress s'accumule, l'épuisement n'est pas loin.</p>
                         </div>
                         <div class="pf-challenge">
-                            <div class="pf-challenge-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H5a4 4 0 0 0 0 8h4"/><path d="M15 7h4a4 4 0 0 1 0 8h-4"/><line x1="12" y1="9" x2="12" y2="10"/><line x1="12" y1="13" x2="12" y2="14"/></svg>
-                            </div>
+                            <div class="pf-challenge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H5a4 4 0 0 0 0 8h4"/><path d="M15 7h4a4 4 0 0 1 0 8h-4"/><line x1="12" y1="9" x2="12" y2="10"/><line x1="12" y1="13" x2="12" y2="14"/></svg></div>
                             <h3>Corps et esprit séparés</h3>
                             <p>Vous optimisez le corps d'un côté, le mental de l'autre. Deux systèmes en parallèle — jamais ensemble.</p>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center; max-width: 700px; margin: 64px auto 0;">
-                    <p style="font-size: 24px; font-weight: 300; color: #16012E; line-height: 1.5; margin: 0 auto;">Le problème, ce n'est pas ce que vous entreprenez.<br><strong style="font-weight: 600; color: #6300FF;">C'est votre système nerveux.</strong></p>
-                    <p style="font-size: 16px; color: #555; margin: 18px auto 0;">Il est en surcharge, bloqué en mode alerte permanent. Et tant qu'il le reste, aucune technique de productivité, aucune nuit de sommeil, aucune semaine de repos ne changera vraiment la donne.</p>
+                <div class="pain-punch">
+                    <p class="big">Le problème, ce n'est pas ce que vous entreprenez. <strong>C'est votre système nerveux.</strong></p>
+                    <p>Il est en surcharge, bloqué en mode alerte permanent. Et tant qu'il le reste, aucune technique de productivité, aucune nuit de sommeil, aucune semaine de repos ne changera vraiment la donne.</p>
                 </div>
             </div>
         </section>
-        <!-- Dissociation Section -->
-        <section style="background: #faf9f5;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+
+        <!-- Dissociation -->
+        <section class="section section--cream">
+            <div class="container">
                 <div class="pf-disso-layout">
                     <div class="pf-disso-text">
-                        <p style="font-size: 22px; font-weight: 300; color: #16012E; margin-bottom: 20px;">Vous avez tout essayé — <strong style="font-weight: 500;">et vous avez bien fait.</strong></p>
-                        <p style="font-size: 16px; line-height: 1.9; color: #555; margin-bottom: 8px;">Coaching mental, développement personnel, cohérence cardiaque, yoga, retraites, cardio intense… Ça aide, ça marche — temporairement. Car au fond, vous le savez : vous traitez le mental d'un côté, le corps de l'autre.</p>
-                        <p style="font-size: 18px; margin: 24px 0 0;"><strong style="color: #16012E; font-weight: 500;">C'est de la dissociation corps-esprit.</strong></p>
-                        <p style="font-size: 16px; line-height: 1.9; color: #555; margin: 24px 0 8px;">Ce qui vous manque, ce n'est pas un meilleur coach ou le programme ultime. <strong style="color: #16012E; font-weight: 500;">C'est le pont entre les deux</strong> : un système nerveux qui transforme l'effort mental en signal physique clair, et la récupération physique en clarté mentale réelle.</p>
-                        <p style="font-size: 18px; margin: 24px 0 0;"><strong style="color: #16012E; font-weight: 500;">C'est exactement ce que Performance Fondamentale (re)construit.</strong></p>
+                        <p class="open">Vous avez tout essayé — <strong>et vous avez bien fait.</strong></p>
+                        <p>Coaching mental, développement personnel, cohérence cardiaque, yoga, retraites, cardio intense… Ça aide, ça marche — temporairement. Car au fond, vous le savez : vous traitez le mental d'un côté, le corps de l'autre.</p>
+                        <p class="key">C'est de la dissociation corps-esprit.</p>
+                        <p>Ce qui vous manque, ce n'est pas un meilleur coach ou le programme ultime. <strong>C'est le pont entre les deux</strong> : un système nerveux qui transforme l'effort mental en signal physique clair, et la récupération physique en clarté mentale réelle.</p>
+                        <p class="key">C'est exactement ce que Performance Fondamentale (re)construit.</p>
                     </div>
-                    <div class="pf-bridge" aria-label="Le système nerveux est le pont entre le corps et l'esprit">
+                    <div class="pf-bridge" role="img" aria-label="Le système nerveux est le pont entre le corps et l'esprit">
                         <div class="pf-bridge__node">ESPRIT</div>
                         <div class="pf-bridge__line"></div>
                         <div class="pf-bridge__center">Système nerveux</div>
@@ -1251,685 +860,432 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </section>
-        <!-- Système / Fondations Section -->
-        <section style="background: #f5f4f1;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 60px;">
-                <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                    <h2 style="font-size: 36px; font-weight: 300; letter-spacing: -0.5px; color: #16012E; margin-bottom: 24px;">Vous n'avez pas un problème de motivation.<br><span style="color: #6300FF; font-weight: 400;">Vous avez un problème de système.</span></h2>
-                    <p style="font-size: 16px; line-height: 1.9; color: #555; margin: 0 auto 8px;">Votre corps est un système. Comme une entreprise, comme une équipe — des fondations, des processus de régulation, une capacité à encaisser les chocs. Si votre système nerveux tourne en surrégime, vous construisez sur du sable.</p>
-                    <p style="font-size: 18px; margin: 24px auto 0;"><strong style="color: #16012E; font-weight: 500;">La performance durable n'est pas un objectif à atteindre. C'est le résultat naturel d'un système qui fonctionne.</strong></p>
+
+        <!-- Problème de système -->
+        <section class="section section--cream2">
+            <div class="container">
+                <div class="system-claim">
+                    <h2>Vous n'avez pas un problème de motivation. <span>Vous avez un problème de système.</span></h2>
+                    <p>Votre corps est un système. Comme une entreprise, comme une équipe — des fondations, des processus de régulation, une capacité à encaisser les chocs. Si votre système nerveux tourne en surrégime, vous construisez sur du sable.</p>
+                    <p class="key">La performance durable n'est pas un objectif à atteindre. C'est le résultat naturel d'un système qui fonctionne.</p>
                 </div>
-                <!-- CTA milieu de page, avant les témoignages -->
-                <div class="pf-cta-block" style="padding-top: 40px; padding-bottom: 24px;">
-                    <a href="#contact" class="pf-cta">Candidater</a>
-                </div>
+                <div class="cta-row"><a href="#contact" class="pf-cta">Candidater</a></div>
             </div>
         </section>
-        <!-- Framework 3 phases -->
-        <section class="pf-phases" id="pf-phases" style="background: linear-gradient(180deg, #1E0838 0%, #16012E 100%);">
-          <style>
-            .pf-phases {
-              color: #faf9f5;
-              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-              font-weight: 300;
-              padding: clamp(56px, 9vw, 104px) 24px clamp(28px, 5vw, 52px);
-            }
-            .pf-phases__inner { max-width: 1040px; margin: 0 auto; }
-            .pf-phases__title {
-              font-size: clamp(1.7rem, 3.4vw, 2.5rem);
-              font-weight: 300;
-              letter-spacing: -0.01em;
-              line-height: 1.2;
-              text-align: center;
-              color: #faf9f5;
-              margin: 0 0 clamp(36px, 5vw, 64px);
-            }
-            .pf-phases__layout {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: clamp(28px, 5vw, 72px);
-            }
-            .pf-phases__stage::before {
-              content: '';
-              position: absolute;
-              top: 50%; left: 50%;
-              width: 120%; height: 120%;
-              transform: translate(-50%, -50%);
-              background: radial-gradient(circle, rgba(99, 0, 255, 0.30) 0%, transparent 65%);
-              pointer-events: none;
-            }
-            .pf-phases__stage {
-              position: relative;
-              width: min(360px, 86vw);
-              aspect-ratio: 1 / 1;
-              flex: 0 0 auto;
-            }
-            .pf-phases__ring {
-              position: absolute;
-              top: 50%; left: 50%;
-              width: 66%; height: 66%;
-              transform: translate(-50%, -50%);
-              border: 1px solid rgba(250, 249, 245, 0.25);
-              border-radius: 50%;
-              pointer-events: none;
-            }
-            .pf-phases__node {
-              position: absolute;
-              top: 50%; left: 50%;
-              width: 27%; height: 27%;
-              margin: 0; padding: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
-              line-height: 1.2;
-              font: inherit;
-              font-size: clamp(0.78rem, 1.6vw, 0.95rem);
-              color: #16012E;
-              background: #faf9f5;
-              border: 1px solid rgba(250, 249, 245, 0.5);
-              border-radius: 50%;
-              cursor: pointer;
-              will-change: transform;
-              transition: border-color .35s ease, color .35s ease, background-color .35s ease, box-shadow .35s ease;
-            }
-            .pf-phases__node:hover { border-color: #6300FF; color: #16012E; box-shadow: 0 0 24px rgba(99, 0, 255, 0.35); }
-            .pf-phases__node:focus-visible { outline: 2px solid #6300FF; outline-offset: 3px; }
-            .pf-phases__node.is-active {
-              border-color: #6300FF;
-              color: #fff;
-              background: #6300FF;
-              box-shadow: 0 0 34px rgba(99, 0, 255, 0.55);
-            }
-            .pf-phases__panel { flex: 0 1 380px; max-width: 380px; min-height: 170px; }
-            .pf-phases__tick { width: 40px; height: 1px; background: #6300FF; margin: 0 0 20px; }
-            .pf-phases__phase-name {
-              font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-              font-weight: 300;
-              color: #faf9f5;
-              margin: 0 0 16px;
-            }
-            .pf-phases__phase-text {
-              font-size: clamp(1rem, 1.7vw, 1.1rem);
-              line-height: 1.65;
-              color: #BDB3D0;
-              margin: 0;
-            }
-            @media (max-width: 640px) {
-              .pf-phases__layout { flex-direction: column; }
-              .pf-phases__panel { text-align: center; }
-              .pf-phases__tick { margin-left: auto; margin-right: auto; }
-            }
-          </style>
-          <div class="pf-phases__inner">
-            <h2 class="pf-phases__title">Performance Fondamentale agit en 3 phases</h2>
-            <div class="pf-phases__layout">
-              <div class="pf-phases__stage" aria-label="Les trois phases, cliquez sur une phase pour voir sa description">
-                <div class="pf-phases__ring"></div>
-                <button class="pf-phases__node" type="button" data-phase="restaurer" aria-pressed="false">Restaurer</button>
-                <button class="pf-phases__node" type="button" data-phase="reguler" aria-pressed="false">Réguler</button>
-                <button class="pf-phases__node" type="button" data-phase="construire" aria-pressed="false">Construire</button>
-              </div>
-              <div class="pf-phases__panel" role="region" aria-live="polite" aria-atomic="true">
-                <div class="pf-phases__tick"></div>
-                <h3 class="pf-phases__phase-name">Restaurer</h3>
-                <p class="pf-phases__phase-text">Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.</p>
-              </div>
-            </div>
-            <!-- CTA bas de section -->
-            <div class="pf-cta-block" style="padding-top: 48px; padding-bottom: 8px;">
-                <a href="#contact" class="pf-cta">Candidater</a>
-            </div>
-          </div>
-          <script>
-          (function () {
-            function init() {
-              var root = document.getElementById('pf-phases');
-              if (!root) return;
-              var stage  = root.querySelector('.pf-phases__stage');
-              var nodes  = Array.prototype.slice.call(root.querySelectorAll('.pf-phases__node'));
-              var nameEl = root.querySelector('.pf-phases__phase-name');
-              var textEl = root.querySelector('.pf-phases__phase-text');
-              var data = {
-                restaurer:  { name: 'Restaurer',  text: 'Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.' },
-                reguler:    { name: 'Réguler',    text: 'Réguler un système mobilisant les énergies au bon endroit, adaptable aux différentes situations.' },
-                construire: { name: 'Construire', text: 'Construire un mental et un corps résilients au stress et à la pression.' }
-              };
-              var base = [150, -90, 30];
-              var rot = 0;
-              var paused = false;
-              var last = 0;
-              var R = 0;
-              var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-              function measure() { R = stage.clientWidth * 0.33; }
-              function place() {
-                for (var i = 0; i < nodes.length; i++) {
-                  var a = (base[i] + rot) * Math.PI / 180;
-                  var x = Math.cos(a) * R;
-                  var y = Math.sin(a) * R;
-                  nodes[i].style.transform = 'translate(-50%,-50%) translate(' + x + 'px,' + y + 'px)';
-                }
-              }
-              function select(key) {
-                nodes.forEach(function (n) {
-                  var on = n.getAttribute('data-phase') === key;
-                  n.classList.toggle('is-active', on);
-                  n.setAttribute('aria-pressed', on ? 'true' : 'false');
-                });
-                nameEl.textContent = data[key].name;
-                textEl.textContent = data[key].text;
-              }
-              function loop(t) {
-                if (!last) last = t;
-                var dt = t - last;
-                last = t;
-                if (!paused && !reduce) {
-                  rot += dt * 0.0075;
-                  if (rot >= 360) rot -= 360;
-                }
-                place();
-                requestAnimationFrame(loop);
-              }
-              nodes.forEach(function (n) {
-                n.addEventListener('click', function () { select(n.getAttribute('data-phase')); });
-              });
-              stage.addEventListener('pointerenter', function () { paused = true; });
-              stage.addEventListener('pointerleave', function () { paused = false; });
-              stage.addEventListener('focusin',  function () { paused = true; });
-              stage.addEventListener('focusout', function () { paused = false; });
-              window.addEventListener('resize', measure);
-              measure();
-              select('restaurer');
-              requestAnimationFrame(loop);
-            }
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', init);
-            } else {
-              init();
-            }
-          })();
-          </script>
-        </section>
-        <!-- Tarifs — fond bleu nuit -->
-        <section id="tarifs" style="background: #16012E;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
-                <div style="background: #faf9f5; border: 1px solid rgba(250,249,245,0.15); border-top: 3px solid #6300FF; border-radius: 20px; padding: 48px; max-width: 920px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.35);">
-                    <div class="pf-offer-layout">
-                        <div class="pf-offer-left">
-                            <p class="pf-kicker" style="margin-bottom: 12px;">Programme</p>
-                            <h3 style="font-size: 28px; font-weight: 400; color: #16012E; margin-bottom: 24px;">Performance Fondamentale</h3>
-                            <div style="display: flex; flex-direction: column; gap: 14px;">
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <span style="color: #6300FF; flex-shrink: 0;">—</span>
-                                    <span style="font-size: 15px; color: #555;">8 sessions individuelles en visioconférence</span>
-                                </div>
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <span style="color: #6300FF; flex-shrink: 0;">—</span>
-                                    <span style="font-size: 15px; color: #555;">Suivi WhatsApp 7 jours sur 7</span>
-                                </div>
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <span style="color: #6300FF; flex-shrink: 0;">—</span>
-                                    <span style="font-size: 15px; color: #555;">Plan de breathwork personnalisé</span>
-                                </div>
-                                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                    <span style="color: #6300FF; flex-shrink: 0;">—</span>
-                                    <span style="font-size: 15px; color: #555;">Accès aux ressources breathwork à la demande</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pf-offer-right">
-                            <p class="pf-offer-premium">Coaching Premium &amp; Confidentiel</p>
-                            <p class="pf-offer-from">À partir de</p>
-                            <div class="pf-offer-price">950 €</div>
-                            <p class="pf-offer-meta">8 sessions · Suivi 7j/7</p>
-                            <a href="#contact" class="pf-cta">Candidater à un appel découverte</a>
+
+        <!-- 3 phases -->
+        <section class="section pf-phases" id="pf-phases">
+            <div class="container">
+                <h2 class="pf-phases__title">Performance Fondamentale agit en 3 phases</h2>
+                <div class="pf-phases__layout">
+                    <div class="pf-phases__stage" aria-label="Les trois phases : sélectionnez une phase pour voir sa description">
+                        <div class="pf-phases__ring"></div>
+                        <button class="pf-phases__node" type="button" data-phase="restaurer" aria-pressed="false">Restaurer</button>
+                        <button class="pf-phases__node" type="button" data-phase="reguler" aria-pressed="false">Réguler</button>
+                        <button class="pf-phases__node" type="button" data-phase="construire" aria-pressed="false">Construire</button>
+                    </div>
+                    <div class="pf-phases__panel" role="region" aria-live="polite">
+                        <p class="pf-phases__step">Phase 1 / 3</p>
+                        <div class="pf-phases__tick"></div>
+                        <h3 class="pf-phases__phase-name">Restaurer</h3>
+                        <p class="pf-phases__phase-text">Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.</p>
+                        <div class="pf-phases__tabs" role="tablist" aria-label="Phases">
+                            <button type="button" role="tab" data-phase="restaurer" aria-selected="true">1 · Restaurer</button>
+                            <button type="button" role="tab" data-phase="reguler" aria-selected="false">2 · Réguler</button>
+                            <button type="button" role="tab" data-phase="construire" aria-selected="false">3 · Construire</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Offre -->
+        <section id="tarifs" class="section section--ink">
+            <div class="container">
+                <div class="offer-card">
+                    <div>
+                        <p class="pf-kicker">Programme</p>
+                        <h3>Performance Fondamentale</h3>
+                        <ul class="offer-list">
+                            <li>8 sessions individuelles en visioconférence</li>
+                            <li>Suivi WhatsApp 7 jours sur 7</li>
+                            <li>Plan de breathwork personnalisé</li>
+                            <li>Accès aux ressources breathwork à la demande</li>
+                        </ul>
+                    </div>
+                    <div class="offer-price-box">
+                        <p class="pf-offer-premium">Coaching Premium &amp; Confidentiel</p>
+                        <p class="pf-offer-from">À partir de</p>
+                        <div class="pf-offer-price">950 €</div>
+                        <p class="pf-offer-meta">8 sessions · Suivi 7j/7</p>
+                        <a href="#contact" class="pf-cta pf-cta--block">Candidater</a>
+                        <p class="offer-note">Premier échange : appel découverte</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Qui suis-je -->
-        <section id="qui-suis-je" style="background: #f5f0e8;">
-          <style>
-            .pf-who-stats { display: flex; gap: 44px; margin: 0 0 32px; }
-            .pf-who-stat-num { font-size: 42px; font-weight: 300; color: #6300FF; display: block; line-height: 1.1; letter-spacing: -1px; }
-            .pf-who-stat-label { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
-            .pf-who-side { display: flex; flex-direction: column; gap: 18px; }
-            .pf-who-certs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-            .pf-who-cert-group { background: #faf9f5; border: 1px solid #e8e7e3; border-radius: 14px; padding: 18px; }
-            .pf-who-cert-title { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #6300FF; font-weight: 600; margin-bottom: 8px; }
-            .pf-who-cert-list { font-size: 13px; color: #555; line-height: 1.7; margin: 0; }
-            @media (max-width: 560px) { .pf-who-certs { grid-template-columns: 1fr; } .pf-who-stats { gap: 32px; } }
-          </style>
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="pf-who-layout">
-                    <div class="pf-who-text">
-                        <h2 style="font-size: clamp(34px, 4vw, 48px); font-weight: 300; letter-spacing: -1px; color: #16012E; margin-bottom: 12px;">Etienne Yong</h2>
-                        <p style="font-size: 18px; font-weight: 400; color: #16012E; margin-bottom: 32px;">Kinésithérapeute et praticien en breathwork. J'ai vécu l'épuisement de l'intérieur. C'est ce qui m'a conduit à comprendre le système nerveux autrement.</p>
-                        <div class="pf-who-stats">
-                            <div><span class="pf-who-stat-num">10</span><span class="pf-who-stat-label">ans de clinique</span></div>
-                            <div><span class="pf-who-stat-num">+8</span><span class="pf-who-stat-label">certifications</span></div>
-                        </div>
+        <section id="qui-suis-je" class="section section--cream3">
+            <div class="container">
+                <div class="who">
+                    <div class="who-intro">
+                        <p class="pf-kicker">Qui suis-je</p>
+                        <h2>Etienne Yong</h2>
+                        <p class="lead">Kinésithérapeute et praticien en breathwork. J'ai vécu l'épuisement de l'intérieur. C'est ce qui m'a conduit à comprendre le système nerveux autrement.</p>
+                    </div>
+                    <div class="who-stats">
+                        <div><span class="who-stat-num">10</span><span class="who-stat-label">ans de clinique</span></div>
+                        <div><span class="who-stat-num">+8</span><span class="who-stat-label">certifications</span></div>
+                    </div>
+                    <div class="who-story">
                         <p>Dix ans de kinésithérapie oro-maxillo-faciale. Dix ans à étudier la littérature scientifique, à affiner mon approche technique, à apprendre à voir le corps d'un point de vue systémique plutôt que spécifique.</p>
                         <p>Dans cette quête d'excellence, je me suis retrouvé plusieurs fois en état d'épuisement professionnel. Sans le savoir, en phase pré-burnout. <strong>Le praticien qui soignait les autres ne voyait pas les signaux que son propre corps lui envoyait.</strong></p>
-                        <p>C'est mon apprentissage lui-même qui m'a guidé vers la respiration et son implication dans le système nerveux. Je me suis formé au breathwork pour devenir d'abord facilitateur, puis praticien. La différence est fondamentale : le praticien s'appuie sur des bases scientifiques rigoureuses pour proposer des exercices respiratoires spécifiques au contexte de chaque individu.</p>
-                        <p>C'est dans ce chemin que ma vision du soin a émergé : <strong>rétablir les fondamentaux d'une bonne santé.</strong> La maladie ne naît pas de nulle part. Elle apparaît quand toutes les conditions sont réunies. Et c'est bien souvent le déséquilibre intérieur qui en est responsable.</p>
-                        <p><strong>Bien respirer, avoir un système nerveux résilient au stress externe et interne — ce n'est plus une option. C'est une nécessité. C'est alors que la performance arrive, et qu'on l'accueille.</strong></p>
+                        <button class="who-more-btn" type="button" aria-expanded="false" aria-controls="whoMore">Lire la suite du parcours
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="who-more" id="whoMore">
+                            <p>C'est mon apprentissage lui-même qui m'a guidé vers la respiration et son implication dans le système nerveux. Je me suis formé au breathwork pour devenir d'abord facilitateur, puis praticien. La différence est fondamentale : le praticien s'appuie sur des bases scientifiques rigoureuses pour proposer des exercices respiratoires spécifiques au contexte de chaque individu.</p>
+                            <p>C'est dans ce chemin que ma vision du soin a émergé : <strong>rétablir les fondamentaux d'une bonne santé.</strong> La maladie ne naît pas de nulle part. Elle apparaît quand toutes les conditions sont réunies. Et c'est bien souvent le déséquilibre intérieur qui en est responsable.</p>
+                            <p><strong>Bien respirer, avoir un système nerveux résilient au stress externe et interne — ce n'est plus une option. C'est une nécessité. C'est alors que la performance arrive, et qu'on l'accueille.</strong></p>
+                        </div>
                     </div>
-                    <div class="pf-who-side">
-                        <img class="pf-who-photo" src="etienne-profile.jpg" alt="Etienne Yong, kinésithérapeute et praticien en breathwork">
-                        <div class="pf-who-certs">
-                            <div class="pf-who-cert-group">
-                                <p class="pf-who-cert-title">Kinésithérapie</p>
-                                <p class="pf-who-cert-list">Diplôme d'État de Kinésithérapeute · Spécialisation oro-maxillo-faciale · DU Maxillo-Faciale</p>
+                    <div class="who-side">
+                        <img class="who-photo" src="etienne-profile.jpg" alt="Etienne Yong, kinésithérapeute et praticien en breathwork" >
+                        <div class="who-certs">
+                            <div class="who-cert">
+                                <p class="who-cert-title">Kinésithérapie</p>
+                                <p>Diplôme d'État de Kinésithérapeute · Spécialisation oro-maxillo-faciale · DU Maxillo-Faciale</p>
                             </div>
-                            <div class="pf-who-cert-group">
-                                <p class="pf-who-cert-title">Breathwork</p>
-                                <p class="pf-who-cert-list">Fondamental &amp; Advanced (Dan Brulé) · Hypnotic Breathwork (Coâmes, Siam Lee) · Breath Science Certification (School of Breath Science)</p>
+                            <div class="who-cert">
+                                <p class="who-cert-title">Breathwork</p>
+                                <p>Fondamental &amp; Advanced (Dan Brulé) · Hypnotic Breathwork (Coâmes, Siam Lee) · Breath Science Certification (School of Breath Science)</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Témoignages (écrits + vidéo) -->
-        <section id="testimonial" style="background: #faf9f5; display: block;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="pf-testi-layout">
-                <div class="pf-testi" aria-roledescription="carrousel" aria-label="Témoignages écrits">
-                    <div class="pf-testi-viewport">
-                        <div class="pf-testi-track" id="pfTestiTrack">
-                            <article class="pf-testi-slide" role="group" aria-label="1 sur 5">
-                                <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
-                                <p class="pf-testi-quote">Je suis vraiment scotché par les résultats qui se maintiennent dans le temps ! C&rsquo;est incroyable comment ça m&rsquo;aide, j&rsquo;ai l&rsquo;impression d&rsquo;avoir appris à 33 ans comment fonctionne mon corps et comment respirer, je pense qu&rsquo;on devrait tous passer par là, d&rsquo;autant plus quand on a une vie stressante (entrepreneuriat, sport).</p>
-                                <div class="pf-testi-author">
-                                    <span class="pf-testi-name">Simon</span>
-                                    <span class="pf-testi-role">Entrepreneur</span>
-                                </div>
-                                </article>
-                            <article class="pf-testi-slide" role="group" aria-label="3 sur 5">
-                                <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
-                                <p class="pf-testi-quote">Ce qui m’a marquée dès le début, c’est le sérieux de son approche et la qualité de son accueil. Étienne maîtrise parfaitement son sujet. Il sait trouver les mots justes, accompagne avec beaucoup de bienveillance, observe avec finesse nos réactions et reste toujours très disponible et à l’écoute.</p>
-                                <div class="pf-testi-author">
-                                    <span class="pf-testi-name">Sophie</span>
-                                    <span class="pf-testi-role">Kinésithérapeute</span>
-                                </div>
+
+        <!-- Témoignages -->
+        <section id="testimonial" class="section section--cream">
+            <div class="container">
+                <div class="section-head center">
+                    <p class="pf-kicker">Témoignages</p>
+                    <h2>Ce qu'ils en disent</h2>
+                </div>
+                <div class="testi-layout">
+                    <div class="testi" aria-roledescription="carrousel" aria-label="Témoignages écrits">
+                        <div class="testi-track" id="testiTrack" tabindex="0">
+                            <article class="testi-slide" aria-label="1 sur 6">
+                                <span class="testi-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="testi-quote">Je suis vraiment scotché par les résultats qui se maintiennent dans le temps ! C&rsquo;est incroyable comment ça m&rsquo;aide, j&rsquo;ai l&rsquo;impression d&rsquo;avoir appris à 33 ans comment fonctionne mon corps et comment respirer, je pense qu&rsquo;on devrait tous passer par là, d&rsquo;autant plus quand on a une vie stressante (entrepreneuriat, sport).</p>
+                                <span class="testi-name">Simon</span><span class="testi-role">Entrepreneur</span>
                             </article>
-                            <article class="pf-testi-slide" role="group" aria-label="2 sur 5">
-                                <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
-                                <p class="pf-testi-quote">Je me sens beaucoup mieux physiquement et mentalement, la respiration me permet de mieux dormir et globalement d&rsquo;avoir un métabolisme plus performant, mon système nerveux est aussi plus résilient donc j&rsquo;absorbe mieux le stress.</p>
-                                <div class="pf-testi-author">
-                                    <span class="pf-testi-name">Simon</span>
-                                    <span class="pf-testi-role">Entrepreneur</span>
-                                </div>
+                            <article class="testi-slide" aria-label="2 sur 6">
+                                <span class="testi-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="testi-quote">Ce qui m&rsquo;a marquée dès le début, c&rsquo;est le sérieux de son approche et la qualité de son accueil. Étienne maîtrise parfaitement son sujet. Il sait trouver les mots justes, accompagne avec beaucoup de bienveillance, observe avec finesse nos réactions et reste toujours très disponible et à l&rsquo;écoute.</p>
+                                <span class="testi-name">Sophie</span><span class="testi-role">Kinésithérapeute</span>
                             </article>
-                            <article class="pf-testi-slide" role="group" aria-label="3 sur 5">
-                                <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
-                                <p class="pf-testi-quote">Dans mon quotidien, je gère beaucoup mieux certaines situations qui me freinaient auparavant. Je reconnais plus facilement mes émotions et je m'autorise désormais à les vivre pleinement. Je me sens également plus libre d'être moi-même, moins préoccupée par le regard des autres et avec la sensation d’avancer, simplement.</p>
-                                <div class="pf-testi-author">
-                                    <span class="pf-testi-name">Sophie</span>
-                                    <span class="pf-testi-role">Kinésithérapeute</span>
-                                </div>
+                            <article class="testi-slide" aria-label="3 sur 6">
+                                <span class="testi-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="testi-quote">Je me sens beaucoup mieux physiquement et mentalement, la respiration me permet de mieux dormir et globalement d&rsquo;avoir un métabolisme plus performant, mon système nerveux est aussi plus résilient donc j&rsquo;absorbe mieux le stress.</p>
+                                <span class="testi-name">Simon</span><span class="testi-role">Entrepreneur</span>
                             </article>
-                            <article class="pf-testi-slide" role="group" aria-label="4 sur 5">
-                                <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
-                                <p class="pf-testi-quote">En plus d&rsquo;une meilleure résistance au stress, j&rsquo;ai retrouvé de l&rsquo;inspiration et de la joie dans le travail ! C&rsquo;est de nouveau agréable de travailler alors que rien n&rsquo;a changé de ce côté-là, seulement la respiration, je ne pensais pas que les effets se feraient ressentir jusque là.</p>
-                                <div class="pf-testi-author">
-                                    <span class="pf-testi-name">Simon</span>
-                                    <span class="pf-testi-role">Entrepreneur</span>
+                            <article class="testi-slide" aria-label="4 sur 6">
+                                <span class="testi-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="testi-quote">Dans mon quotidien, je gère beaucoup mieux certaines situations qui me freinaient auparavant. Je reconnais plus facilement mes émotions et je m&rsquo;autorise désormais à les vivre pleinement. Je me sens également plus libre d&rsquo;être moi-même, moins préoccupée par le regard des autres et avec la sensation d&rsquo;avancer, simplement.</p>
+                                <span class="testi-name">Sophie</span><span class="testi-role">Kinésithérapeute</span>
                             </article>
-                            <article class="pf-testi-slide" role="group" aria-label="5 sur 5">
-                                <span class="pf-testi-mark" aria-hidden="true">&ldquo;</span>
-                                <p class="pf-testi-quote">Mes performances sportives sont aussi bien meilleures, j&rsquo;ai plus d&rsquo;endurance et plus de force, je maintiens les efforts plus longtemps en dépensant moins d&rsquo;énergie, j&rsquo;ai l&rsquo;impression que la respiration me permet d&rsquo;optimiser l&rsquo;allocation de mon énergie dans mon corps pour la performance, c&rsquo;est impressionnant !</p>
-                                <div class="pf-testi-author">
-                                    <span class="pf-testi-name">Simon</span>
-                                    <span class="pf-testi-role">Sportif Crossfit</span>
-                                </div>
+                            <article class="testi-slide" aria-label="5 sur 6">
+                                <span class="testi-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="testi-quote">En plus d&rsquo;une meilleure résistance au stress, j&rsquo;ai retrouvé de l&rsquo;inspiration et de la joie dans le travail ! C&rsquo;est de nouveau agréable de travailler alors que rien n&rsquo;a changé de ce côté-là, seulement la respiration, je ne pensais pas que les effets se feraient ressentir jusque là.</p>
+                                <span class="testi-name">Simon</span><span class="testi-role">Entrepreneur</span>
+                            </article>
+                            <article class="testi-slide" aria-label="6 sur 6">
+                                <span class="testi-mark" aria-hidden="true">&ldquo;</span>
+                                <p class="testi-quote">Mes performances sportives sont aussi bien meilleures, j&rsquo;ai plus d&rsquo;endurance et plus de force, je maintiens les efforts plus longtemps en dépensant moins d&rsquo;énergie, j&rsquo;ai l&rsquo;impression que la respiration me permet d&rsquo;optimiser l&rsquo;allocation de mon énergie dans mon corps pour la performance, c&rsquo;est impressionnant !</p>
+                                <span class="testi-name">Simon</span><span class="testi-role">Sportif Crossfit</span>
                             </article>
                         </div>
+                        <div class="testi-controls">
+                            <button class="testi-arrow" id="testiPrev" type="button" aria-label="Témoignage précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+                            <div class="testi-dots" id="testiDots"></div>
+                            <button class="testi-arrow" id="testiNext" type="button" aria-label="Témoignage suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+                        </div>
                     </div>
-                    <div class="pf-testi-controls">
-                        <button class="pf-testi-arrow" id="pfTestiPrev" aria-label="Témoignage précédent">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
-                        </button>
-                        <div class="pf-testi-dots" id="pfTestiDots" role="tablist"></div>
-                        <button class="pf-testi-arrow" id="pfTestiNext" aria-label="Témoignage suivant">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-                        </button>
+                    <div class="testi-video">
+                        <iframe src="https://www.youtube.com/embed/EYLkfk1HE4E" title="Témoignage client — Performance Fondamentale" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                </div>
-                <div class="pf-testi-video">
-                    <iframe
-                        src="https://www.youtube.com/embed/EYLkfk1HE4E"
-                        title="Témoignage client — Performance Fondamentale"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                </div>
                 </div>
             </div>
         </section>
+
         <!-- FAQ -->
-        <section id="faq" style="background: #faf9f5;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="pf-faq-grid">
-                <details style="border-bottom: 1px solid #e8e7e3; padding: 24px 0;">
-                    <summary style="font-size: 17px; font-weight: 500; color: #16012E; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Qu'est-ce que la régulation du système nerveux ?
-                        <span style="font-size: 22px; font-weight: 300; color: #6300FF; flex-shrink: 0; margin-left: 16px;">+</span>
-                    </summary>
-                    <p style="margin-top: 16px; color: #666; font-size: 15px; line-height: 1.8;">La régulation du système nerveux est la capacité à basculer fluidement entre activation et récupération. Un système nerveux régulé permet une clarté mentale optimale, une meilleure récupération et une performance durable sans épuisement.</p>
-                </details>
-                <details style="border-bottom: 1px solid #e8e7e3; padding: 24px 0;">
-                    <summary style="font-size: 17px; font-weight: 500; color: #16012E; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        À qui s'adresse Performance Fondamentale ?
-                        <span style="font-size: 22px; font-weight: 300; color: #6300FF; flex-shrink: 0; margin-left: 16px;">+</span>
-                    </summary>
-                    <p style="margin-top: 16px; color: #666; font-size: 15px; line-height: 1.8;">Performance Fondamentale s'adresse aux executives et athlètes qui ressentent une baisse de lucidité, un sommeil qui ne répare plus, ou une sensation de forcer là où avant tout coulait. L'approche est basée sur la reconnexion corps-esprit par la respiration.</p>
-                </details>
-                <details style="border-bottom: 1px solid #e8e7e3; padding: 24px 0;">
-                    <summary style="font-size: 17px; font-weight: 500; color: #16012E; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        En quoi consiste une session 1:1 ?
-                        <span style="font-size: 22px; font-weight: 300; color: #6300FF; flex-shrink: 0; margin-left: 16px;">+</span>
-                    </summary>
-                    <p style="margin-top: 16px; color: #666; font-size: 15px; line-height: 1.8;">Une session 1:1 est un accompagnement personnalisé où nous créons ensemble un plan d'action de breathwork adapté à vos objectifs : améliorer le sommeil, réduire le stress chronique, retrouver clarté mentale et énergie durable.  A partir de tests et d'un bilan, le programme est ajusté pour qu'il corresponde parfaitement au besoin.</p>
-                </details>
-                <details style="border-bottom: 1px solid #e8e7e3; padding: 24px 0;">
-                    <summary style="font-size: 17px; font-weight: 500; color: #16012E; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        Quelle est la différence avec un coaching classique ?
-                        <span style="font-size: 22px; font-weight: 300; color: #6300FF; flex-shrink: 0; margin-left: 16px;">+</span>
-                    </summary>
-                    <p style="margin-top: 16px; color: #666; font-size: 15px; line-height: 1.8;">Performance Fondamentale ne traite pas le mental et le corps séparément. L'approche agit directement sur le système nerveux, le pont entre corps et esprit, via des techniques de respiration basées sur les preuves scientifiques.</p>
-                </details>
+        <section id="faq" class="section section--cream2">
+            <div class="container">
+                <div class="section-head center">
+                    <p class="pf-kicker">FAQ</p>
+                    <h2>Questions fréquentes</h2>
                 </div>
-                <!-- CTA bas de section -->
-                <div class="pf-cta-block" style="padding-top: 48px; padding-bottom: 0;">
-                    <a href="#contact" class="pf-cta">Candidater</a>
+                <div class="faq-grid">
+                    <details>
+                        <summary>Qu'est-ce que la régulation du système nerveux ?</summary>
+                        <p>La régulation du système nerveux est la capacité à basculer fluidement entre activation et récupération. Un système nerveux régulé permet une clarté mentale optimale, une meilleure récupération et une performance durable sans épuisement.</p>
+                    </details>
+                    <details>
+                        <summary>À qui s'adresse Performance Fondamentale ?</summary>
+                        <p>Performance Fondamentale s'adresse aux executives et athlètes qui ressentent une baisse de lucidité, un sommeil qui ne répare plus, ou une sensation de forcer là où avant tout coulait. L'approche est basée sur la reconnexion corps-esprit par la respiration.</p>
+                    </details>
+                    <details>
+                        <summary>En quoi consiste une session 1:1 ?</summary>
+                        <p>Une session 1:1 est un accompagnement personnalisé où nous créons ensemble un plan d'action de breathwork adapté à vos objectifs : améliorer le sommeil, réduire le stress chronique, retrouver clarté mentale et énergie durable. À partir de tests et d'un bilan, le programme est ajusté pour qu'il corresponde parfaitement au besoin.</p>
+                    </details>
+                    <details>
+                        <summary>Quelle est la différence avec un coaching classique ?</summary>
+                        <p>Performance Fondamentale ne traite pas le mental et le corps séparément. L'approche agit directement sur le système nerveux, le pont entre corps et esprit, via des techniques de respiration basées sur les preuves scientifiques.</p>
+                    </details>
                 </div>
             </div>
         </section>
-        <!-- Formulaire de contact -->
-        <section id="contact" style="background: #faf9f5;">
-            <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="pf-contact-header" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
-                    <p class="pf-kicker" style="display: flex; justify-content: center;">Candidature</p>
-                    <h2 id="pf-contact-title" style="font-size: 38px; font-weight: 300; letter-spacing: -0.5px; color: #16012E; margin-bottom: 16px;">Prêt à vivre la prospérité ? </h2>
-                    <p style="font-size: 16px; color: #555; max-width: 480px; margin: 0 auto;">Soumettez votre candidature pour un premier appel. Nous échangerons sur vos objectifs et vérifierons que nous sommes les bons partenaires pour vous.</p>
+
+        <!-- Candidature -->
+        <section id="contact" class="section section--cream">
+            <div class="container">
+                <div class="section-head center">
+                    <p class="pf-kicker">Candidature</p>
+                    <h2 id="pf-contact-title">Prêt à vivre la prospérité ?</h2>
+                    <p>Soumettez votre candidature pour un premier appel. Nous échangerons sur vos objectifs et vérifierons que nous sommes les bons partenaires pour vous.</p>
                 </div>
-                <form id="pfContactForm" class="pf-form"
-                      action="https://formsubmit.co/etienneyong@performancefondamentale.com"
-                      method="POST">
-                    <!-- Configuration FormSubmit -->
+                <form id="pfContactForm" class="pf-form" action="https://formsubmit.co/etienneyong@performancefondamentale.com" method="POST" aria-labelledby="pf-contact-title">
                     <input type="hidden" name="_subject" value="Nouvelle candidature — Performance Fondamentale">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="true">
-                    <!-- Anti-spam (champ piège, laissé vide par les humains) -->
                     <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
-                    <div class="pf-form-row">
-                        <div class="pf-form-field">
-                            <label for="pf-nom">Nom</label>
-                            <input type="text" id="pf-nom" name="Nom" required autocomplete="family-name" placeholder="Votre nom">
-                        </div>
-                        <div class="pf-form-field">
-                            <label for="pf-prenom">Prénom</label>
-                            <input type="text" id="pf-prenom" name="Prénom" required autocomplete="given-name" placeholder="Votre prénom">
-                        </div>
+
+                    <div class="form-row form-row--keep">
+                        <div class="form-field"><label for="pf-prenom">Prénom</label><input type="text" id="pf-prenom" name="Prénom" required autocomplete="given-name"></div>
+                        <div class="form-field"><label for="pf-nom">Nom</label><input type="text" id="pf-nom" name="Nom" required autocomplete="family-name"></div>
                     </div>
-                    <div class="pf-form-row">
-                        <div class="pf-form-field">
-                            <label for="pf-email">Email</label>
-                            <input type="email" id="pf-email" name="Email" required autocomplete="email" placeholder="vous@exemple.com">
-                        </div>
-                        <div class="pf-form-field">
-                            <label for="pf-phone">Téléphone <span class="pf-optional">(facultatif)</span></label>
-                            <input type="tel" id="pf-phone" name="Téléphone" autocomplete="tel" placeholder="06 ...">
-                        </div>
+                    <div class="form-row">
+                        <div class="form-field"><label for="pf-email">Email</label><input type="email" id="pf-email" name="Email" required autocomplete="email" inputmode="email" placeholder="vous@exemple.com"></div>
+                        <div class="form-field"><label for="pf-phone">Téléphone <span class="opt">(facultatif)</span></label><input type="tel" id="pf-phone" name="Téléphone" autocomplete="tel" inputmode="tel" placeholder="06 ..."></div>
                     </div>
-                    <div class="pf-form-row">
-                        <div class="pf-form-field">
-                            <label for="pf-source">Comment avez-vous entendu parler de moi ?</label>
-                            <input type="text" id="pf-source" name="Source" placeholder="Instagram, LinkedIn, recommandation...">
-                        </div>
-                        <div class="pf-form-field">
-                            <label for="pf-challenge">Quel est votre challenge principal ?</label>
-                            <input type="text" id="pf-challenge" name="Challenge principal" placeholder="Sommeil, stress, énergie, focus...">
-                        </div>
+                    <div class="form-row">
+                        <div class="form-field"><label for="pf-challenge">Votre challenge principal</label><input type="text" id="pf-challenge" name="Challenge principal" placeholder="Sommeil, stress, énergie, focus..."></div>
+                        <div class="form-field"><label for="pf-source">Comment m'avez-vous connu ?</label><input type="text" id="pf-source" name="Source" placeholder="Instagram, LinkedIn, recommandation..."></div>
                     </div>
-                    <div class="pf-form-field">
+                    <div class="form-field">
                         <label for="pf-objectif">Quel est votre objectif ?</label>
                         <textarea id="pf-objectif" name="Objectif" rows="3" required placeholder="Ce que vous aimeriez retrouver ou atteindre"></textarea>
                     </div>
-                    <div class="pf-form-row">
-                        <div class="pf-form-field">
-                            <label for="pf-motivation">Motivation pour ce travail <span class="pf-optional">(1 à 10)</span></label>
+                    <div class="form-row form-row--keep">
+                        <div class="form-field">
+                            <label for="pf-motivation">Motivation <span class="opt">(1-10)</span></label>
                             <select id="pf-motivation" name="Motivation (1-10)" required>
-                                <option value="" disabled selected>Choisir un score</option>
-                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-                                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
-                                <option value="10">10</option>
+                                <option value="" disabled selected>Score</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
                             </select>
                         </div>
-                        <div class="pf-form-field">
-                            <label for="pf-investissement">Prêt(e) à vous investir <span class="pf-optional">(1 à 10)</span></label>
+                        <div class="form-field">
+                            <label for="pf-investissement">Prêt(e) à vous investir <span class="opt">(1-10)</span></label>
                             <select id="pf-investissement" name="Investissement (1-10)" required>
-                                <option value="" disabled selected>Choisir un score</option>
-                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-                                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
-                                <option value="10">10</option>
+                                <option value="" disabled selected>Score</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
                             </select>
                         </div>
                     </div>
-                    <div class="pf-form-field">
-                        <label for="pf-commentaires">Commentaires supplémentaires <span class="pf-optional">(facultatif)</span></label>
-                        <textarea id="pf-commentaires" name="Commentaires" rows="4" placeholder="Tout ce qui pourrait m'aider à mieux vous comprendre"></textarea>
+                    <fieldset class="form-field">
+                        <legend>Comment puis-je vous contacter ?</legend>
+                        <div class="pill-group">
+                            <label><input type="radio" name="Moyen de contact préféré" value="Email" required><span>Email</span></label>
+                            <label><input type="radio" name="Moyen de contact préféré" value="Téléphone"><span>Téléphone</span></label>
+                        </div>
+                    </fieldset>
+                    <div class="form-field">
+                        <label for="pf-commentaires">Commentaires <span class="opt">(facultatif)</span></label>
+                        <textarea id="pf-commentaires" name="Commentaires" rows="3" placeholder="Tout ce qui pourrait m'aider à mieux vous comprendre"></textarea>
                     </div>
-                    <div class="pf-form-field">
-                        <label for="pf-contact-method">Comment puis-je vous contacter ?</label>
-                        <select id="pf-contact-method" name="Moyen de contact préféré" required>
-                            <option value="" disabled selected>Choisir</option>
-                            <option value="Email">Email</option>
-                            <option value="Téléphone">Téléphone</option>
-                        </select>
-                    </div>
-                    <div class="pf-form-submit-wrap">
+                    <div class="form-submit">
                         <button type="submit" class="pf-cta pf-form-submit">Envoyer ma candidature</button>
-                        <p id="pfFormStatus" class="pf-form-status" role="status" aria-live="polite"></p>
+                        <p id="pfFormStatus" class="form-status" role="status" aria-live="polite"></p>
                     </div>
                 </form>
             </div>
         </section>
     </main>
-    <!-- Section « Pour aller plus loin » -->
-    <section class="pf-readmore">
-      <div class="pf-readmore-inner">
-        <h2 class="pf-readmore-title">Lire le blog</h2>
-        <p class="pf-readmore-text">Des articles sur la respiration, le système nerveux et la performance durable.</p>
-        <a class="pf-readmore-btn" href="https://etienneyong.com/archive/?ref=performancefondamentale.com" target="_blank" rel="noopener noreferrer">Découvrir les articles →</a>
-      </div>
+
+    <section class="readmore">
+        <div class="container">
+            <h2>Lire le blog</h2>
+            <p>Des articles sur la respiration, le système nerveux et la performance durable.</p>
+            <a href="https://etienneyong.com/archive/?ref=performancefondamentale.com" target="_blank" rel="noopener noreferrer">Découvrir les articles →</a>
+        </div>
     </section>
     <footer>
-        <div class="footer-content">
-            <p>Performance Fondamentale par Etienne Yong</p>
-            <p style="margin-top: 10px; font-size: 12px;">Régulation du système nerveux • Performance durable • Santé véritable</p>
-            <p style="margin-top: 16px; font-size: 12px;">
-                <a href="/mentions-legales" style="color: #9b8fb3; text-decoration: none; border-bottom: 1px solid #4B2E7A;">Mentions légales & Politique de confidentialité</a>
-            </p>
-        </div>
+        <p>Performance Fondamentale par Etienne Yong</p>
+        <p class="small">Régulation du système nerveux • Performance durable • Santé véritable</p>
+        <p class="small" style="margin-top:14px;"><a href="/mentions-legales">Mentions légales &amp; Politique de confidentialité</a></p>
     </footer>
-    <!-- Menu pastilles (scroll-spy) -->
+
     <nav class="pf-dotnav" aria-label="Navigation de la page">
-        <button class="pf-dotnav__item" type="button" data-target="hero" aria-label="Accueil">
-            <span class="pf-dotnav__label">Accueil</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="schema" aria-label="Système">
-            <span class="pf-dotnav__label">Système</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="pain" aria-label="Votre histoire">
-            <span class="pf-dotnav__label">Votre histoire</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="pf-phases" aria-label="3 phases">
-            <span class="pf-dotnav__label">3 phases</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="tarifs" aria-label="Tarifs">
-            <span class="pf-dotnav__label">Tarifs</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="qui-suis-je" aria-label="Qui suis-je">
-            <span class="pf-dotnav__label">Qui suis-je</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="testimonial" aria-label="Témoignages">
-            <span class="pf-dotnav__label">Témoignages</span><span class="pf-dotnav__dot"></span>
-        </button>
-        <button class="pf-dotnav__item" type="button" data-target="contact" aria-label="Contact">
-            <span class="pf-dotnav__label">Contact</span><span class="pf-dotnav__dot"></span>
-        </button>
+        <button class="pf-dotnav__item" type="button" data-target="hero"><span class="pf-dotnav__label">Accueil</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="schema"><span class="pf-dotnav__label">Système</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="pain"><span class="pf-dotnav__label">Votre histoire</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="pf-phases"><span class="pf-dotnav__label">3 phases</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="tarifs"><span class="pf-dotnav__label">Tarifs</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="qui-suis-je"><span class="pf-dotnav__label">Qui suis-je</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="testimonial"><span class="pf-dotnav__label">Témoignages</span><span class="pf-dotnav__dot"></span></button>
+        <button class="pf-dotnav__item" type="button" data-target="contact"><span class="pf-dotnav__label">Contact</span><span class="pf-dotnav__dot"></span></button>
     </nav>
+
     <script>
-        // ---- Carrousel témoignages écrits ----
-        (function () {
-            function initPfTesti() {
-                var track = document.getElementById('pfTestiTrack');
-                if (!track) return;
-                var slides = Array.prototype.slice.call(track.children);
-                var dotsEl = document.getElementById('pfTestiDots');
-                var prev = document.getElementById('pfTestiPrev');
-                var next = document.getElementById('pfTestiNext');
-                var index = 0;
-                slides.forEach(function (_, i) {
-                    var d = document.createElement('button');
-                    d.className = 'pf-testi-dot';
-                    d.setAttribute('aria-label', 'Aller au témoignage ' + (i + 1));
-                    d.addEventListener('click', function () { go(i); });
-                    dotsEl.appendChild(d);
-                });
-                var dots = Array.prototype.slice.call(dotsEl.children);
-                function update() {
-                    track.style.transform = 'translateY(' + (-index * 100) + '%)';
-                    dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
-                }
-                function go(i) { index = (i + slides.length) % slides.length; update(); }
-                next.addEventListener('click', function () { go(index + 1); });
-                prev.addEventListener('click', function () { go(index - 1); });
-                var startY = 0, delta = 0;
-                track.addEventListener('touchstart', function (e) { startY = e.touches[0].clientY; }, { passive: true });
-                track.addEventListener('touchmove', function (e) { delta = e.touches[0].clientY - startY; }, { passive: true });
-                track.addEventListener('touchend', function () {
-                    if (Math.abs(delta) > 50) go(delta < 0 ? index + 1 : index - 1);
-                    delta = 0;
-                });
-                update();
-            }
-            if (document.readyState !== 'loading') initPfTesti();
-            else document.addEventListener('DOMContentLoaded', initPfTesti);
-        })();
-        // ---- Formulaire de contact (FormSubmit AJAX) ----
-        (function () {
-            function initPfForm() {
-                var form = document.getElementById('pfContactForm');
-                if (!form) return;
-                var status = document.getElementById('pfFormStatus');
-                var btn = form.querySelector('.pf-form-submit');
-                var ajaxAction = form.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    status.className = 'pf-form-status';
-                    status.textContent = 'Envoi en cours…';
-                    btn.disabled = true;
-                    fetch(ajaxAction, {
-                        method: 'POST',
-                        headers: { 'Accept': 'application/json' },
-                        body: new FormData(form)
-                    })
-                    .then(function (r) { return r.json(); })
-                    .then(function () {
-                        form.reset();
-                        status.textContent = 'Merci, votre candidature a bien été envoyée. Réponse sous 48 h.';
-                        btn.disabled = false;
-                    })
-                    .catch(function () {
-                        status.className = 'pf-form-status error';
-                        status.textContent = "Une erreur est survenue. Écrivez-moi directement à etienneyong@performancefondamentale.com.";
-                        btn.disabled = false;
-                    });
-                });
-            }
-            if (document.readyState !== 'loading') initPfForm();
-            else document.addEventListener('DOMContentLoaded', initPfForm);
-        })();
-        // ---- Menu pastilles (scroll-spy) ----
-        (function () {
-            function initDotnav() {
-                var nav = document.querySelector('.pf-dotnav');
-                if (!nav) return;
-                var items  = Array.prototype.slice.call(nav.querySelectorAll('.pf-dotnav__item'));
-                var header = document.querySelector('header');
-                function headerH() { return header ? header.offsetHeight : 0; }
-                function setActive(id) {
-                    items.forEach(function (it) {
-                        var on = it.getAttribute('data-target') === id;
-                        it.classList.toggle('is-active', on);
-                        if (on) { it.setAttribute('aria-current', 'true'); }
-                        else { it.removeAttribute('aria-current'); }
-                    });
-                }
-                items.forEach(function (it) {
-                    it.addEventListener('click', function () {
-                        var el = document.getElementById(it.getAttribute('data-target'));
-                        if (!el) return;
-                        var y = el.getBoundingClientRect().top + window.pageYOffset - headerH() - 8;
-                        window.scrollTo({ top: y, behavior: 'smooth' });
-                    });
-                });
-                var targets = items
-                    .map(function (it) { return document.getElementById(it.getAttribute('data-target')); })
-                    .filter(Boolean);
-                if ('IntersectionObserver' in window) {
-                    var obs = new IntersectionObserver(function (entries) {
-                        entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
-                    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-                    targets.forEach(function (t) { obs.observe(t); });
-                }
-                if (targets[0]) setActive(targets[0].id);
-            }
-            if (document.readyState !== 'loading') initDotnav();
-            else document.addEventListener('DOMContentLoaded', initDotnav);
-        })();
-        // ---- Interactions générales (scroll, schéma) ----
-        document.addEventListener('DOMContentLoaded', function() {
-            // Scroll indicator
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            if (scrollIndicator) {
-                scrollIndicator.addEventListener('click', function() {
-                    const target = document.getElementById('schema');
-                    if (target) target.scrollIntoView({ behavior: 'smooth' });
-                });
-            }
-            // Interactive schema
-            const groups = document.querySelectorAll('.item-group');
-            const elementDetails = document.querySelectorAll('.element-detail');
-            groups.forEach(group => {
-                group.addEventListener('click', function() {
-                    const item = this.getAttribute('data-item');
-                    elementDetails.forEach(d => d.classList.remove('active'));
-                    const detail = document.getElementById(item);
-                    if (detail) {
-                        detail.classList.add('active');
-                        if (window.innerWidth < 1024) detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }
-                });
-                group.addEventListener('mouseenter', function() {
-                    if (window.innerWidth >= 1024) {
-                        const item = this.getAttribute('data-item');
-                        elementDetails.forEach(d => d.classList.remove('active'));
-                        const detail = document.getElementById(item);
-                        if (detail) detail.classList.add('active');
-                    }
-                });
+    (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        function $(s, r) { return (r || document).querySelector(s); }
+        function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+        function headerH() { var h = $('.site-header .header-inner'); return h ? h.offsetHeight : 0; }
+        function scrollToId(id) {
+            var el = document.getElementById(id); if (!el) return;
+            window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - headerH(), behavior: reduce ? 'auto' : 'smooth' });
+        }
+
+        // ---- Menu mobile ----
+        var menuBtn = $('.menu-btn'), menu = $('#mobileMenu');
+        function setMenu(open) { menu.classList.toggle('is-open', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu'); }
+        menuBtn.addEventListener('click', function () { setMenu(!menu.classList.contains('is-open')); });
+        $$('#mobileMenu a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+        // ---- Scroll indicator ----
+        $$('[data-scroll]').forEach(function (b) { b.addEventListener('click', function () { scrollToId(b.getAttribute('data-scroll')); }); });
+
+        // ---- Schéma 9 piliers ----
+        var nodes = $$('.system-node'), lines = $$('.system-lines line'), details = $$('.element-detail');
+        var order = nodes.map(function (n) { return n.getAttribute('data-item'); });
+        var current = order[0];
+        function selectPillar(key) {
+            current = key;
+            nodes.forEach(function (n) { var on = n.getAttribute('data-item') === key; n.classList.toggle('is-active', on); n.setAttribute('aria-pressed', on); });
+            lines.forEach(function (l) { l.classList.toggle('is-active', l.getAttribute('data-for') === key); });
+            details.forEach(function (d) { d.classList.toggle('active', d.id === key); });
+        }
+        nodes.forEach(function (n) {
+            n.addEventListener('click', function () { selectPillar(n.getAttribute('data-item')); });
+            if (canHover) n.addEventListener('mouseenter', function () { selectPillar(n.getAttribute('data-item')); });
+        });
+        $$('.detail-nav button').forEach(function (b) {
+            b.addEventListener('click', function () {
+                var i = (order.indexOf(current) + parseInt(b.getAttribute('data-step'), 10) + order.length) % order.length;
+                selectPillar(order[i]);
             });
         });
+        selectPillar(current);
+
+        // ---- 3 phases (orbite) ----
+        (function () {
+            var root = document.getElementById('pf-phases'); if (!root) return;
+            var stage = $('.pf-phases__stage', root);
+            var pnodes = $$('.pf-phases__node', root), tabs = $$('.pf-phases__tabs button', root);
+            var nameEl = $('.pf-phases__phase-name', root), textEl = $('.pf-phases__phase-text', root), stepEl = $('.pf-phases__step', root);
+            var data = {
+                restaurer:  { n: 1, name: 'Restaurer',  text: 'Rétablir la connexion entre votre corps et votre esprit. Que votre système nerveux se sente à nouveau en sécurité.' },
+                reguler:    { n: 2, name: 'Réguler',    text: 'Réguler un système mobilisant les énergies au bon endroit, adaptable aux différentes situations.' },
+                construire: { n: 3, name: 'Construire', text: 'Construire un mental et un corps résilients au stress et à la pression.' }
+            };
+            var base = [150, -90, 30], rot = 0, paused = false, last = 0, R = 0, visible = true;
+            function measure() { R = stage.clientWidth * 0.33; }
+            function place() {
+                for (var i = 0; i < pnodes.length; i++) {
+                    var a = (base[i] + rot) * Math.PI / 180;
+                    pnodes[i].style.transform = 'translate(-50%,-50%) translate(' + (Math.cos(a) * R) + 'px,' + (Math.sin(a) * R) + 'px)';
+                }
+            }
+            function select(key) {
+                pnodes.forEach(function (n) { var on = n.getAttribute('data-phase') === key; n.classList.toggle('is-active', on); n.setAttribute('aria-pressed', on); });
+                tabs.forEach(function (t) { t.setAttribute('aria-selected', t.getAttribute('data-phase') === key); });
+                nameEl.textContent = data[key].name; textEl.textContent = data[key].text; stepEl.textContent = 'Phase ' + data[key].n + ' / 3';
+            }
+            function loop(t) {
+                if (!last) last = t;
+                var dt = t - last; last = t;
+                if (!paused && !reduce && visible) { rot = (rot + dt * 0.0075) % 360; place(); }
+                requestAnimationFrame(loop);
+            }
+            pnodes.concat(tabs).forEach(function (n) { n.addEventListener('click', function () { select(n.getAttribute('data-phase')); }); });
+            stage.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') paused = true; });
+            stage.addEventListener('pointerleave', function () { paused = false; });
+            stage.addEventListener('focusin', function () { paused = true; });
+            stage.addEventListener('focusout', function () { paused = false; });
+            if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(stage);
+            window.addEventListener('resize', function () { measure(); place(); });
+            measure(); place(); select('restaurer'); requestAnimationFrame(loop);
+        })();
+
+        // ---- Témoignages (swipe horizontal natif) ----
+        (function () {
+            var track = $('#testiTrack'); if (!track) return;
+            var slides = $$('.testi-slide', track), dotsEl = $('#testiDots'), index = 0;
+            slides.forEach(function (_, i) {
+                var d = document.createElement('button');
+                d.type = 'button'; d.className = 'testi-dot'; d.setAttribute('aria-label', 'Aller au témoignage ' + (i + 1));
+                d.addEventListener('click', function () { go(i); });
+                dotsEl.appendChild(d);
+            });
+            var dots = $$('.testi-dot', dotsEl);
+            function paint() { dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); }); }
+            function go(i) { index = (i + slides.length) % slides.length; track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); paint(); }
+            $('#testiNext').addEventListener('click', function () { go(index + 1); });
+            $('#testiPrev').addEventListener('click', function () { go(index - 1); });
+            var t;
+            track.addEventListener('scroll', function () {
+                clearTimeout(t);
+                t = setTimeout(function () { index = Math.round(track.scrollLeft / track.clientWidth); paint(); }, 60);
+            }, { passive: true });
+            track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { e.preventDefault(); go(index + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(index - 1); } });
+            paint();
+        })();
+
+        // ---- Qui suis-je : lire la suite (mobile) ----
+        (function () {
+            var btn = $('.who-more-btn'), more = $('#whoMore'); if (!btn) return;
+            btn.addEventListener('click', function () {
+                var open = !more.classList.contains('is-open');
+                more.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', open);
+                btn.firstChild.nodeValue = open ? 'Réduire ' : 'Lire la suite du parcours ';
+            });
+        })();
+
+        // ---- Formulaire (FormSubmit AJAX) ----
+        (function () {
+            var form = $('#pfContactForm'); if (!form) return;
+            var status = $('#pfFormStatus'), btn = $('.pf-form-submit', form);
+            var ajaxAction = form.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                status.className = 'form-status'; status.textContent = 'Envoi en cours…'; btn.disabled = true;
+                fetch(ajaxAction, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+                    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+                    .then(function () { form.reset(); status.textContent = 'Merci, votre candidature a bien été envoyée. Réponse sous 48 h.'; btn.disabled = false; })
+                    .catch(function () { status.className = 'form-status error'; status.textContent = 'Une erreur est survenue. Écrivez-moi directement à etienneyong@performancefondamentale.com.'; btn.disabled = false; });
+            });
+        })();
+
+        // ---- Dot nav (scroll-spy) ----
+        (function () {
+            var items = $$('.pf-dotnav__item');
+            function setActive(id) { items.forEach(function (it) { var on = it.getAttribute('data-target') === id; it.classList.toggle('is-active', on); if (on) it.setAttribute('aria-current', 'true'); else it.removeAttribute('aria-current'); }); }
+            items.forEach(function (it) { it.addEventListener('click', function () { scrollToId(it.getAttribute('data-target')); }); });
+            var targets = items.map(function (it) { return document.getElementById(it.getAttribute('data-target')); }).filter(Boolean);
+            if ('IntersectionObserver' in window) {
+                var obs = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); }); }, { rootMargin: '-45% 0px -45% 0px' });
+                targets.forEach(function (t) { obs.observe(t); });
+            }
+            if (targets[0]) setActive(targets[0].id);
+        })();
+    })();
     </script>
 </body>
 </html>
