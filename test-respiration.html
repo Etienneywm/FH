@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CCTKJCL');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de respiration : le questionnaire de Nijmegen · Performance Fondamentale</title>
+    <meta name="description" content="16 questions, 3 minutes : est-ce que ta respiration entretient ton état d'alerte ? Le questionnaire de Nijmegen, par Etienne Yong, kinésithérapeute et praticien en breathwork.">
+    <link rel="canonical" href="https://www.performancefondamentale.com/test-respiration">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫁</text></svg>">
+    <meta property="og:title" content="Est-ce que ta respiration entretient ton stress ?">
+    <meta property="og:description" content="Le questionnaire de Nijmegen : 16 questions, 3 minutes, ton score tout de suite.">
+    <meta property="og:image" content="https://www.performancefondamentale.com/og-image.png">
+    <style>
+        /* Repris de index.html (Performance Fondamentale v2) : mêmes tokens, mêmes composants. */
+        :root {
+            --pf-cream: #faf9f5; --pf-cream-2: #f5f4f1; --pf-ink: #16012E;
+            --pf-violet: #6300FF; --pf-violet-dark: #4B00C2; --pf-violet-pale: #F0EBFF; --pf-violet-soft: #D9C6FF;
+            --pf-text: #4f4a57; --pf-muted: #6f6a7a; --pf-line: #e8e7e3;
+            --gutter: clamp(20px, 5vw, 48px); --section-y: clamp(48px, 7vw, 96px);
+            --radius: clamp(14px, 2vw, 20px); --header-h: 64px;
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: clip; -webkit-text-size-adjust: 100%; }
+        body { font-family: var(--font); background: var(--pf-cream); color: var(--pf-ink); line-height: 1.6; overflow-x: clip; }
+        a { color: inherit; }
+        h1 { font-size: clamp(32px, 4.6vw, 54px); font-weight: 300; line-height: 1.12; letter-spacing: -1px; }
+        h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; }
+        p { font-size: clamp(15.5px, 1.2vw, 17px); font-weight: 300; line-height: 1.75; color: var(--pf-text); }
+        p strong { color: var(--pf-ink); font-weight: 500; }
+        .pf-kicker { font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--pf-violet); font-weight: 500; margin-bottom: 14px; }
+        .container { width: 100%; max-width: 760px; margin: 0 auto; padding-inline: var(--gutter); }
+        .section { padding-block: var(--section-y); }
+
+        .site-header { position: sticky; top: 0; z-index: 100; background: rgba(250,249,245,.86); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--pf-line); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .logo { text-decoration: none; color: var(--pf-ink); display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+        .logo-main { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+        .logo-main span { color: var(--pf-violet); }
+        .logo-sub { font-size: 10.5px; letter-spacing: 1px; color: var(--pf-muted); text-transform: uppercase; margin-top: 3px; }
+        .header-link { font-size: 12px; color: var(--pf-muted); text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase; }
+        .header-link:hover { color: var(--pf-violet); }
+
+        .pf-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 34px; background: var(--pf-violet); color: #fff; text-decoration: none; font: 500 14px/1.2 var(--font); letter-spacing: 0.6px; text-transform: uppercase; text-align: center; border-radius: 100px; border: none; cursor: pointer; transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
+        .pf-cta:hover { background: var(--pf-violet-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,0,255,.22); }
+        .pf-cta:focus-visible { outline: 2px solid var(--pf-violet); outline-offset: 3px; }
+        .pf-cta[disabled] { opacity: .6; cursor: wait; transform: none; box-shadow: none; }
+        .pf-cta--block { width: 100%; }
+
+        .carte { background: #fff; border: 1px solid var(--pf-line); border-radius: var(--radius); padding: clamp(22px, 4vw, 40px); }
+        .intro p + p { margin-top: 14px; }
+        .etapes { list-style: none; display: grid; gap: 10px; margin: 22px 0 0; }
+        .etapes li { display: flex; gap: 12px; align-items: baseline; font-weight: 300; color: var(--pf-text); font-size: 16px; }
+        .etapes b { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--pf-violet-pale); color: var(--pf-violet); font-weight: 600; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-field { display: flex; flex-direction: column; margin-bottom: 18px; min-width: 0; }
+        .form-field label { font-size: 11.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--pf-muted); margin-bottom: 8px; }
+        .form-field input { font: 300 16px/1.4 var(--font); color: var(--pf-ink); background: #fff; border: 1px solid var(--pf-line); border-radius: 10px; padding: 12px 14px; width: 100%; min-height: 48px; -webkit-appearance: none; appearance: none; }
+        .form-field input:focus { outline: none; border-color: var(--pf-violet); box-shadow: 0 0 0 3px rgba(99,0,255,.10); }
+        .coche { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; font-size: 14.5px; font-weight: 300; color: var(--pf-text); line-height: 1.55; cursor: pointer; }
+        .coche input { flex: none; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--pf-violet); }
+        .note { font-size: 13px; color: var(--pf-muted); line-height: 1.6; margin-top: 6px; }
+        .pot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+        .form-status { font-size: 14px; margin-top: 14px; min-height: 20px; color: #a3392b; }
+
+        .question { border: 0; border-top: 1px solid var(--pf-line); margin: 0; padding: 18px 0; min-width: 0; }
+        .question:first-of-type { border-top: none; }
+        .question legend { float: left; width: 100%; padding: 0; font-size: 17px; font-weight: 400; color: var(--pf-ink); margin-bottom: 12px; }
+        .question .echelle { clear: both; }
+        .question legend span { color: var(--pf-muted); font-size: 13px; margin-right: 6px; }
+        .echelle { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+        .echelle label { position: relative; }
+        .echelle input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+        .echelle span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 44px; padding: 6px 4px; border: 1px solid var(--pf-line); border-radius: 10px; font-size: 13px; color: var(--pf-text); background: #fff; transition: border-color .2s, background .2s; }
+        .echelle input:checked + span { border-color: var(--pf-violet); background: var(--pf-violet-pale); color: var(--pf-ink); font-weight: 500; }
+        .echelle input:focus-visible + span { outline: 2px solid var(--pf-violet); outline-offset: 2px; }
+        .progression { font-size: 13px; color: var(--pf-muted); margin-bottom: 8px; }
+
+        .score { font-size: clamp(56px, 9vw, 88px); font-weight: 200; line-height: 1; color: var(--pf-violet); }
+        .score small { font-size: .35em; color: var(--pf-muted); }
+        .zones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .zones li { list-style: none; padding: 6px 14px; border-radius: 100px; background: var(--pf-violet-pale); color: var(--pf-ink); font-size: 14px; }
+        .bloc + .bloc { margin-top: 22px; }
+        .avertissement { font-size: 13px; color: var(--pf-muted); border-left: 2px solid var(--pf-violet-soft); padding-left: 12px; margin-top: 26px; line-height: 1.6; }
+
+        [hidden] { display: none !important; }
+        footer { background: var(--pf-ink); color: var(--pf-cream); padding: 36px var(--gutter); text-align: center; }
+        footer p { color: #9b8fb3; font-size: 14px; }
+        footer .small { font-size: 12px; margin-top: 8px; }
+        footer a { color: #9b8fb3; text-decoration: none; border-bottom: 1px solid #4B2E7A; }
+
+        @media (max-width: 640px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .echelle { gap: 4px; }
+            .echelle span { font-size: 11.5px; line-height: 1.2; min-height: 48px; padding: 4px 2px; }
+            .logo-sub { display: none; }
+            .logo-main { font-size: 11px; letter-spacing: 1.4px; }
+        }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+    </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CCTKJCL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="/" class="logo" aria-label="Performance Fondamentale, accueil">
+            <span class="logo-main">Performance <span>Fondamentale</span></span>
+            <span class="logo-sub">par Etienne Yong</span>
+        </a>
+        <a class="header-link" href="/">Le programme</a>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+
+        <!-- Étape 1 : la présentation et l'inscription -->
+        <section id="etape-inscription">
+            <div class="intro">
+                <p class="pf-kicker">Le questionnaire de Nijmegen</p>
+                <h1>Et si ton stress commençait par ta respiration ?</h1>
+                <p style="margin-top:22px">Dans mon cabinet, je vois tous les jours des corps qui ont oublié comment respirer. Un souffle court, rapide, qui garde le système nerveux en alerte. Et la plupart du temps, la personne ne s'en rend même pas compte.</p>
+                <p>Ce questionnaire sert justement à le repérer. Il existe depuis plus de 30 ans, il est utilisé pour dépister une respiration dysfonctionnelle. 16 questions, 3 minutes.</p>
+                <ul class="etapes">
+                    <li><b>1</b> Tu réponds aux 16 questions et tu vois ton score tout de suite.</li>
+                    <li><b>2</b> Je t'envoie par mail deux petits tests de respiration à faire chez toi.</li>
+                    <li><b>3</b> Puis un audio de 5 minutes pour relâcher, à refaire quand tu veux.</li>
+                </ul>
+            </div>
+
+            <form id="form-inscription" class="carte" style="margin-top:32px" novalidate>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="prenom">Prénom</label>
+                        <input id="prenom" name="prenom" type="text" autocomplete="given-name" maxlength="60">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Mail</label>
+                        <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                    </div>
+                </div>
+                <div class="pot" aria-hidden="true">
+                    <label for="site">Site</label><input id="site" name="site" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <label class="coche">
+                    <input type="checkbox" id="consentement-mails" required>
+                    <span>Je veux recevoir les tests, l'audio et les lettres d'Etienne par mail. Je peux me désinscrire à tout moment, en un clic.</span>
+                </label>
+                <label class="coche">
+                    <input type="checkbox" id="consentement-resultats">
+                    <span>J'accepte que mon score et les zones qui ressortent soient gardés dans ma fiche, pour recevoir des conseils adaptés. <em>(facultatif)</em></span>
+                </label>
+                <p class="note">Tes réponses détaillées ne quittent pas ton navigateur. Si tu coches la deuxième case, seuls ton score total et les zones qui ressortent sont gardés, par Etienne Yong (PEACOCK SAS), tant que tu restes inscrit. Pour les retirer : <a href="mailto:etienne.ywm@gmail.com">etienne.ywm@gmail.com</a>. <a href="/mentions-legales">Confidentialité</a>.</p>
+                <div style="margin-top:20px">
+                    <button type="submit" class="pf-cta pf-cta--block" id="bouton-inscription">Commencer le questionnaire</button>
+                    <p class="form-status" id="statut-inscription" role="alert"></p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Étape 2 : le questionnaire -->
+        <section id="etape-questionnaire" hidden>
+            <p class="pf-kicker">Le questionnaire de Nijmegen</p>
+            <h2>À quelle fréquence ressens-tu ces sensations ?</h2>
+            <p style="margin-top:10px">Réponds sans trop réfléchir, en pensant à ces dernières semaines.</p>
+            <form id="form-questionnaire" class="carte" style="margin-top:24px" novalidate>
+                <p class="progression" id="progression">0 réponse sur 16</p>
+                <div id="questions"></div>
+                <div style="margin-top:20px">
+                    <button type="submit" class="pf-cta pf-cta--block" id="bouton-resultats">Voir mon score</button>
+                    <p class="form-status" id="statut-questionnaire" role="alert"></p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Étape 3 : le résultat -->
+        <section id="etape-resultat" hidden>
+            <p class="pf-kicker">Ton résultat</p>
+            <div class="carte">
+                <p class="score" id="score">0<small> / 64</small></p>
+                <div class="bloc">
+                    <h2 id="titre-resultat"></h2>
+                    <p style="margin-top:10px" id="texte-resultat"></p>
+                </div>
+                <div class="bloc" id="bloc-zones" hidden>
+                    <p><strong>Ce qui ressort le plus chez toi :</strong></p>
+                    <ul class="zones" id="zones"></ul>
+                </div>
+                <div class="bloc">
+                    <p><strong>Et maintenant ?</strong> Je t'envoie par mail deux petits tests de respiration. Fais-les avant d'écouter l'audio qui suivra : l'audio change ta respiration, et fausserait les tests.</p>
+                </div>
+                <p class="avertissement">Ce questionnaire est un outil de dépistage, pas un diagnostic. Un score élevé ne veut pas dire que quelque chose ne va pas : il dit que ta respiration mérite qu'on s'y intéresse. Si tu as des douleurs dans la poitrine, des palpitations ou des vertiges, parles-en d'abord à ton médecin.</p>
+            </div>
+            <div style="text-align:center;margin-top:28px">
+                <a class="pf-cta" href="/#contact">Découvrir Performance Fondamentale</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <p>Performance Fondamentale par Etienne Yong</p>
+    <p class="small">Questionnaire de Nijmegen : Van Dixhoorn et Duivenvoorden (1985), Van Dixhoorn et Folgering (2015).</p>
+    <p class="small" style="margin-top:14px;"><a href="/mentions-legales">Mentions légales &amp; Politique de confidentialité</a></p>
+</footer>
+
+<script>
+(function () {
+    // L'adresse de la page dans le hub de Comète (/admin/cadeau). À remplir avant la mise en ligne.
+    var ADRESSE = 'https://app.cometestudio.fr/api/cadeau/JETON_A_REMPLIR';
+
+    var QUESTIONS = [
+        ['Tension nerveuse', 'emotions'],
+        ['Incapacité à respirer profondément', 'respiration'],
+        ['Respiration accélérée ou ralentie', 'respiration'],
+        ['Respiration courte', 'respiration'],
+        ['Palpitations', 'coeur'],
+        ['Froideur des extrémités', 'coeur'],
+        ['Vertiges', 'tete'],
+        ['Anxiété', 'emotions'],
+        ['Poitrine serrée', 'respiration'],
+        ['Douleurs thoraciques', 'coeur'],
+        ['Flou visuel', 'tete'],
+        ['Fourmillements dans les doigts', 'fourmillements'],
+        ['Ankylose des bras et des doigts', 'fourmillements'],
+        ['Sensation de confusion', 'tete'],
+        ['Ballonnement abdominal', 'ventre'],
+        ['Fourmillements autour de la bouche', 'fourmillements']
+    ];
+    var REPONSES = ['Jamais', 'Rarement', 'Parfois', 'Souvent', 'Très souvent'];
+    var NOMBRE = { respiration: 4, coeur: 3, tete: 3, fourmillements: 3, ventre: 1, emotions: 2 };
+    var NOMS = { respiration: 'la respiration', coeur: 'le cœur et la circulation', tete: 'la tête (vertiges, vision, confusion)', fourmillements: 'les fourmillements', ventre: 'le ventre', emotions: 'les émotions' };
+
+    var params = new URLSearchParams(location.search);
+    var source = (params.get('utm_source') || '').slice(0, 100) || undefined;
+    var campagne = (params.get('utm_campaign') || '').slice(0, 100) || undefined;
+    var session = null;
+
+    function $(id) { return document.getElementById(id); }
+    function montrer(id) {
+        ['etape-inscription', 'etape-questionnaire', 'etape-resultat'].forEach(function (e) { $(e).hidden = e !== id; });
+        window.scrollTo({ top: 0 });
+    }
+    function envoyer(corps) {
+        return fetch(ADRESSE, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(corps) })
+            .then(function (r) { return r.json().catch(function () { return { ok: false }; }); });
+    }
+    function signal(nom) { (window.dataLayer = window.dataLayer || []).push({ event: nom }); }
+
+    // Les 16 questions
+    var conteneur = $('questions');
+    QUESTIONS.forEach(function (q, i) {
+        var f = document.createElement('fieldset');
+        f.className = 'question';
+        var l = document.createElement('legend');
+        l.innerHTML = '<span>' + (i + 1) + '.</span>';
+        l.appendChild(document.createTextNode(q[0]));
+        f.appendChild(l);
+        var e = document.createElement('div');
+        e.className = 'echelle';
+        REPONSES.forEach(function (rep, v) {
+            var lab = document.createElement('label');
+            lab.innerHTML = '<input type="radio" name="q' + i + '" value="' + v + '" required><span>' + rep + '</span>';
+            e.appendChild(lab);
+        });
+        f.appendChild(e);
+        conteneur.appendChild(f);
+    });
+    $('form-questionnaire').addEventListener('change', function () {
+        var n = 0;
+        QUESTIONS.forEach(function (_, i) { if (document.querySelector('input[name="q' + i + '"]:checked')) n++; });
+        $('progression').textContent = n + (n > 1 ? ' réponses' : ' réponse') + ' sur 16';
+    });
+
+    // Étape 1 : l'inscription
+    $('form-inscription').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var statut = $('statut-inscription');
+        var email = $('email').value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { statut.textContent = 'Vérifie ton adresse mail.'; return; }
+        if (!$('consentement-mails').checked) { statut.textContent = 'Coche la première case pour recevoir les tests par mail.'; return; }
+        statut.textContent = '';
+        var bouton = $('bouton-inscription');
+        bouton.disabled = true;
+        envoyer({
+            etape: 'inscription',
+            email: email,
+            prenom: $('prenom').value.trim() || undefined,
+            consentement_mails: true,
+            consentement_resultats: $('consentement-resultats').checked,
+            source: source,
+            campagne: campagne,
+            site: $('site').value
+        }).then(function (r) {
+            bouton.disabled = false;
+            if (!r.ok) { statut.textContent = r.erreur || 'Un souci, réessaie dans un instant.'; return; }
+            session = { membre: r.membre, passe: r.passe };
+            signal('cadeau_inscription');
+            montrer('etape-questionnaire');
+        }).catch(function () {
+            bouton.disabled = false;
+            statut.textContent = 'Un souci de connexion, réessaie dans un instant.';
+        });
+    });
+
+    // Étape 2 : le score, calculé ici
+    $('form-questionnaire').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var zones = { respiration: 0, coeur: 0, tete: 0, fourmillements: 0, ventre: 0, emotions: 0 };
+        var total = 0, manque = 0;
+        QUESTIONS.forEach(function (q, i) {
+            var c = document.querySelector('input[name="q' + i + '"]:checked');
+            if (!c) { manque++; return; }
+            var v = Number(c.value);
+            total += v;
+            zones[q[1]] += v;
+        });
+        if (manque) { $('statut-questionnaire').textContent = 'Il te reste ' + manque + (manque > 1 ? ' questions' : ' question') + ' à remplir.'; return; }
+        $('statut-questionnaire').textContent = '';
+        afficher(total, zones);
+        signal('cadeau_resultats');
+        if (session) {
+            envoyer({ etape: 'resultats', membre: session.membre, passe: session.passe, total: total, zones: zones, site: $('site').value })
+                .catch(function () {});
+        }
+    });
+
+    function afficher(total, zones) {
+        $('score').innerHTML = total + '<small> / 64</small>';
+        var titre, texte;
+        if (total >= 23) {
+            titre = 'Ta respiration mérite qu\'on s\'y intéresse.';
+            texte = 'Ton score dépasse le seuil de 23, celui à partir duquel on parle d\'une respiration dysfonctionnelle. Concrètement, ta façon de respirer entretient peut-être une partie de ce que tu ressens : la fatigue, la tension, ce sentiment d\'être toujours en alerte. La bonne nouvelle, c\'est que ça se travaille.';
+        } else if (total >= 19) {
+            titre = 'Tu es dans la zone limite.';
+            texte = 'Ton score est entre 19 et 22. Certaines études placent le seuil à 19, d\'autres à 23. Ta respiration n\'est peut-être pas le cœur du problème, mais elle joue sûrement un rôle quand le stress monte.';
+        } else {
+            titre = 'Ta respiration ne semble pas te freiner.';
+            texte = 'Ton score est sous le seuil de 19. Ta respiration a l\'air de bien faire son travail. Les deux tests que je t\'envoie te diront si ton système nerveux encaisse bien le stress au quotidien.';
+        }
+        $('titre-resultat').textContent = titre;
+        $('texte-resultat').textContent = texte;
+        var ul = $('zones');
+        ul.innerHTML = '';
+        Object.keys(zones).forEach(function (z) {
+            if (zones[z] / NOMBRE[z] >= 2) {
+                var li = document.createElement('li');
+                li.textContent = NOMS[z];
+                ul.appendChild(li);
+            }
+        });
+        $('bloc-zones').hidden = !ul.children.length;
+        montrer('etape-resultat');
+    }
+})();
+</script>
+</body>
+</html>
