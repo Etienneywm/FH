@@ -187,6 +187,9 @@
             .page-title { font-size: 32px; }
         }
     </style>
+    <!-- Mesure d'audience Sonde (Comète Studio) : sans cookie. Provenance de la visite, jointe aux candidatures. -->
+    <script src="https://app.cometestudio.fr/sonde.js" data-site="e62adc71288e5d639261ee94c99d3c8c" defer></script>
+    <script src="/provenance.js" defer></script>
 </head>
 <body>
 
@@ -224,10 +227,10 @@
         <h2>Hébergement</h2>
         <p>Ce site est hébergé par :</p>
         <div class="info-block">
-            <p><strong>GitHub, Inc.</strong></p>
-            <p>88 Colin P Kelly Jr Street</p>
-            <p>San Francisco, CA 94107, États-Unis</p>
-            <p>Site : <a href="https://github.com" target="_blank" rel="noopener">github.com</a></p>
+            <p><strong>Vercel Inc.</strong></p>
+            <p>440 N Barranca Ave #4133</p>
+            <p>Covina, CA 91723, États-Unis</p>
+            <p>Site : <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></p>
         </div>
     </div>
 
@@ -250,7 +253,13 @@
         Contact : <a href="mailto:etienne.ywm@gmail.com">etienne.ywm@gmail.com</a></p>
 
         <h3>Données collectées</h3>
-        <p>Ce site ne collecte aucune donnée personnelle directement. Cependant, les services tiers suivants peuvent collecter des données de navigation :</p>
+        <p>Ce site collecte des données personnelles dans deux cas : quand vous envoyez une candidature, et quand vous faites le test de respiration.</p>
+        <ul>
+            <li><strong>Formulaire de candidature</strong> : prénom, nom, email, téléphone (facultatif), vos réponses, et la provenance de votre visite (le site ou la campagne d'où vous arrivez, et la première page vue). Le formulaire est transmis par FormSubmit à l'adresse email d'Etienne Yong.</li>
+            <li><strong>Test de respiration</strong> : prénom et email, pour vous envoyer les tests, l'audio et les lettres d'Etienne que vous avez demandés (lettres hébergées par Ghost, envoyées par Mailgun). Vos réponses détaillées restent dans votre navigateur. Votre score total et les zones qui ressortent ne sont gardés que si vous l'acceptez. Les lettres comptent les clics sur leurs liens (vidéo, audio, candidature), pour savoir ce qui vous intéresse. Ces données passent par l'outil de Comète Studio, prestataire d'Etienne Yong.</li>
+            <li><strong>Mesure d'audience Sonde</strong> (Comète Studio) : pages vues, nom du site d'où vous arrivez, paramètres de campagne. Sans cookie, et sans adresse IP enregistrée : une visite ne peut être reliée ni à une personne, ni à une visite d'un autre jour.</li>
+        </ul>
+        <p>Les services tiers suivants peuvent aussi collecter des données de navigation :</p>
         <ul>
             <li><strong>Google Analytics 4</strong> (via Google Tag Manager) — mesure d'audience anonymisée : pages visitées, durée de session, source de trafic. Aucune donnée personnellement identifiable n'est collectée.</li>
             <li><strong>Calendly</strong> — si vous réservez une session, Calendly collecte votre nom et adresse email conformément à sa propre politique de confidentialité.</li>
@@ -259,18 +268,22 @@
 
         <h3>Finalité du traitement</h3>
         <ul>
-            <li>Mesure de l'audience et amélioration du site (Analytics)</li>
+            <li>Mesure de l'audience et amélioration du site (Sonde, Analytics)</li>
+            <li>Réponse à votre candidature</li>
+            <li>Envoi des tests, de l'audio et des lettres du test de respiration</li>
             <li>Gestion des réservations de sessions (Calendly)</li>
         </ul>
 
         <h3>Base légale</h3>
         <ul>
             <li>Intérêt légitime pour la mesure d'audience anonymisée</li>
+            <li>Votre consentement pour les lettres et pour la conservation de votre score</li>
+            <li>Mesures préalables à un contrat, à votre demande, pour la candidature</li>
             <li>Exécution du contrat pour la gestion des réservations</li>
         </ul>
 
         <h3>Durée de conservation</h3>
-        <p>Les données Analytics sont conservées 14 mois (paramètre par défaut GA4). Les données de réservation Calendly sont gérées par Calendly selon leurs propres conditions.</p>
+        <p>Les candidatures sont conservées 3 ans après le dernier échange. Les données du test de respiration sont gardées tant que vous restez inscrit : chaque lettre permet de se désinscrire en un clic. Sonde garde les visites 13 mois, puis seulement des totaux par jour. Les données Analytics sont conservées 14 mois (paramètre par défaut GA4). Les données de réservation Calendly sont gérées par Calendly selon leurs propres conditions.</p>
 
         <h3>Vos droits</h3>
         <p>Conformément au RGPD, vous disposez des droits suivants :</p>
@@ -297,6 +310,8 @@
             <li><strong>Cookies YouTube</strong> — déposés lors de la lecture de vidéos intégrées, gérés par Google.</li>
         </ul>
 
+        <p>Sonde ne dépose aucun cookie. Une seule information est gardée dans l'onglet de votre navigateur (sessionStorage) : la provenance de votre visite, effacée quand vous fermez l'onglet, et jointe à votre candidature si vous en envoyez une.</p>
+
         <h3>Gestion des cookies</h3>
         <p>Vous pouvez à tout moment refuser ou supprimer les cookies via les paramètres de votre navigateur, ou via l'outil de désactivation de Google Analytics : <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a></p>
     </div>
@@ -316,7 +331,7 @@
         <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>
     </div>
 
-    <p class="update-date">Dernière mise à jour : mai 2026</p>
+    <p class="update-date">Dernière mise à jour : octobre 2026</p>
 
 </main>
 

@@ -28,6 +28,7 @@
     { "source": "/mentions-legales", "destination": "/mentions-legales.html" },
     { "source": "/tarifs", "destination": "/tarifs.html" },
     { "source": "/a-propos", "destination": "/a-propos.html" },
-    { "source": "/test-respiration", "destination": "/test-respiration.html" }
+    { "source": "/test-respiration", "destination": "/test-respiration.html" },
+    { "source": "/merci", "destination": "/merci.html" }
   ]
 }
