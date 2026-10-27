@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour ta réponse - Performance Fondamentale</title>
+    <meta name="description" content="Ta réponse à la lettre d'Etienne Yong est bien arrivée.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Etienne Yong">
+    <meta name="theme-color" content="#faf9f5">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%231f1e1d'>P</text></svg>">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #faf9f5;
+            color: #1f1e1d;
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 249, 245, 0.9);
+            border-bottom: 1px solid #e8e7e3;
+            padding: 20px 40px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1f1e1d;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .logo:hover { opacity: 0.7; }
+        .logo-sub {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #999;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px 120px;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            color: #1f1e1d;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+        }
+
+        /* Sections */
+        .legal-section {
+            margin-bottom: 56px;
+            padding-bottom: 56px;
+            border-bottom: 1px solid #e8e7e3;
+        }
+        .legal-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-number {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            color: #1f1e1d;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1f1e1d;
+            margin: 24px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 14px;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 14px;
+        }
+
+        ul li {
+            font-size: 15px;
+            color: #555;
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #bbb;
+        }
+
+        a {
+            color: #1f1e1d;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: opacity 0.2s ease;
+        }
+        a:hover { opacity: 0.6; }
+
+        .info-block {
+            background: rgba(31, 30, 29, 0.04);
+            border-left: 2px solid #1f1e1d;
+            border-radius: 2px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .info-block p {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .info-block p:last-child { margin-bottom: 0; }
+
+        .update-date {
+            font-size: 12px;
+            color: #bbb;
+            text-align: right;
+            margin-top: 60px;
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f4f1;
+            border-top: 1px solid #e8e7e3;
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header { padding: 15px 20px; }
+            .content { padding: 40px 20px 80px; }
+            .page-title { font-size: 32px; }
+        }
+        .merci { max-width: 560px; }
+        .merci p { font-size: 17px; line-height: 1.7; margin-bottom: 18px; }
+        .merci .suite { margin-top: 40px; padding: 24px 28px; background: rgba(31, 30, 29, 0.04); border-left: 2px solid #1f1e1d; border-radius: 2px; }
+        .merci .suite p { font-size: 15px; margin-bottom: 14px; }
+        .merci .bouton { display: inline-block; padding: 12px 22px; background: #1f1e1d; color: #faf9f5; border: 0; border-radius: 2px; font-size: 14px; letter-spacing: 0.5px; }
+        .merci .bouton:hover { opacity: 0.85; }
+        .merci .retour { display: inline-block; margin-top: 36px; font-size: 14px; }
+    </style>
+    <!-- Mesure d'audience Sonde (Comète Studio) : sans cookie. Provenance de la visite, jointe aux candidatures. -->
+    <script src="https://app.cometestudio.fr/sonde.js" data-site="e62adc71288e5d639261ee94c99d3c8c" defer></script>
+    <script src="/provenance.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <a href="https://www.performancefondamentale.com" class="logo">
+            PERFORMANCE FONDAMENTALE
+            <div class="logo-sub">par Etienne Yong</div>
+        </a>
+    </div>
+</header>
+
+<main class="content merci">
+
+    <h1 class="page-title">Merci.</h1>
+    <p class="page-subtitle">Ta réponse est bien notée.</p>
+
+    <p>Tu n'as rien d'autre à faire. Mes prochaines lettres partiront de ce que tu m'as dit.</p>
+
+    <div class="suite">
+        <p>Et si tu veux savoir où en est ta respiration, il y a le test&nbsp;: trois minutes, seize questions, puis deux petits tests à faire chez toi.</p>
+        <a class="bouton" href="/test-respiration">Faire le test de respiration</a>
+    </div>
+
+    <p style="margin-top: 36px;">Etienne</p>
+
+</main>
+
+<footer>
+    <p>Performance Fondamentale par Etienne Yong</p>
+    <p style="margin-top: 8px; font-size: 12px;">Régulation du système nerveux • Performance durable • Santé véritable</p>
+    <p style="margin-top: 16px;"><nav style="display: flex; gap: 32px; align-items: center;">
+    <a href="/a-propos" style="font-size: 13px; color: #666; text-decoration: none; letter-spacing: 0.5px;">À propos</a>
+    <a href="/breathwork" style="font-size: 13px; color: #666; text-decoration: none; letter-spacing: 0.5px;">Breathwork</a>
+    <a href="/tarifs" style="font-size: 13px; color: #666; text-decoration: none; letter-spacing: 0.5px;">Tarifs</a>
+</nav></p>
+</footer>
+
+</body>
+</html>
