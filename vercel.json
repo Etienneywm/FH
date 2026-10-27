@@ -18,6 +18,11 @@
   ],
   "redirects": [
     {
+      "source": "/test",
+      "destination": "/test-respiration?utm_source=instagram&utm_medium=bio",
+      "permanent": false
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "https://www.performancefondamentale.com/sitemap.xml",
       "permanent": true
